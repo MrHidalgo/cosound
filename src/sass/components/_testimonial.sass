@@ -1,0 +1,65 @@
+/* testimonial
+.testimonial
+  border-bottom: 1px solid $borderColor20
+  padding: 35px 0
+  &:last-child
+    border-bottom: 0
+    padding-bottom: 20px
+  &__head
+    display: flex
+    align-items: center
+
+  &__info
+    display: flex
+    align-items: center
+    margin-right: auto
+    &-content
+      margin-left: 25px
+
+  &__name
+    font-size: 16px
+    font-weight: 500
+    line-height: 2
+  &__rating
+    display: flex
+    align-items: center
+
+    span
+      display: inline-block
+      color: $fontColor50
+      margin-left: 5px
+
+  &__timestamp
+    font-size: 14px
+    line-height: 1.5
+    color: $fontColor50
+    &--mobile
+      display: none
+
+  &__content
+    margin-top: 20px
+    font-size: 14px
+    line-height: 1.78
+    p
+      margin: 0
+      & + p
+        margin-top: 1em
+
++r($mobile)
+  .testimonial
+    padding: 25px 0
+    &__info
+      &-content
+        margin-left: 15px
+
+    &__name
+      font-size: 15px
+
+    &__content
+      font-size: 13px
+
+    &__timestamp
+      display: none
+      font-size: 12px
+      &--mobile
+        display: block

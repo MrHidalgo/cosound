@@ -1,0 +1,295 @@
+/* Media (video/audio) plugins
+
+/* music (controls for wavesurfer.js) and tracklist
+.m-music
+  position: relative
+  &__scope
+    margin: 10px 0
+    display: flex
+    align-content: center
+  &__cover
+    position: relative
+    flex: 0 0 92px
+    size: 92px
+    // opacity: 0.65
+    box-shadow: 0 2px 20px 0 rgba(0,0,0,0.35)
+    img
+      max-width: 100%
+  &__play
+    position: absolute
+    bottom: -20px
+    right: -17px
+    display: flex
+    align-items: center
+    justify-content: center
+    color: white
+    background: $colorRed
+    border-radius: 50%
+    size: 40px
+    box-shadow: 0 4px 10px 0 rgba(255,39,123,0.33)
+    font-size: 13px
+    cursor: pointer
+    transition: .25s $ease
+    .ico
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%,-50%)
+      transition: .25s $ease
+      &-play
+        opacity: 1
+      &-stop
+        opacity: 0
+    &:hover
+      background-color: $colorAqua
+      box-shadow: 0 4px 10px 0 rgba($colorAqua,0.33)
+    &.is-playing
+      .ico
+        &-play
+          opacity: 0
+        &-stop
+          opacity: 1
+
+  &__names
+    margin-left: 28px
+    // margin-right: -10px
+  &__author
+    font-size: 16px
+    color: $fontColor50
+    line-height: 2
+  &__title
+    font-size: 16px
+    font-weight: 500
+    line-height: 1.5
+  &__track-graph
+    margin: 40px 0 10px
+    img
+      max-width: 100%
+
+  &__tracks
+    margin: 20px 0 0
+
+  &__track
+    padding: 13px 0
+    display: flex
+    align-items: center
+    border-bottom: 1px solid $borderColor20
+    &-name
+      flex: 1 1 auto
+      min-width: 1px
+      min-height: 0
+      font-size: 14px
+      line-height: 1.9
+      +text-overflow
+    &-duration
+      font-size: 12px
+      margin-left: auto
+      text-align: right
+
+  &__volume
+    position: absolute
+    top: 0
+    right: 0
+    &-toggle
+      cursor: pointer
+      font-size: 0
+      transition: .25s $ease
+      &:hover
+        opacity: .7
+    &-bar
+      position: absolute
+      top: 50%
+      left: 35px
+      background: #FFFFFF
+      box-shadow: 10px 0 30px 0 rgba(0,0,0,0.08)
+      border-radius: 6px
+      width: 140px
+      padding: 15px 8px
+      transition: .25s $ease
+      opacity: 0
+      pointer-events: none
+      transform: translate(-10px,-50%)
+      &.is-active
+        opacity: 1
+        pointer-events: all
+        transform: translate(0,-50%)
+
+      .noUi-target
+        background: none
+        border: 0
+        box-shadow: none
+        &::after
+          display: inline-block
+          content: ' '
+          background: rgba(#979797, .13)
+          height: 2px
+          position: absolute
+          left: 8px
+          right: 8px
+          top: 10px
+      .noUi-horizontal
+        height: 20px
+        overflow: hidden
+        padding-left: 8px
+        padding-right: 8px
+      .noUi-base
+        padding-top: 8px
+        padding-bottom: 8px
+
+      .noUi-handle
+        border-radius: 50%
+        size: 14px
+        right: -7px !important
+        top: -7px !important
+        background: #FFFFFF
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.21)
+        cursor: pointer
+        &::before, &::after
+          display: none
+      .noUi-origin
+        top: 10px
+        height: 2px
+        background: linear-gradient(to right, #8E5ACD, #21B0B0)
+
++r($hd)
+  .m-music
+    &__volume
+      &-bar
+        left: auto
+        right: 35px
+
++r($mobile)
+  .m-music
+    &__names
+      padding-bottom: 20px
+      margin-top: -8px
+    &__volume
+      bottom: -10px
+      top: auto
+      left: 130px
+      right: auto
+      &-bar
+        left: 35px
+        right: auto
+        padding: 10px 8px
+        box-shadow: 5px 3px 25px 0 rgba(0,0,0,0.08)
+
+/* video
+// mediaelement.js
+.m-video
+  position: relative
+  z-index: 1
+  margin: 20px 0
+  padding-bottom: 50px
+
+
+// waveserfer.js
+.m-audio
+  position: relative
+  margin: 30px 0 10px
+  &--ie
+    display: none
+  &__time-total, &__time-current
+    position: absolute
+    bottom: 0
+    font-size: 12px
+  &__time-total
+    right: 0
+  &__time-current
+    left: 0
+
+//* IE fix (doesn't support feature)
+// mediaelement.js is used instead
+.is-ie
+  .m-audio
+    display: none
+    &--ie
+      display: block
+  .m-music
+    &__play, &__volume
+     display: none
+
+
+/* gallery
+.m-gallery
+  display: flex
+  flex-wrap: wrap
+  margin: 0 -7px 25px
+  font-size: 0
+  &__item
+    flex: 0 1 33.3%
+    max-width: 33.3%
+    min-width: 1px
+    min-height: 0
+    font-size: 0
+    padding: 7px
+  &__img-holder
+    display: inline-block
+    // min-size: 120px
+    // height: 120px
+    width: 100%
+    position: relative
+    z-index: 1
+    border-radius: 6px
+    overflow: hidden
+    box-shadow: 0 6px 9px 0 rgba(0,0,0,0.11)
+    transition: .25s $ease
+    &:hover
+      box-shadow: none
+      // img
+      //   transform: translate(-50%,-50%) scale(1.1)
+    img
+      // position: absolute
+      // top: 50%
+      // left: 50%
+      // transform: translate(-50%,-50%)
+      // min-width: 100%
+      // min-height: 100%
+      // width: auto
+      // height: auto
+      width: 100%
+      transition: .25s $ease
+
+// image row
+// what would happens when 3,4,5 img ?
+.m-img-row
+  display: flex
+  flex-wrap: wrap
+  margin: -22px
+  width: calc(100% + 44px)
+  &[data-images="2"]
+    .m-img-row__col
+      flex: 0 1 50%
+  &[data-images="3"]
+    .m-img-row__col
+      flex: 0 1 33.3%
+  &__col
+    padding: 22px
+  .m-image
+    margin: 0
+
++r($mobile)
+  .m-img-row
+    &[data-images="2"]
+      .m-img-row__col
+        flex: 0 0 calc(100% + 50px)
+        margin-left: -25px
+        margin-right: -25px
+        border-radius: 0
+
+
+.m-image
+  margin: 20px 0
+  position: relative
+  z-index: 1
+  border-radius: 5px
+  overflow: hidden
+  img
+    max-width: 100%
+    width: 100%
+
++r($mobile)
+  .m-image
+    margin-left: -25px
+    margin-right: -25px
+    border-radius: 0

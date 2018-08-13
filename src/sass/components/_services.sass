@@ -1,0 +1,324 @@
+.services
+  margin-top: 50px
+  margin-bottom: 150px
+  max-width: 850px
+  margin-left: auto
+  margin-right: auto
+  &--wide
+    max-width: 100%
+  &--top-offset
+    margin-top: 100px
+  &__head
+    position: relative
+    z-index: 2
+    display: flex
+    align-items: center
+    &-name
+      color: $fontColor50
+      font-size: 14px
+      +text-overflow
+      padding-right: 15px
+      flex: 0 1 auto
+      min-width: 1px
+    &-sorting
+      flex: 0 0 auto
+      display: flex
+      align-items: center
+      margin-left: auto
+      span
+        font-size: 14px
+        display: inline-block
+        margin-right: 5px
+
+
+  &__wrapper
+    position: relative
+    z-index: 1
+    background: #FFFFFF
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.08)
+    border-radius: 10px
+    padding: 0 40px
+    margin-top: 25px
+    &--no-bg
+      background: transparent
+      box-shadow: none
+
+  &--option-b
+    max-width: 770px
+    .services
+      &__wrapper
+        background: transparent
+        box-shadow: none
+        padding: 0
+
+    .services-item
+      border-top: 1px solid $borderColor20
+      border-bottom: 0
+
++r($tablet)
+  .services
+    &__wrapper
+      padding-left: 30px
+      padding-right: 30px
+    &--top-offset
+      margin-top: 50px
+
++r($mobile)
+  .services
+    margin-bottom: 50px
+    margin-top: 20px
+    &--top-offset
+      margin-bottom: 0
+    &__wrapper
+      margin-left: -25px
+      margin-right: -25px
+      border-radius: 0
+      padding-left: 20px
+      padding-right: 25px
+    &--option-b
+      .services
+        &__wrapper
+          margin-left: 0
+          margin-right: 0
+    &__head
+      flex-direction: column
+      align-items: flex-start
+      &-name
+        flex: 0 0 auto
+        text-align: left
+        margin-bottom: 15px
+
+.services-item
+  position: relative
+  z-index: 1
+  display: flex
+  border-bottom: 1px solid $borderColor20
+  padding: 35px 0
+  text-align: left
+  &:hover
+    .services-item
+      &__name
+        color: $colorAqua
+      // .avatar
+      //   transform: translateX(-5px)
+  &:last-child
+    border-bottom: 0
+
+  &__content
+    flex: 1 1 auto
+    margin-left: 20px
+
+  &__name
+    font-size: 20px
+    font-weight: 500
+    line-height: 1.4
+    margin-top: 2px
+    transition: .25s $ease
+
+  &__category
+    font-size: 14px
+    color: $fontColor50
+    line-height: 1.5
+    margin-top: -.1em
+  &__desc
+    margin-top: 10px
+    font-size: 14px
+    line-height: 1.9
+    p
+      margin: 0
+      & + p
+        margin-top: 1em
+    &--row
+      display: flex
+
+  &__cta
+    flex: 0 0 auto
+    display: flex
+    align-items: center
+    padding-left: 10px
+    .btn
+      margin-right: 7px
+      &:last-child
+        margin-right: 0
+
++r($desktop)
+  .services-item
+    &__desc
+      &--row
+        flex-direction: column
+    &__cta
+      margin-top: 15px
+      margin-left: auto
+
++r($mobile)
+  .services-item
+    padding: 25px 0
+    &__name
+      font-size: 18px
+    &__category
+      font-size: 13px
+    &__content
+      margin-left: 15px
+    &__desc
+      font-size: 13px
+      margin-left: -55px
+    &__cta
+      // margin-left: 0px
+      margin-right: auto
+      padding-left: 0
+      .btn
+        padding: 5px 7px
+        min-width: 100px
+
++r($mobile-s)
+  .services-item
+    &__cta
+      margin-left: 0
+
+/* No services
+.services-no
+  margin-top: 130px
+  text-align: center
+  &__icon
+    text-align: center
+  &__name
+    font-size: 30px
+    margin-top: 100px
+
+  &__desc
+    margin-top: 35px
+    font-size: 14px
+    color: $fontColor50
+
+  &__cta
+    margin-top: 60px
+
++r($tablet)
+  .services-no
+    margin-top: 100px
+    &__name
+      margin-top: 75px
+
++r($mobile)
+  .services-no
+    margin-top: 60px
+    &__icon
+      transform: scale(0.75)
+      transform-origin: center bottom
+    &__name
+      margin-top: 40px
+      font-size: 26px
+    &__desc
+      margin-top: 25px
+    &__cta
+      margin-top: 50px
+
+.services-create
+  margin-top: 120px
+  display: block
+  &__title
+    font-size: 30px
+    text-align: center
+  &__form
+    margin-top: 75px
+    max-width: 550px
+    margin-left: auto
+    margin-right: auto
+    &--wide
+      max-width: 750px
+    &--full
+      max-width: 100%
+  &__cta
+    text-align: center
+    margin-top: 100px
+
+  &__price-hint
+    display: flex
+    align-items: center
+    text-align: center
+    justify-content: center
+    margin-top: 65px
+    margin-bottom: -20px
+    color: $colorBlue
+    font-size: 16px
+    span
+      margin-right: 10px
+      display: inline-block
+    .ico
+      font-size: 25px
+
+  &__step
+    display: none
+
+    &.is-active
+      display: block
+
+  &__section-title
+    font-size: 20px
+    text-align: center
+
+  &__images
+    margin-top: 80px
+    &-wrap
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+      margin-top: 20px
+      margin-left: -15px
+      margin-right: -15px
+    &-col
+      padding: 15px
+      flex: 0 1 auto
+
+
++r($tablet)
+  .services-create
+    margin-top: 90px
+    &__form
+      margin-top: 65px
+
+    &__cta
+      margin-top: 80px
+
++r($mobile)
+  .services-create
+    margin-top: 60px
+    &__title
+      font-size: 26px
+    &__form
+      margin-top: 50px
+    &__price-hint
+      margin-top: 30px
+      font-size: 14px
+      .ico
+        font-size: 22px
+    &__cta
+      margin-top: 60px
+    .photo-uploader
+      color: $fontColor
+      &__name
+        margin-bottom: 35px
+
+    &__images
+      &-wrap
+        margin-left: -10px
+        margin-right: -10px
+      &-col
+        padding: 10px
+
++r($mobile-s)
+  .services-create
+    &__images
+      &-col
+        flex: 0 1 100%
+    &__cta
+      margin-top: 40px
+
++r(375)
+  .services-create
+    &__price-hint
+      font-size: 13px
+      margin-left: -10px
+      margin-right: -10px
+      .ico
+        font-size: 20px

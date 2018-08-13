@@ -1,0 +1,57 @@
+/* f-page
+.f-page
+  &__title
+    font-size: 30px
+    line-height: 1.3
+
+  &__subtitle
+    font-size: 16px
+    line-height: 2
+    margin-top: 30px
+    color: $fontColor50
+
+  &__form
+    margin-top: 60px
+    max-width: 550px
+    margin-left: auto
+    margin-right: auto
+    text-align: left
+    &-row
+      display: flex
+      margin-left: -15px
+      margin-right: -15px
+      .ui-group
+        padding-left: 15px
+        padding-right: 15px
+    &-cta
+      margin-top: 80px
+      text-align: center
+
++r($tablet)
+  .f-page
+    &__title
+      font-size: 26px
+    &__subtitle
+      font-size: 15px
+      margin-top: 25px
+    &__form
+      margin-top: 45px
+      &-cta
+        margin-top: 60px
+
++r($mobile)
+  .f-page
+    &__title
+      font-size: 24px
+    &__subtitle
+      font-size: 14px
+      line-height: 1.7
+
++r(480)
+  .f-page
+    &__form
+      &-row
+        display: block
+        margin: 0
+        .ui-group
+          padding: 0

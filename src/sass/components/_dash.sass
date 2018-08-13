@@ -1,0 +1,415 @@
+.feed
+  position: relative
+  z-index: 2
+  margin-top: 100px
+
++r($tablet)
+  .feed
+    margin-top: 60px
+
+.dash
+  display: flex
+  margin: 50px -12px
+  &__sidebar
+    flex: 0 1 480px
+    max-width: 480px
+    min-width: 1px
+    min-height: 0
+    padding: 0 12px
+
+    &-wrap
+      position: relative
+      // transition: .1s linear
+      &.is-fixed
+
+      &.is_stuck
+        z-index: 9
+
+
+  &__content
+    flex: 0 1 680px
+    max-width: 100%
+    min-width: 1px
+    min-height: 0
+    padding: 0 12px
+  &--feed
+    .dash
+      &__sidebar
+        flex-basis: 285px
+        max-width: 285px
+      &__content
+        flex-basis: 875px
+        max-width: 875px
+
++r($desktop)
+  .dash
+    flex-direction: column
+    &__sidebar
+      // display: none
+      flex: 0 0 auto
+      max-width: 100%
+      width: 100%
+      &-wrap
+        width: 100%
+        display: flex
+      .d-card
+        flex: 0 1 50%
+        max-width: 50%
+        min-width: 1px
+        margin-right: 24px
+        &:last-child
+          margin-right: 0
+    &__content
+      flex: 0 0 auto
+      margin-left: auto
+      margin-right: auto
+    &--feed
+      .dash
+        &__sidebar
+          max-width: 100%
+          flex-basis: auto
+          &-wrap
+            justify-content: center
+        &__content
+          max-width: 100%
+          flex: 0 0 auto
+          margin-left: auto
+          margin-right: auto
+
++r($tablet)
+  .dash
+    &__sidebar
+      &-wrap
+        flex-direction: column
+      .d-card
+        flex: 0 0 auto
+        max-width: 100%
+        margin-right: 0
+
++r($mobile)
+  .dash
+    margin-top: 20px
+    margin-left: -37px
+    margin-right: -37px
+
+// Dash card
+.d-card
+  position: relative
+  z-index: 2
+  // overflow: hidden
+  padding: 30px 30px 0px
+  margin-bottom: 30px
+  background: white
+  box-shadow: 0 10px 30px 0 rgba(0,0,0,0.08)
+  border-radius: 10px
+  color: $fontColor
+  &__head
+    display: flex
+    align-items: center
+    padding-bottom: 25px
+    border-bottom: 1px solid $borderColor20
+  &__title
+    font-size: 20px
+    font-weight: 500
+  &__action
+    color: $colorViolet
+    position: absolute
+    top: 15px
+    right: 25px
+    font-size: 22px
+    cursor: pointer
+    transition: .25s $ease
+    &:hover
+      color: $colorAqua
+  &__options
+    position: absolute
+    top: 5px
+    right: 3px
+    &-toggle
+      cursor: pointer
+      font-size: 4px
+      padding: 15px
+      color: $fontColor50
+      transition: .25s $ease
+      &:hover
+        color: $colorAqua
+    &-wrap
+      position: relative
+    &-list
+      position: absolute
+      z-index: 5
+      top: 25px
+      left: 10px
+      padding: 10px 0
+      margin: 0px 0
+      min-width: 180px
+      background: white
+      border-radius: 6px
+      box-shadow: 0 10px 30px 0 rgba(0,0,0,0.08)
+      opacity: 0
+      transform: translate3d(0,15px,0)
+      pointer-events: none
+      transition: .25s $ease
+      &.is-visible
+        opacity: 1
+        transform: translate3d(0,0,0)
+        pointer-events: all
+      li
+        display: block
+        &:first-child
+          font-weight: 500
+      a
+        display: block
+        font-size: 15px
+        padding: 12px 30px
+        color: #8E8E8E
+        transition: .25s $ease
+        &:hover
+          color: $fontColor
+          background: #F9F9F9
+          box-shadow: 0 6px 11px 0 rgba(0,0,0,0.04)
+
+
+  &__content
+    padding: 25px 0 10px
+    p
+      margin: 0
+      font-size: 14px
+      line-height: 1.9
+      & + p
+        margin-top: 1em
+
+  &__more
+    border-top: 1px solid $borderColor20
+    margin-top: -1px
+    padding: 12px 0 5px
+    text-align: center
+    font-size: 14px
+    color: $colorRed
+    a
+      display: inline-block
+      padding: 5px
+      transition: .25s $ease
+      &:hover
+        color: $colorAqua
+
+  &__user
+    display: flex
+    align-items: center
+
+    &-info
+      margin-left: 25px
+
+    &-name
+      font-size: 16px
+      font-weight: 500
+
+    &-position
+      font-size: 14px
+      line-height: 2
+      color: $fontColor50
+
+  &__actions
+    display: flex
+    align-items: center
+    margin: 25px 0
+
+  &__like, &__share, &__repost
+    color: #8E8E8E
+    border: 1px solid #D8D8D8
+    border-radius: 100px
+    min-size: 67px 28px
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 5px
+    cursor: pointer
+    transition: .25s $ease
+    span
+      display: inline-block
+      margin-left: 5px
+      font-size: 12px
+    &:hover, &.is-active
+      background: #EEEEEE
+      border-color: #EEEEEE
+    // refactor - click change the class and hover is not clear enought
+    &.is-active
+      &:hover
+        border-color: #D8D8D8
+        background: #D8D8D8
+
+  &__like
+    margin-right: 15px
+    .ico
+      font-size: 12px
+  &__share
+    .ico
+      font-size: 10px
+
+  &__repost
+    min-width: 36px
+    margin-left: auto
+    .ico
+      font-size: 11px
+
+  &__comments
+    margin: 35px 0 0
+    &-head
+      position: relative
+      display: flex
+      // justify-content: center
+      text-align: center
+      margin: 20px 0
+      padding-bottom: 5px
+      &::before
+        display: inline-block
+        content: ' '
+        position: absolute
+        top: 50%
+        left: 0
+        right: 0
+        height: 1px
+        background: $borderColor20
+    &-toggle
+      display: inline-block
+      position: relative
+      z-index: 2
+      display: flex
+      margin-left: auto
+      margin-right: auto
+      min-width: 160px
+      // width: 159px
+      padding-left: 18px
+      border-radius: 30px
+      background: white
+      border: 1px solid #EAEAEA
+      font-size: 12px
+      cursor: pointer
+      color: $fontColor50
+      transition: .25s $ease
+      .ico
+        fill: #8E8E8E
+      span
+        display: inline-block
+        margin-left: 7px
+      &:hover
+        background: #EEEEEE
+        border-color: #EEEEEE
+      &.is-opened
+        .d-card__comments-arrow
+          .ico
+            transform: rotate(180deg)
+    &-text
+      display: flex
+      align-items: center
+    &-arrow
+      font-size: 5px
+      margin: -1px -1px -1px auto
+      flex: 0 0 auto
+      border: 1px solid #EAEAEA
+      border-radius: 15px
+      padding: 9px 12px
+      .ico
+        transition: .25s $ease
+
+    &-drop
+      display: none
+      margin: 30px 0
+      .d-card__comment
+        &:first-child
+          margin-top: 0
+        &:last-child
+          margin-bottom: 0
+
+  /* comment
+  &__comment
+    display: flex
+    margin: 30px 0
+    &-content
+      flex: 1 1 auto
+      padding: 0 23px
+
+    &-author
+      font-size: 16px
+      font-weight: 500
+      line-height: 2
+    &-text
+      font-size: 14px
+      color: $fontColor50
+      p
+        margin: 0
+        line-height: 1.9
+        & + p
+          margin-top: 1em
+
+    &-date
+      flex: 0 0 auto
+      font-size: 12px
+      color: $fontColor50
+
+  &__reply
+    background: #F1F1F1
+    display: flex
+    align-items: flex-end
+    margin: 20px -30px 0
+    padding: 20px 30px
+    border-bottom-left-radius: 10px
+    border-bottom-right-radius: 10px
+    textarea
+      display: block
+      width: 100%
+      -webkit-appearance: none
+      background: #F1F1F1
+      color: $fontColor
+      border: none
+      border-radius: 8px
+      padding: 5px 0px
+      margin-left: 20px
+      resize: none
+      // transition: .25s $ease
+      &::placeholder
+        color: $fontColor50
+  &__btn-bottom
+    position: absolute
+    bottom: 0
+    left: 50%
+    transform: translate(-50%, 22px)
+
++r($hd)
+  .d-card
+    &__options
+      &-list
+        right: 10px
+        left: auto
+        min-width: 180px
+
++r($mobile)
+  .d-card
+    border-radius: 0
+    margin-bottom: 15px
+    // margin-bottom: 0
+    // border-bottom: 1px solid $borderColor
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,0.06)
+    padding: 25px 25px 0
+    &--mobile-btn-offset
+      margin-bottom: 80px
+
+    &__content
+      p
+        font-size: 13px
+    &__user
+      &-name
+        font-size: 15px
+      &-position
+        font-size: 13px
+    &__comment
+      &-content
+        padding-left: 15px
+      &-author
+        font-size: 15px
+
+      &-text
+        font-size: 13px
+    &__reply
+      textarea
+        margin-left: 15px

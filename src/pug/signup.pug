@@ -1,0 +1,43 @@
+---
+title: Signup 1
+---
+extends shared/_layout
+
+block header
+  // empty header
+  
+block content
+  
+  // SIGNUP
+  .signup
+    .page-bg
+      .page-bg__wrapper
+        include ../inline-svg/hero-bg-login.svg
+    .container
+      .signup__wrapper
+        .signup__logo.wow(data-animation-class="wowFadeDown")
+          +icon('ico-logo')
+        h2.signup__heading.wow(data-animation-delay=".4s") Welcome, user!
+        .signup__text.wow(data-animation-delay=".5s")
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit.
+          
+        //form
+        form.signup-form(action="#" js-validate-signup-1 data-animation-delay=".6s").wow
+          .ui-group(data-animation-delay=".6s")
+            select(name="options" placeholder="Select location" js-change-location)
+              option(disabled) Select location
+              option United Kingdom
+              option Scotland
+              option United States
+              option Australia
+              option Canada
+          .ui-group(data-animation-delay=".7s")
+            input(type="text" name="postal_code" placeholder="Postal code" js-mask-zip)
+
+          .signup-form__cta.wow(data-animation-delay=".8s")
+            button(type="submit").btn.btn-primary.btn-primary--red
+              span Confirm Location
+        
+        // steps
+        .signup__steps(data-active-step="1" data-animation-class="wowFadeDown").wow
+          include components/_signup-steps

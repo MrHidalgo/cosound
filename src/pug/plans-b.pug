@@ -1,0 +1,202 @@
+---
+title: Plans
+---
+extends shared/_layout
+
+block header
+  // empty header
+  
+block content
+  
+  // SIGNUP
+  .signup
+    .page-bg
+      .page-bg__wrapper.page-bg__wrapper--plans
+        include ../inline-svg/hero-bg-plans.svg
+    .container
+      .signup__wrapper
+        .signup__logo.wow(data-animation-class="wowFadeDown")
+          +icon('ico-logo')
+        h2.signup__heading.wow(data-animation-delay=".4s") Please select Plan
+        .signup__text.wow(data-animation-delay=".5s")
+          p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        
+        // PLANS
+        .plans
+          include components/_plansGrid
+          .plans-tabs
+
+            // plan benefits
+            .benefits.benefits--line(data-plan="1")
+              .benefits__title Premium Features for Professionals
+              .benefits__subtitle Lorem ipsum dolor sit amet, consectetur adipisicing elit
+              .benefits__list
+                // el
+                .benefits__el
+                  .benefits__icon
+                    +icon('ico-plan-benefit-1')
+                  .benefits__content
+                    .benefits__el-name Tempor incididunt 
+                    .benefits__el-desc
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo …
+                // el
+                .benefits__el
+                  .benefits__icon
+                    +icon('ico-plan-benefit-2')
+                  .benefits__content
+                    .benefits__el-name Ut enim ad minim veniam
+                    .benefits__el-desc
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo …
+                // el
+                .benefits__el
+                  .benefits__icon
+                    +icon('ico-plan-benefit-3')
+                  .benefits__content
+                    .benefits__el-name Tempor incididunt 
+                    .benefits__el-desc
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                // el
+                .benefits__el
+                  .benefits__icon
+                    +icon('ico-plan-benefit-4')
+                  .benefits__content
+                    .benefits__el-name llamco laboris
+                    .benefits__el-desc
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo …
+                // el
+                .benefits__el
+                  .benefits__icon
+                    +icon('ico-plan-benefit-5')
+                  .benefits__content
+                    .benefits__el-name Tempor incididunt 
+                    .benefits__el-desc
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo …
+                // el
+                .benefits__el
+                  .benefits__icon
+                    +icon('ico-plan-benefit-6')
+                  .benefits__content
+                    .benefits__el-name Magna aliqua
+                    .benefits__el-desc
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo …
+              
+              .benefits__cta
+                a(href='#').btn.btn-primary.btn-primary--red
+                  spab Continue
+
+            // plan benefits
+            .benefits.benefits--line(data-plan="2")
+              .benefits__title Premium Features for Professionals
+              .benefits__subtitle Lorem ipsum dolor sit amet, consectetur adipisicing elit
+              .benefits__list
+                // el
+                .benefits__el
+                  .benefits__icon
+                    +icon('ico-plan-benefit-1')
+                  .benefits__content
+                    .benefits__el-name Tempor incididunt 
+                    .benefits__el-desc
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo …
+                // el
+                .benefits__el
+                  .benefits__icon
+                    +icon('ico-plan-benefit-2')
+                  .benefits__content
+                    .benefits__el-name Ut enim ad minim veniam
+                    .benefits__el-desc
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo …
+                // el
+                .benefits__el
+                  .benefits__icon
+                    +icon('ico-plan-benefit-3')
+                  .benefits__content
+                    .benefits__el-name Tempor incididunt 
+                    .benefits__el-desc
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                // el
+                .benefits__el
+                  .benefits__icon
+                    +icon('ico-plan-benefit-4')
+                  .benefits__content
+                    .benefits__el-name llamco laboris
+                    .benefits__el-desc
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo …
+                // el
+                .benefits__el
+                  .benefits__icon
+                    +icon('ico-plan-benefit-5')
+                  .benefits__content
+                    .benefits__el-name Tempor incididunt 
+                    .benefits__el-desc
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo …
+                // el
+                .benefits__el
+                  .benefits__icon
+                    +icon('ico-plan-benefit-6')
+                  .benefits__content
+                    .benefits__el-name Magna aliqua
+                    .benefits__el-desc
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo …
+              
+              .benefits__cta
+                a(href='#').btn.btn-primary.btn-primary--red
+                  spab Continue
+                  
+                  
+            // plan benefits
+            .benefits.benefits--line(data-plan="3")
+              .benefits__title Premium Features for Professionals
+              .benefits__subtitle Lorem ipsum dolor sit amet, consectetur adipisicing elit
+              .benefits__list
+                // el
+                .benefits__el
+                  .benefits__icon
+                    +icon('ico-plan-benefit-1')
+                  .benefits__content
+                    .benefits__el-name Tempor incididunt 
+                    .benefits__el-desc
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo …
+                // el
+                .benefits__el
+                  .benefits__icon
+                    +icon('ico-plan-benefit-2')
+                  .benefits__content
+                    .benefits__el-name Ut enim ad minim veniam
+                    .benefits__el-desc
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo …
+                // el
+                .benefits__el
+                  .benefits__icon
+                    +icon('ico-plan-benefit-3')
+                  .benefits__content
+                    .benefits__el-name Tempor incididunt 
+                    .benefits__el-desc
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                // el
+                .benefits__el
+                  .benefits__icon
+                    +icon('ico-plan-benefit-4')
+                  .benefits__content
+                    .benefits__el-name llamco laboris
+                    .benefits__el-desc
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo …
+                // el
+                .benefits__el
+                  .benefits__icon
+                    +icon('ico-plan-benefit-5')
+                  .benefits__content
+                    .benefits__el-name Tempor incididunt 
+                    .benefits__el-desc
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo …
+                // el
+                .benefits__el
+                  .benefits__icon
+                    +icon('ico-plan-benefit-6')
+                  .benefits__content
+                    .benefits__el-name Magna aliqua
+                    .benefits__el-desc
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo …
+              
+              .benefits__cta
+                a(href='#').btn.btn-primary.btn-primary--red
+                  spab Continue

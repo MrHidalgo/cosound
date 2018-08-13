@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>check-outline</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="check-outline" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M26,0 C11.664,0 0,11.664 0,26 C0,40.337 11.664,52 26,52 C40.337,52 52,40.337 52,26 C52,11.664 40.337,0 26,0 Z M26,48 C13.869,48 4,38.131 4,26 C4,13.869 13.869,4 26,4 C38.131,4 48,13.869 48,26 C48,38.131 38.131,48 26,48 Z" id="Shape" fill="#3B93BB" fill-rule="nonzero"></path>
+        <path d="M32.464,18.72 L23.614,29.339 L19.109,26.336 C18.191,25.723 16.948,25.972 16.336,26.891 C15.723,27.81 15.972,29.052 16.891,29.664 L22.891,33.664 C23.23,33.891 23.616,34 23.999,34 C24.575,34 25.144,33.752 25.537,33.28 L35.537,21.28 C36.244,20.431 36.13,19.171 35.281,18.463 C34.432,17.755 33.171,17.871 32.464,18.72 Z" id="Shape" fill="#3B93BB" fill-rule="nonzero"></path>
+    </g>
+</svg>

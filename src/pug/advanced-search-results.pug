@@ -1,0 +1,70 @@
+---
+title: Advanced search
+---
+extends shared/_layout
+
+block header
+  include components/headers/_header-results
+  
+block content
+  
+  // PROFILE
+  .full-height-wrap
+    .container
+
+      // SERVICES
+      .services.services--top-offset
+        .services__head.wow
+          .services__head-name Showing Studio Engineers in San Diego
+          
+          .services__head-sorting
+            span Sort by:
+            select.selectric-no-bg
+              option(selected) Name
+              option() Date
+              option() Value
+        
+        .services__wrapper.wow
+          // item
+          .services-item
+            .avatar.avatar--shad
+              img(src='img/suggestionCard-avatar-1.jpg' srcset='img/suggestionCard-avatar-1@2x.jpg 2x')
+            .services-item__content
+              .services-item__name Service Title
+              .services-item__category Bassline Drift 
+              .services-item__desc.services-item__desc--row
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                .services-item__cta
+                  a(href="#").btn.btn-primary.btn-primary--aqua.btn-primary--smaller
+                    span Message
+                  a(href="#" js-advSearch-fake-btn).btn.btn-primary.btn-primary--disabled.btn-primary--smaller
+                    span Requested
+                
+          // item
+          .services-item
+            .avatar.avatar--shad
+              img(src='img/suggestionCard-avatar-2.jpg' srcset='img/suggestionCard-avatar-2@2x.jpg 2x')
+            .services-item__content
+              .services-item__name Service Title
+              .services-item__category Bassline Drift 
+              .services-item__desc.services-item__desc--row
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                .services-item__cta
+                  a(href="#").btn.btn-primary.btn-primary--aqua.btn-primary--smaller
+                    span Message
+                  a(href="#" js-advSearch-fake-btn).btn.btn-primary.btn-primary--violet.btn-primary--smaller
+                    span Connect
+          // item
+          .services-item
+            .avatar.avatar--shad
+              img(src='img/suggestionCard-avatar-3.jpg' srcset='img/suggestionCard-avatar-3@2x.jpg 2x')
+            .services-item__content
+              .services-item__name Long services title which in this could be on another line
+              .services-item__category Bassline Drift 
+              .services-item__desc.services-item__desc--row
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                .services-item__cta
+                  a(href="#").btn.btn-primary.btn-primary--aqua.btn-primary--smaller
+                    span Message
+                  a(href="#" js-advSearch-fake-btn).btn.btn-primary.btn-primary--violet.btn-primary--smaller
+                    span Connect

@@ -1,0 +1,62 @@
+// HEADER :: START
+header.header.header--dash.header--bg.js-should-scroll
+  // no wow class here
+  .header__wrapper
+    a(href="homepage.html").header__logo
+      +icon('ico-logo')
+  
+    include _search
+      
+    include _actions
+    
+    //- .header__premium
+    //-   a(href="plans.html") Premium
+    
+    include _user
+    
+    .header__hamburger
+      .hamburger.hamburger--squeeze(js-hamburger)
+        .hamburger-box
+          .hamburger-inner
+  
+  .header-search
+    .header-search__mobile-toggle(js-header-search-toggle)
+      span I'm looking for
+      .header-search__mobile-btn
+        +icon('ico-select-down')
+    form(action="#").header-search__wrapper
+      .header-search__keywords
+        .header-search__group
+          label I'm looking for
+          input(type="text" value="Studio Engineers")
+      .header-search__location
+        .header-search__group
+          label within
+          select.selectric-as-select
+            option 5 miles
+            option 10 miles
+            option 25 miles
+            option 50 miles
+            option 100 miles
+            option any
+            
+        .header-search__group
+          label of
+          input(type="text" value="San Diego")
+      .header-search__cta
+        button(type="submit").btn.btn-primary.btn-primary--aqua.btn-primary--smaller
+          span Search
+        
+        
+// HEADER :: END
+
+
+// MOBILE NAV
+.mnav.mnav--fixed
+  .mnav__wrapper(js-scrollbar)
+    include _search
+    
+    include _dash-mobileMenu
+
+
+include ../_notifications

@@ -1,0 +1,393 @@
+
+/* Signup
+.signup
+  position: relative
+  z-index: 2
+  color: white
+  flex: 1 0 auto
+  display: flex
+  flex-direction: column
+  .container
+    position: relative
+    z-index: 2
+    flex: 1 0 auto
+    display: flex
+    flex-direction: column
+  &__wrapper
+    min-height: 1100px
+    width: 100%
+    flex: 1 0 auto
+    display: flex
+    flex-direction: column
+    align-items: center
+    text-align: center
+    padding: 70px 0
+  &__logo
+    font-size: 44px
+  &__heading
+    margin: 70px 0 30px
+    font-weight: 400
+    font-size: 30px
+    &--big
+      font-size: 40px
+  &__upperheading
+    margin-top: 70px
+    margin-bottom: 20px
+    font-weight: 400
+    font-size: 30px
+    + .signup__heading
+      margin-top: 0
+      margin-bottom: -15px
+
+  &__text
+    font-size: 16px
+    max-width: 670px
+    margin-left: auto
+    margin-right: auto
+    color: $colorWhite50
+    p
+      margin: 0
+      line-height: 1.9
+      & + p
+        margin-bottom: 1em
+  &__steps
+    margin-top: auto
+    padding-top: 180px
+    width: 100%
+    display: flex
+    color: $fontColor
+
+  // suggestions
+  &__sug
+    margin-top: 75px
+    margin-bottom: 90px
+    &-icon
+      margin-left: auto
+      margin-right: auto
+      size: 107px
+      background: white
+      border-radius: 50%
+      display: flex
+      align-items: center
+      justify-content: center
+      .icon
+        animation: suggestionsWaitingIcon 1s easeInOutSine infinite
+    &-info
+      margin-top: 120px
+      max-width: 530px
+      margin-left: auto
+      margin-right: auto
+      p
+        margin: 0
+        line-height: 2
+        font-size: 16px
+        color: $fontColor50
+
++r($mobile)
+  .signup
+    &__wrapper
+      min-height: 1px
+      padding: 50px 0
+    &__logo
+      font-size: 42px
+    &__heading
+      font-size: 28px
+      margin: 40px 0 20px 0
+      &--big
+        font-size: 32px
+    &__upperheading
+      font-size: 28px
+      margin-top: 35px
+      margin-bottom: 13px
+    &__text
+      font-size: 14px
+      max-width: 360px
+      margin-left: auto
+      margin-right: auto
+    &__steps
+      padding-top: 80px
+
+    &__sug
+      margin-top: 50px
+      margin-bottom: 50px
+      &-info
+        margin-top: 100px
+
+
++r($mobile-s)
+  .signup
+    &__heading
+      margin-top: 25px
+
+/* Signup form
+.signup-form
+  width: 100%
+  max-width: 550px
+  margin-top: 80px
+  margin-bottom: 60px
+  margin-left: auto
+  margin-right: auto
+  color: $fontColor
+  &--full
+    max-width: 100%
+  &__cta
+    margin-top: 60px
+    .btn
+      min-width: 220px
+  &__uploader
+    margin-top: -15px
+    margin-bottom: 60px
+  &__skip
+    font-size: 14px
+    margin-top: 45px
+    a
+      display: inline-block
+      padding: 7px 5px
+      color: $fontColor50
+      transition: .25s $ease
+      &:hover
+        color: $colorAqua
+
+
++r($mobile)
+  .signup-form
+    margin-top: 60px
+    margin-bottom: 30px
+    &__uploader
+      margin-top: -25px
+    &__skip
+      margin-top: 35px
+    &__cta
+      margin-top: 35px
+
+$colorStep: #2a8b8b
+
+/* Signup step
+.signup-step
+  flex: 1 1 20%
+  position: relative
+  min-width: 80px
+  min-height: 1px
+  margin-bottom: 30px
+  pointer-events: none
+  // just making the line
+  &::before, &::after
+    display: inline-block
+    content: ' '
+    position: absolute
+    top: 0px
+    height: 6px
+    width: 50%
+    z-index: 1
+    background: $borderColor
+  &::before
+    left: 0
+  &::after
+    right: 0
+  &:first-child
+    &::before
+      display: none
+  &:last-child
+    &::after
+      display: none
+
+  &__progress
+    width: 100%
+    height: 6px
+    bottom: auto
+    // background: $borderColor
+    position: relative
+    z-index: 2
+
+    &::before
+      position: absolute
+      size: 22px
+      background: white
+      border: 2px solid #E0E0E0
+      border-radius: 50%
+      display: block
+      content: ''
+      left: 50%
+      top: 50%
+      transform: translate(-50%,-50%)
+      transition: .25s $ease
+      box-shadow: 0 8px 10px 0 rgba(0,0,0,0.07)
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute
+      +sprite('signup-check')
+      left: 50%
+      top: 50%
+      transform: translate(-50%,-50%) scale(0)
+      transition: .25s $ease
+  span
+    display: inline-block
+    margin-top: 40px
+    font-size: 16px
+    color: $fontColor50
+
+  // states
+  &.is-current
+    &::before
+      width: 100%
+      left: -50%
+      background-color: $colorGreen2
+      background: linear-gradient(to right, $colorStep, $colorGreen2)
+    .signup-step__progress
+      &::before
+        background: $colorGreen2
+        box-shadow: 0 3px 4px 0 rgba($colorGreen2,0.54)
+        border-color: transparent
+        size: 37px
+      &::after
+        transform: translate(-50%,-50%) scale(1)
+    span
+      color: $fontColor
+
+  &.is-done
+    pointer-events: all
+    &::before, &::after
+      background-color: $colorStep
+    .signup-step__progress
+      &::before
+        background: $colorStep
+        border-color: transparent
+        box-shadow: 0 5px 10px 0 rgba($colorStep,0.32)
+      &::after
+        transform: translate(-50%,-50%) scale(1)
+    span
+      color: $colorStep
+      transition: .25s $ease
+    &:hover
+      .signup-step__progress
+        &::before
+          transform: translate(-50%,-50%) scale(1.2)
+      span
+        color: $fontColor
+
++r($tablet)
+  .signup-step
+
+    &__progress
+      &::before
+        size: 20px
+    span
+      margin-top: 30px
+      font-size: 13px
+
+    &.is-current
+      .signup-step__progress
+        &::before
+          size: 32px
+
++r($mobile)
+  .signup__steps
+    display: block
+    max-width: 220px
+    margin-left: auto
+    margin-right: auto
+    padding-top: 0
+  .signup-step
+    width: 100%
+    min-width: 1px
+    display: flex
+    align-items: center
+    margin-bottom: 0
+    &__progress
+      width: 40px
+      height: 115px
+      &::before
+        size: 18px
+    span
+      margin-top: 3px
+      font-size: 16px
+      margin-left: 13px
+      // display: none
+    &::before, &::after
+      left: 17px
+      width: 6px
+      height: 50%
+      background: #E1E1E1
+    &::before
+      top: 0
+    &::after
+      top: 50%
+      right: auto
+
+    &.is-current
+      span
+        font-weight: 500
+      &::before
+        width: 6px
+        left: 17px
+        top: -50%
+        height: 100%
+        background: linear-gradient(to bottom, #2a8b8b, #3BCE35)
+      .signup-step__progress
+        &::before
+          // size: 28px
+
+
+.signup-type
+  display: flex
+  justify-content: center
+  &__radio
+    flex: 0 1 270px
+    display: flex
+    flex-direction: column
+    margin: 12px
+    input
+      display: none
+      width: 0.1px
+      height: 0.1px
+      opacity: 0
+      position: absolute
+      top: 0
+      left: 0
+      &:checked
+        + label
+          background: white
+          box-shadow: 0 10px 30px 0 rgba(0,0,0,0.08)
+    label
+      flex: 1 1 auto
+      display: flex
+      flex-direction: column
+      align-items: center
+      border-radius: 12px
+      transition: .25s $ease
+      display: flex
+      padding: 45px 20px
+      flex-direction: column
+      cursor: pointer
+      &:hover
+        background: white
+        box-shadow: 0 10px 30px 0 rgba(0,0,0,0.08)
+      span
+        font-size: 18px
+        padding-top: 30px
+        line-height: 1.5
+        transition: .25s $ease
+
++r($mobile)
+  .signup-type
+    margin-top: -50px
+    flex-direction: column
+    align-items: center
+    &__radio
+      flex: 0 0 auto
+      width: 240px
+      input
+        &:checked
+          + label
+            span
+              color: $fontColor
+      label
+        padding: 25px 15px
+        background: rgba(white, .5)
+        .icon
+          transform: scale(.8)
+          transform-origin: center center
+        span
+          padding-top: 20px
+          color: $fontColor50

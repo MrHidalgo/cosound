@@ -1,0 +1,307 @@
+---
+title: ITO 
+---
+extends shared/_layout
+
+block footer
+  include components/_footer-full--blue
+  
+block content
+  
+  // ITO PAGE
+  .ito
+    // HERO
+    .hero.hero--ito
+      .ito-bg
+        .ito-bg__wrapper
+          include ../inline-svg/hero-bg-ito.svg
+          img.wow(src='img/itoBg.png' srcset='img/itoBg@2x.png 2x' data-animation-class="wowBlur" data-animation-name="wowBlurUp" data-animation-delay=".9s")
+      .container
+        .hero__wrapper
+          .hero__logo.hero__logo--smaller.wow(data-animation-class="wowFadeDown" data-animation-delay=".3s")
+            +icon('ico-logo')
+          .ito-counter
+            .ito-counter__title.wow(data-animation-delay=".4s") Token Sale Ends In:
+            .ito-counter__wrapper.wow(js-counter data-animation-delay=".5s" data-month=06 data-day=05 data-hour=19 data-minute=00)
+              .ito-counter__col(js-counter-days)
+                .ito-counter__num 
+                  span 0
+                  span 0
+                .ito-counter__name Days
+              .ito-counter__col(js-counter-hours)
+                .ito-counter__num
+                  span 0
+                  span 0
+                .ito-counter__name Hours
+              .ito-counter__col(js-counter-minutes)
+                .ito-counter__num 
+                  span 0
+                  span 0
+                .ito-counter__name Minutes
+              .ito-counter__col(js-counter-seconds)
+                .ito-counter__num 
+                  span 0
+                  span 0
+                .ito-counter__name Seconds
+          
+          // progress
+          .ito-progress
+            .ito-progress__info.wow(data-animation-delay=".4s" data-animation-class="wowFadeLeft")
+              span $500k
+              span Soft cap
+            .ito-progress__bar.wow(data-animation-delay=".5s")
+              .ito-progress__fill(style="width: 30%")
+                .ito-progress__fill-wrap
+                  .ito-progress__handle
+                    i.icon.icon-itoHandle
+            .ito-progress__info.wow(data-animation-delay=".4s" data-animation-class="wowFadeRight")
+              span $2m
+              span Soft cap
+          
+          // CTA
+          .ito-cta-buttons.wow(data-animation-delay=".75s")
+            a(href='#').btn.btn-primary.btn-primary--red
+              span Buy Tokens
+            a(href='#').btn.btn-primary.btn-primary--white
+              span White Paper
+    
+    // PROMO BENEFITS
+    .promo-benefits.promo-benefits--ito
+      .container.container--wide
+        .benefits__list
+          // el
+          .benefits__el.wow(data-animation-delay=".1s")
+            .benefits__icon
+              +icon('ico-promo-benefiit-1')
+            .benefits__el-name Global Music Industry Directory with advanced search facilities
+            .benefits__el-desc
+              p An online directory of publicists, recording studios, writers, session musicians, social media marketing professionals, videographers, music lawyers, publishers. (and more)
+          // el
+          .benefits__el.wow(data-animation-delay=".2s")
+            .benefits__icon
+              +icon('ico-promo-benefiit-2')
+            .benefits__el-name A Music Industry Marketplace and Payment Portal
+            .benefits__el-desc
+              p Music industry professionals will create and list services through the platforms integrated marketplace.
+          // el
+          .benefits__el.wow(data-animation-delay=".3s")
+            .benefits__icon
+              +icon('ico-promo-benefiit-3')
+            .benefits__el-name A Music Industry Social Network
+            .benefits__el-desc
+              p Connect and interact with musicians and professionals through a social network built around music.
+          // el
+          .benefits__el.wow(data-animation-delay=".4s")
+            .benefits__icon
+              +icon('ico-promo-benefiit-4')
+            .benefits__el-name Advanced AI integration
+            .benefits__el-desc
+              p AI integration will shape the users marketplace and social experience. Analysing a range of available user stats (external social stats, music streams etc) the platform will provide a seamless, customised front end experience.
+          // el
+          .benefits__el.wow(data-animation-delay=".5s")
+            .benefits__icon
+              +icon('ico-promo-benefiit-5')
+            .benefits__el-name Toolkits
+            .benefits__el-desc
+              p Cosound V2 will provide intuitive tools for musicians, AI integration will give clear roadmaps and suggestions on how to reach the next checkpoint.
+          // el
+          .benefits__el.wow(data-animation-delay=".6s")
+            .benefits__icon
+              +icon('ico-promo-benefiit-6')
+            .benefits__el-name An A&R Engine
+            .benefits__el-desc
+              p Cosound V2 will create an unrivalled database designed to scrub acoustic fingerprints against user engagements to determine potentially successful songs.
+    
+    // ITO INFO
+    .ito-info
+      .ito-info__bg
+        include ../inline-svg/ito-distribution.svg
+      .container.container--extra
+        .ito-info__wrapper
+          .ito-info__left.wow(data-animation-class="wowFadeLeft")
+            .benefits__icon
+              +icon('ico-promo-benefiit-3')
+            h2.ito-info__title ICO Distribution
+            .ito-info__description
+              p Cosound ICO will take place in two major steps which are the Pre­ ICO and the ICO, as described below Of the 1,200,000,000 tokens initially issued by Cryption, only 600,000,000 tokens will be available for the Pre­ICO and ICO sale, the difference being kept as a reserve for the team, advisors, partners and Cosound community
+              p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua enim ad minim veniam.
+          
+          // right
+          .ito-info__right
+            .ito-info__grid
+              // col
+              .ito-info__col.wow(data-animation-delay=".4s")
+                .ito-card
+                  .ito-card__head
+                    .ito-card__name ICO
+                  .ito-card__content
+                    .ito-card__icon
+                      i.icon.icon-itoCardGlobe
+                    .ito-card__scope
+                      span.ito-card__price 2,400 CSND = 1 ETH
+                      span.ito-card__minimum No Minimum
+                    .ito-card__info
+                      .ito-card__dates
+                        span From: <span class="c-violet">February 12th, 2018 </span>
+                        span To: <span class="c-green">April 30th, 2018</span>
+                      .ito-card__distribution
+                        span Coin distribution:
+                        .ito-card__total 1.2B Tokens
+                    .ito-card__cta
+                      a(href="#").btn.btn-primary.btn-primary--violet
+                        span Buy Tokens
+              
+              // Discount
+              .ito-info__col.wow(data-animation-delay=".5s")
+                .ito-card
+                  .ito-card__head.ito-card__head--green
+                    .ito-card__name Discount
+                  .ito-card__content
+                    .ito-card__icon
+                      i.icon.icon-itoCardDiscount
+                    .ito-card__table
+                      .ito-card__table-row
+                        span Week 1 and 2 
+                        span 12%
+                      .ito-card__table-row
+                        span Week 9 and 10
+                        span 3%
+                      .ito-card__table-row
+                        span Week 7 and 8 
+                        span 4%  
+                      .ito-card__table-row
+                        span Week 5 and 6
+                        span 6%
+                      .ito-card__table-row
+                        span Week 3 and 4
+                        span 8%   
+
+                    .ito-card__cta
+                      a(href="#").btn.btn-primary.btn-primary--green
+                        span Buy Tokens
+    
+    // ITO SLIDER
+    .ito-slider
+      .ito-slider-bg
+        include ../inline-svg/ito-slide-bg.svg
+        .ito-slider__token
+          i.icon.icon-cosound-token.wow
+              
+      div(js-ito-slider).swiper-container
+        .ito-slider__token
+          i.icon.icon-cosound-token.wow
+            
+        .swiper-wrapper
+          // slide
+          .ito-slider__slide
+            .container.container--extra
+              .ito-slider__wrapper
+                .ito-slider__left.wow(data-animation-class="wowFadeLeft")
+                  .benefits__icon
+                    +icon('ico-distribution')
+                  h3.ito-slider__title Fund Distribution
+                  table.ito-slider__table
+                    tr
+                      td Advisors/Talent: 
+                      td 20%
+                    tr
+                      td Admin/Legal:
+                      td 7,5%
+                    tr
+                      td Markering:
+                      td 35%
+                    tr
+                      td Product Development:
+                      td 30%
+                    tr
+                      td Exchange Listing Strategy:
+                      td 7,5%
+
+                        
+                .ito-slider__right.wow(data-animation-class="wowFadeRight" data-animation-delay=".3s")
+                  .ito-slider__image
+                    img(src='img/itoSlide-1.png' srcset='img/itoSlide-1@2x.png 2x')
+                    .ito-slider__dot.ito-slider__dot--pd
+                      .ito-slider__dot-wrap
+                        span Product Development
+                        
+          // slide
+          .ito-slider__slide
+            .container.container--extra
+              .ito-slider__wrapper
+                .ito-slider__left
+                  .benefits__icon
+                    +icon('ico-distribution')
+                  h3.ito-slider__title Token Allocation
+                  table.ito-slider__table
+                    tr
+                      td Pre-sale:
+                      td 20m
+                    tr
+                      td Main sale
+                      td 250m
+                    tr
+                      td Bountry:
+                      td 150m
+
+                .ito-slider__right
+                  .ito-slider__image
+                    img(src='img/itoSlide-2.png' srcset='img/itoSlide-2@2x.png 2x')
+                    .ito-slider__dot.ito-slider__dot--bounty
+                      .ito-slider__dot-wrap
+                        span Bountry
+                        
+        .ito-slider-next
+          +icon("ico-arrow-right")
+        .ito-slider-prev
+          +icon("ico-arrow-left")
+            
+    
+    // ITO members
+    .ito-members
+      .container.container--extra
+        .ito-members__wrapper
+          -
+            var cards = [
+              ['itoMember-1', 'Steven Watson'],
+              ['itoMember-2', 'Steven Watson'],
+              ['itoMember-3', 'Steven Watson'],
+              ['itoMember-4', 'Steven Watson'],
+              ['itoMember-5', 'Steven Watson'],
+              ['itoMember-6', 'Steven Watson'],
+              ['itoMember-7', 'Steven Watson'],
+              ['itoMember-8', 'Steven Watson']
+            ]
+          
+          each card, index in cards    
+            // col
+            .ito-members__col.wow
+              .ito-member
+                .ito-member__image
+                  img(src='img/' + card[0] + '.jpg' srcset='img/' + card[0] + '@2x.jpg 2x')
+                .ito-member__content
+                  .ito-member__description
+                    .ito-member__name= card[1]
+                    .ito-member__position Lorem ipsum
+                .ito-member__popover
+                  p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.
+
+        
+        
+    // INFO
+    .info.info--ito
+      .info__bg
+        .info__bg-wrapper
+          include ../inline-svg/info-promo-bg-2.svg
+      .container.container--extra
+        .info__wrapper
+          .info__content.wow(data-animation-class="wowFadeRight")
+            h2.heading.c-aqua Artist Development
+            .info__text
+              p Adipiscing bibendum est ultricies integer quis auctor. Enim praesent elementum facilisis leo vel. Pellentesque sit amet porttitor eget dolor morbi non arcu risus. Amet est placerat in egestas erat imperdiet. Nisl nisi scelerisque eu ultrices vitae 
+              .info__cta
+                a(href="signup.html").btn.btn-primary.btn-primary--wider.btn-primary--red
+                  span Get Started
+          .info__image.wow(data-animation-class="wowFadeRight" data-animation-delay=".5s")
+            .info__image-mask
+              img(src='img/promoImage_1.jpg' srcset='img/promoImage_1@2x.jpg 2x')

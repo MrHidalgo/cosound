@@ -1,0 +1,58 @@
+// HEADER :: START
+header.header.header--dash.header--bg.js-should-scroll
+  // no wow class here
+  .header__wrapper
+    a(href="homepage.html").header__logo
+      +icon('ico-logo')
+    
+    include _search
+      
+    include _actions
+
+    //- .header__premium
+    //-   a(href="plans.html") Premium
+    
+    include _user
+    
+    .header__hamburger
+      .hamburger.hamburger--squeeze(js-hamburger)
+        .hamburger-box
+          .hamburger-inner
+  
+  .header-market
+    .header-market__mobile Graphics &amp; Design
+    ul.header-market__menu(js-scrollbar data-disable-on="<992")
+      li.is-active
+        a(href="#") Graphics &amp; Design
+      li
+        a(href="#") Marketing &amp; Promotion
+      li
+        a(href="#") Publishing
+      li
+        a(href="#") Legal
+      li
+        a(href="#") Music &amp; Audio
+      li
+        a(href="#") Music Business
+      li
+        a(href="#") Video
+    
+    // mobile toggle
+    .header-market__toggle(js-mobile-market)
+      +icon('ico-select-down')
+
+  
+.bg-overlay
+
+// HEADER :: END
+
+
+// MOBILE NAV
+.mnav.mnav--market.mnav--fixed
+  .mnav__wrapper(js-scrollbar)
+    include _search
+    
+    include _dash-mobileMenu
+
+
+include ../_notifications

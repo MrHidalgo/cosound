@@ -1,0 +1,274 @@
+.product
+  margin-top: 180px
+  margin-bottom: 40px
+
+  &__wrapper
+    display: flex
+    align-items: flex-start
+    margin: 0 -15px
+  &__content
+    flex: 0 1 880px
+    min-width: 1px
+    max-width: 880px
+    padding: 0 15px
+
+  &__box
+    padding: 40px
+    background: white
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.08)
+    border-radius: 10px
+    margin-bottom: 40px
+    &--no-pad
+      padding: 0
+    // for cart b page
+    &--no-bg
+      background: transparent
+      box-shadow: none
+
+  &__main
+    display: flex
+    &--cover
+      display: block
+      .product
+        &__cover
+          margin: -40px -40px 0
+          size: calc(100% + 80px) auto
+          border-bottom-left-radius: 0px
+          border-bottom-right-radius: 0px
+        &__scope
+          margin-top: 40px
+          margin-left: 0
+  &__cover
+    position: relative
+    z-index: 1
+    flex: 0 0 285px
+    size: 285px
+    box-shadow: 0 10px 30px 0 rgba(0,0,0,0.08)
+    border-radius: 5px
+    overflow: hidden
+    font-size: 0
+    img
+      width: 100%
+
+  &__scope
+    margin-left: 70px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: baseline
+
+  &__artist
+    font-size: 20px
+    line-height: 1.5
+    color: $fontColor50
+  &__name
+    margin: 5px 0
+    font-size: 30px
+    line-height: 1.3
+    margin-left: -.1em
+  &__album
+    font-size: 14px
+    color: $fontColor50
+    line-height: 2
+  &__price
+    color: $colorViolet
+    font-size: 40px
+    margin-top: 25px
+  &__delivery
+    margin-top: 30px
+    color: $fontColor50
+    font-size: 14px
+    .ico
+      font-size: 13px
+      margin-right: 7px
+    span
+      span
+        font-weight: 500
+
+  &__title
+    font-size: 30px
+    line-height: 1.4
+    margin-bottom: 20px
+  &__info
+    font-size: 14px
+    line-height: 1.78
+    p
+      margin: 0
+      & + p
+        margin-top: 1em
+
+  &__sidebar
+    flex: 0 1 290px
+    max-width: 290px
+    min-width: 1px
+    padding: 0 15px
+
+/* sidebar
+.product-sidebar
+  &__wrap
+    background: #FFFFFF
+    box-shadow: 0 10px 30px 0 rgba(0,0,0,0.08)
+    border-radius: 10px
+    padding: 25px 15px 20px
+  &__bottom
+    margin-top: -10px
+    background: #FFFFFF
+    padding: 25px 20px 0
+    border-bottom-left-radius: 10px
+    border-bottom-right-radius: 10px
+    box-shadow: 0 2px 30px 0 rgba(0,0,0,0.08)
+  &__title
+    font-size: 16px
+    font-weight: 500
+    line-height: 2
+    text-align: center
+  &__main-title
+    font-size: 24px
+    font-weight: 500
+
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    li
+      display: block
+      padding-left: 32px
+      position: relative
+      color: $fontColor50
+      font-size: 14px
+      line-height: 2
+      margin-bottom: 10px
+      transition: .25s $ease
+      &::before
+        display: inline-block
+        content: ' '
+        +sprite(list-check)
+        position: absolute
+        left: -3px
+        top: .35em
+        transition: .25s $ease
+      &:hover
+        color: $fontColor
+        &::before
+          transform: translateX(-5px)
+      &.is-time
+        color: $fontColor
+        &::before
+          +sprite(time)
+          left: 2px
+          top: .5em
+  &__message
+    text-align: center
+    margin-top: 35px
+  &__cta
+    padding-top: 10px
+    text-align: center
+    transform: translateY(20px)
+
+
+.product-testimonials
+  &__header
+    padding: 23px 40px
+    display: flex
+    align-items: center
+    background: #F8F8F8
+
+  &__rating
+    display: flex
+    align-items: center
+    span
+      display: inline-block
+      margin-left: 17px
+      font-size: 14px
+      color: $fontColor50
+
+  &__sorting
+    margin-left: auto
+
+  &__content
+    padding: 20px 40px
+
+
++r($desktop)
+  .product
+    &__wrapper
+      display: block
+    &__content
+      max-width: 100%
+    &__sidebar
+      display: none
+  .product-sidebar
+    &__bottom
+      margin-bottom: 50px
+
++r($tablet)
+  .product
+    margin-top: 130px
+    &__box
+      padding: 30px
+      &--no-pad
+        padding: 0
+    &__cover
+      flex-basis: 250px
+      size: 250px
+    &__scope
+      margin-left: 40px
+    &__artist
+      font-size: 18px
+    &__name
+      font-size: 26px
+    &__album
+      font-size: 13px
+    &__price
+      font-size: 34px
+
+  .product-testimonials
+    &__header, &__content
+      padding-left: 30px
+      padding-right: 30px
+
+
++r($mobile)
+  .product
+    &__box
+      margin-left: -25px
+      margin-right: -25px
+      padding: 25px
+      border-radius: 0
+      margin-bottom: 20px
+      &--no-pad
+        padding: 0
+    &__main
+      flex-direction: column
+      align-items: center
+    &__cover
+      margin-left: auto
+      margin-right: auto
+    &__scope
+      margin-left: auto
+      margin-right: auto
+      margin-top: 35px
+      margin-bottom: 25px
+      min-width: 250px
+
+    &__title
+      font-size: 26px
+
+    &__info
+      // font-size: 13px
+
+  .product-testimonials
+    &__header, &__content
+      padding-left: 25px
+      padding-right: 25px
+
+    &__header
+      flex-direction: column-reverse
+    &__rating
+      margin-top: 30px
+
+    &__sorting
+      margin-right: auto
+
+    &__content
+      padding-top: 0

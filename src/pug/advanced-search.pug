@@ -1,0 +1,49 @@
+---
+title: Advanced search results
+---
+extends shared/_layout
+
+block header
+  include components/headers/_header-dash
+  
+block content
+  
+  // ADVANCED SEARCH
+  .full-height-wrap
+    .container
+      .f-page__title.wow(data-animation-delay=".1s") Advanced Search
+
+      form.f-page__form(action="#" js-validate-adv-search)
+        .ui-group.wow(data-animation-delay=".3s")
+          label I'm looking for:
+          input(type="text" name="type" placeholder="Studio Engineers")
+        .ui-group.wow(data-animation-delay=".4s")
+          label Location (optional)
+          input(type="text" name="type" placeholder="San Diego")
+        .ui-group.wow(data-animation-delay=".5s" style="z-index: 2")
+          label Genres (optional)
+          input(type="text" name="type" placeholder="Search genres" js-selectize-genres)
+            
+        .ui-checkbox.ui-checkbox--optional.wow(data-animation-delay=".7s")
+          input(type="checkbox" name="remember" id="remember" js-advSearch-service-provider)
+          label(for="remember")
+            span Is a service provider (optional)
+        
+        .adv-search__price
+          .adv-search__price-row
+            .ui-group
+              label Service Price
+              div(js-pricerange).noUi-main-theme
+              .adv-search__price-range
+                span(js-range-from)
+                span(js-range-to)
+            .ui-group
+              label Price per
+              select
+                option fixed
+                option hour
+                option monthly
+            
+        .f-page__form-cta.wow(data-animation-delay="1s")
+          button(type="submit").btn.btn-primary.btn-primary--red
+            span Search

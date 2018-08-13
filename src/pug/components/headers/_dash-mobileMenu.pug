@@ -1,0 +1,41 @@
+.mnav__profile
+  .mnav__profile-mage
+    .avatar.avatar--big
+      img(src='img/avatar-1.jpg' srcset='img/avatar-1@2x.jpg 2x')
+  a(href="plans.html").mnav__profile-status
+    span Premium
+  .mnav__profile-name Benjamin Rees
+    
+ul.mnav__menu.mnav__menu--dash
+  li
+    a(href="marketplace.html")
+      .mnav__menu-icon
+        +icon('ico-case')
+      span Market
+      
+  li
+    a(href="messages.html")
+      .mnav__menu-icon
+        +icon('ico-comments')
+      span Messages  
+      .mnav__menu-counter 
+        span 3
+  li
+    a(href="profile.html")
+      .mnav__menu-icon
+        +icon('ico-profile')
+      span Profile
+  li
+    a(href="#" js-header-notifications)
+      .mnav__menu-icon
+        +icon('ico-notifications')
+      span Notifications
+      .mnav__menu-counter
+        span 9+
+  li
+    a(href="cart.html")
+      .mnav__menu-icon
+        +icon('ico-cart')
+      span Cart 
+      .mnav__menu-counter
+        span 2

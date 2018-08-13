@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>uploader-add</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Apr-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Featured-picture" transform="translate(-495.000000, -1117.000000)" fill="#3B93BB" fill-rule="nonzero">
+            <g id="uploader-add" transform="translate(496.000000, 1118.000000)">
+                <path d="M29,59 C12.4314575,59 -1,45.5685425 -1,29 C-1,12.4314575 12.4314575,-1 29,-1 C45.5685425,-1 59,12.4314575 59,29 C59,45.5685425 45.5685425,59 29,59 Z M29,57 C44.463973,57 57,44.463973 57,29 C57,13.536027 44.463973,1 29,1 C13.536027,1 1,13.536027 1,29 C1,44.463973 13.536027,57 29,57 Z" id="Oval"></path>
+                <path d="M28,17.4 C28,16.8477153 28.4477153,16.4 29,16.4 C29.5522847,16.4 30,16.8477153 30,17.4 L30,40.6 C30,41.1522847 29.5522847,41.6 29,41.6 C28.4477153,41.6 28,41.1522847 28,40.6 L28,17.4 Z" id="Shape"></path>
+                <path d="M17.4,30 C16.8477153,30 16.4,29.5522847 16.4,29 C16.4,28.4477153 16.8477153,28 17.4,28 L40.6,28 C41.1522847,28 41.6,28.4477153 41.6,29 C41.6,29.5522847 41.1522847,30 40.6,30 L17.4,30 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

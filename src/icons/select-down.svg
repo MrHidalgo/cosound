@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="7px" viewBox="0 0 12 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>select-down</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Cosound" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2" transform="translate(-1195.000000, -409.000000)" fill="#319B9D" fill-rule="nonzero">
+            <g id="Group-2" transform="translate(1183.000000, 398.000000)">
+                <g id="select-down" transform="translate(18.000000, 14.500000) rotate(-180.000000) translate(-18.000000, -14.500000) translate(13.000000, 12.000000)">
+                    <path d="M5,1.41421356 L0.707106781,5.70710678 C0.316582489,6.09763107 -0.316582489,6.09763107 -0.707106781,5.70710678 C-1.09763107,5.31658249 -1.09763107,4.68341751 -0.707106781,4.29289322 L4.29289322,-0.707106781 C4.68341751,-1.09763107 5.31658249,-1.09763107 5.70710678,-0.707106781 L10.7071068,4.29289322 C11.0976311,4.68341751 11.0976311,5.31658249 10.7071068,5.70710678 C10.3165825,6.09763107 9.68341751,6.09763107 9.29289322,5.70710678 L5,1.41421356 Z"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

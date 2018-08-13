@@ -1,0 +1,342 @@
+// INDEX
+
+.hero
+  position: relative
+  z-index: 2
+  color: white
+  &__bg
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 1
+    display: flex
+    flex-direction: column
+    &-wrapper
+      flex: 1 1 auto
+      display: flex
+      max-height: 680px
+      flex-direction: column
+      position: relative
+    svg
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%,-50%)
+      min-width: 100%
+      min-height: 100%
+      width: 1920px
+      height: auto
+      overflow: visible
+  .container
+    position: relative
+    z-index: 2
+  &__wrapper
+    min-height: 700px
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    text-align: center
+    padding: 90px 0
+
+  &__logo
+    font-size: 66px
+    &--smaller
+      font-size: 56px
+
+  &__text
+    margin-top: 50px
+    font-size: 20px
+    max-width: 670px
+    margin-left: auto
+    margin-right: auto
+    p
+      margin: 0
+      line-height: 1.9
+      & + p
+        margin-bottom: 1em
+
+  &__cta
+    margin-top: 100px
+    margin-left: -13px
+    margin-right: -13px
+    .btn
+      margin: 0 13px 20px
+
+  /* promo modifier
+  &--promo
+    .hero
+      &__wrapper
+        min-height: 570px
+  &--ito
+    background: white
+    .hero
+      &__logo
+        margin-top: auto
+      &__wrapper
+        min-height: 695px
+        padding-bottom: 0
+
++r($tablet)
+  .hero
+    &__bg
+      svg
+        // width: 1600px
+        // height: auto
+        margin-left: -200px
+    &__wrapper
+      padding-top: 140px
+      min-height: 550px
+    &__logo
+      font-size: 50px
+    &__text
+      font-size: 18px
+    &__cta
+      margin-left: -5px
+      margin-right: -5px
+      .btn
+        margin-left: 5px
+        margin-right: 5px
+    &--ito
+      .hero
+        &__wrapper
+          min-height: 550px
+          // padding-bottom: 120px
+
++r($mobile-s)
+  .hero
+    &__wrapper
+      min-height: 1px
+      padding-top: 95px
+      padding-bottom: 50px
+    &__bg
+      svg
+        margin-left: -200px
+        width: 1300px
+    &__text
+      margin-top: 12px
+    &__logo
+      font-size: 42px
+    &__cta
+      margin-top: 40px
+
+    &--promo
+      .hero
+        &__wrapper
+          min-height: 1px
+          /* bg offset
+          padding-bottom: 140px
+
+// INFO
+.info
+  position: relative
+  margin-top: 90px
+  & + .info
+    margin-top: 200px
+
+  &--ito
+    padding-bottom: 120px
+    .info__text
+      text-align: left
+  &--m-bottom
+    margin-bottom: 150px
+  &__wrapper
+    display: flex
+    width: 100%
+    // align-items: flex-start
+    align-items: center
+    &--reverse
+      flex-direction: row-reverse
+      .info
+        &__image
+          padding-left: 0
+          padding-right: 5%
+          margin-left: 0
+          margin-right: auto
+
+  &__bg
+    position: absolute 0
+    top: 50px
+    display: flex
+    flex-direction: column
+
+    &-wrapper
+      flex: 1 1 auto
+      position: relative
+      max-height: 602px
+    svg
+      overflow: visible
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%,-50%)
+      min-width: 100%
+      min-height: 100%
+      // width: auto
+      width: 1920px
+      height: auto
+
+  &__content
+    flex: 0 0 auto
+    max-width: 100%
+    min-width: 1px
+    min-height: 1px
+    // margin-top: 90px
+    text-align: right
+
+  &__text
+    margin-top: 25px
+    color: rgba($fontColor, .52)
+    max-width: 343px
+    margin-left: auto
+    p
+      font-size: 14px
+      line-height: 2
+      margin-top: 0
+      & + p
+        margin-top: 1em
+  &__cta
+    margin-top: 26px
+
+  &__image
+    flex: 0 1 auto
+    padding-left: 5%
+    margin-left: auto
+    &-box
+      position: relative
+      border: 8px solid white
+      border-radius: 9px
+      box-shadow: 0 10px 60px 0 rgba(0,0,0,0.26)
+      transition: .25s $ease
+      cursor: pointer
+      &:hover
+        box-shadow: 0 5px 40px 0 rgba(0,0,0,0.15)
+        .info__image-play
+          box-shadow: 0 6px 30px rgba(black, .5)
+          transform: translate(-50%,-50%) scale(1.2)
+          .ico
+            transform: translateX(10%) scale(0.8)
+    &-mask
+      border-radius: 9px
+      position: relative
+      overflow: hidden
+      font-size: 0
+      box-shadow: 0 10px 60px 0 rgba(0,0,0,0.26)
+      img
+        max-width: 100%
+    &-placeholder
+      font-size: 0
+      user-select: none
+      img
+        max-width: 100%
+    &-play
+      position: absolute
+      top: 50%
+      left: 50%
+      z-index: 2
+      min-size: 68px
+      size: 68px
+      transform: translate(-50%,-50%)
+      border-radius: 50%
+      background: white
+      box-shadow: 0 2px 20px rgba(black, .5)
+      display: flex
+      align-items: center
+      justify-content: center
+      color: $colorViolet
+      font-size: 27px
+      cursor: pointer
+      transition: .25s $ease
+      .ico
+        transform: translateX(10%)
+        transition: .25s $ease
+
++r($desktop)
+  .info
+    & + .info
+      margin-top: 150px
+
+    &--ito
+      &::after
+        // hot fix white bg
+        display: inline-block
+        content: ' '
+        position: absolute
+        bottom: 0
+        left: 0
+        right: 0
+        height: 300px
+        background: white
+        z-index: 1
+      > .container
+        position: relative
+        z-index: 2
+
+    &__wrapper
+      flex-direction: column-reverse
+      &--reverse
+        .info
+          &__image
+            margin-left: auto
+            margin-right: auto
+            padding-right: 0
+
+    &__image
+      padding-left: 0
+      margin-left: auto
+      margin-right: auto
+    &__content
+      margin-top: 50px
+      margin-left: auto
+      margin-right: auto
+      text-align: center
+      text-align: left
+
+
++r($tablet)
+  .info
+    margin-top: 0
+    & + .info
+      margin-top: 100px
+    &--m-bottom
+      margin-bottom: 120px
+
+    &__image
+      &-box
+        border: 0
+
++r($mobile-s)
+  .info
+    &__content
+      margin-top: 10px
+    &__text
+      margin-top: 0
+
+
+// PREFOOTER
+.prefooter
+  text-align: center
+  margin-top: 120px
+  font-size: 0
+  img
+    max-width: 100%
+    // width: 100%
+
++r($tablet)
+  .prefooter
+    margin-top: 70px
+
++r($mobile)
+  .prefooter
+    margin-left: -25px
+    margin-right: -25px
+    img
+      width: 100%
+
++r($mobile-s)
+  .prefooter
+    margin-left: -15px
+    margin-right: -15px

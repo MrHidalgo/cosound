@@ -1,0 +1,67 @@
+---
+title: No Services
+---
+extends shared/_layout
+
+block header
+  include components/headers/_header-profile
+  
+block content
+  
+  // PROFILE
+  .profile
+    .profile__hero.profile__hero--short
+      .profile__bg
+        .profile__bg-wrapper
+          include ../inline-svg/hero-bg-profile.svg
+      .container
+        .profile__info
+          .avatar.avatar--big.wow(data-animation-class="wowFadeUp")
+            img(src='img/profileImage.jpg' srcset='img/profileImage@2x.jpg 2x')
+          .profile__name.wow(data-animation-delay=".4s") Lois Stokes
+  
+          
+    .container
+      .bg-overlay
+      // settings
+      .profile-settings.wow
+        .profile__categories-mobile
+          a(href="#").profile__category.--blue.is-active
+            .profile__category-icon
+              i.icon.icon-profile-services
+            span Offered Services
+        .profile__categories-toggle(js-mobile-account-nav)
+          +icon('ico-select-down')
+
+        .profile__categories
+          a(href="purchased-services.html").profile__category.--violet
+            .profile__category-icon
+              i.icon.icon-profile-gears
+            span Purchased Services
+          a(href="#").profile__category.--blue.is-active
+            .profile__category-icon
+              i.icon.icon-profile-services
+            span Offered Services
+          a(href="#").profile__category.--aqua
+            .profile__category-icon
+              i.icon.icon-profile-history
+            span Historic
+          a(href="#").profile__category.--blue-mute
+            .profile__category-icon
+              i.icon.icon-profile-support
+            span Support Center
+      
+      
+      // SERVICES
+      .services
+        .services-no
+          .services-no__icon
+            i.icon.icon-no-services
+          .services-no__name You don't offer any services :(
+          
+          .services-no__desc Want to create your first one now?
+          
+          .services-no__cta
+            a(href="create-service.html").btn.btn-primary.btn-primary--red
+              span Create Service
+        

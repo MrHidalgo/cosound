@@ -1,0 +1,78 @@
+*
+  box-sizing: border-box
+  outline: none
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
+
+a
+  color: inherit
+  text-decoration: none
+  &:hover, &:focus
+    text-decoration: none
+
+ul
+  list-style: none
+  li
+    display: inline-block
+
+body, html
+  background: #F5F5F5
+  color: $fontColor
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif
+  font-size: 16px
+  font-style: normal
+  min-width: 320px
+  max-width: 100%
+  margin: 0
+  overflow-x: hidden
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  -ms-font-feature-settings: normal
+
+::selection
+  background: $colorGreen
+  color: white
+
+
+.page
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+  &__content
+    flex: 1 0 auto
+    display: flex
+    flex-direction: column
+
+.container
+  max-width: 1140px
+  width: 100%
+  margin-left: auto
+  margin-right: auto
+  padding-left: 50px
+  padding-right: 50px
+  &--wide
+    max-width: 1240px
+    // outline: 1px solid rebeccapurple
+  &--extra
+    max-width: 1300px
+
++r($tablet)
+  .container
+    padding-left: 25px
+    padding-right: 25px
+
++r($mobile-s)
+  .container
+    padding-left: 15px
+    padding-right: 15px
+
+// REMOVE FOR PRODUCTION !
+.dev-bp-debug
+  background: black
+  position: fixed
+  top: 0
+  right: 0
+  z-index: 9999
+  color: white
+  padding: 5px
+  font-size: 12px
+  border-bottom-left-radius: 5px

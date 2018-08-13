@@ -1,0 +1,161 @@
+---
+title: MARKETPLACE - PRODUCT
+---
+extends shared/_layout
+
+block header
+  include components/headers/_header-market
+  
+block content
+  
+  // MARKETPLACE PRODUCT
+  .product
+    .container.container--wide
+      // breadcrumbs
+      .breadcrumbs.wow
+        a(href="#") Marketing & Promotion
+        a(href="#") Spotify Playlists
+        a(href="#") Pop
+  
+      .product__wrapper
+        .product__content
+          
+          //- // teleport sidebar here!
+          //- div(data-teleport-target="product-sidebar")
+        
+          // box
+          .product__box.wow
+            // cover modifier to cover bg photo
+            .product__main.product__main--cover
+              .product__cover
+                img(src='img/coverNew.jpg')
+              .product__scope
+                .product__artist Spotify Playlists
+                .product__name I will list you on 30 Pop Playlists
+                .product__album · 
+                .product__price $199
+                .product__delivery
+                  +icon('ico-time')
+                  span Delivery time <span>3 Days</span>
+          //box
+          .product__box.wow
+            .product__title About this Job
+            .product__info
+              p I can list your Pop track on 30 highly subscribed playlists! Each of the playlists has around 700 - 2000 active subscribers and are often played in bars and clubs around the Shoreditch area. These playlists only have 30/40 songs in each, so you're much more likely to be heard. 
+              p I'm looking forward to working with you!! Please drop me a message so that I can listen to the song(s) before hand! 
+              
+          //- // teleport sidebar here!
+          div(data-teleport-target="product-sidebar")
+
+          //box
+          .product__box.product__box--no-pad.wow
+            .product-testimonials
+              .product-testimonials__header
+                .product-testimonials__rating
+                  .rating-stars.rating-stars--bigger(data-rating='5')
+                    i.icon
+                    i.icon
+                    i.icon
+                    i.icon
+                    i.icon
+                  span 112 Reviews
+                .product-testimonials__sorting
+                  select(name="sorting").-mini
+                    option Most Recent 
+                    option Best Rated
+                    option Worst Rated
+                      
+              .product-testimonials__content
+                // testiminial
+                .testimonial
+                  .testimonial__head
+                    .testimonial__info
+                      .avatar.avatar--mid
+                        img(src='img/suggestionCard-avatar-1.jpg' srcset='img/suggestionCard-avatar-1@2x.jpg 2x')
+                      .testimonial__info-content
+                        .testimonial__name Bryan Garza
+                        .testimonial__rating
+                          .rating-stars(data-rating='4')
+                            i.icon
+                            i.icon
+                            i.icon
+                            i.icon
+                            i.icon
+                          span 112
+                    .testimonial__timestamp about 21 hours ago
+                    .testimonial__timestamp.testimonial__timestamp--mobile 21h ago
+                  .testimonial__content
+                    p Awesome service, exactly as described! Thanks Chester!
+                
+                // testiminial
+                .testimonial
+                  .testimonial__head
+                    .testimonial__info
+                      .avatar.avatar--mid
+                        img(src='img/suggestionCard-avatar-4.jpg' srcset='img/suggestionCard-avatar-4@2x.jpg 2x')
+                      .testimonial__info-content
+                        .testimonial__name Patrick Watkins
+                        .testimonial__rating
+                          .rating-stars(data-rating='5')
+                            i.icon
+                            i.icon
+                            i.icon
+                            i.icon
+                            i.icon
+                          span 112
+                    .testimonial__timestamp about 21 hours ago
+                    .testimonial__timestamp.testimonial__timestamp--mobile 21h ago
+                  
+                  .testimonial__content
+                    p My spotify plays went THROUGH THE ROOF! Chester is a really great guy, and delivered exactly what he promised.
+                // testiminial
+                .testimonial
+                  .testimonial__head
+                    .testimonial__info
+                      .avatar.avatar--mid
+                        img(src='img/suggestionCard-avatar-2.jpg' srcset='img/suggestionCard-avatar-2@2x.jpg 2x')
+                      .testimonial__info-content
+                        .testimonial__name Bryan Garza
+                        .testimonial__rating
+                          .rating-stars(data-rating='4')
+                            i.icon
+                            i.icon
+                            i.icon
+                            i.icon
+                            i.icon
+                          span 112
+                    .testimonial__timestamp about 21 hours ago
+                    .testimonial__timestamp.testimonial__timestamp--mobile 21h ago
+                    
+                  .testimonial__content
+                    p Perfect service for the promotion of my artist! Our label will be buying again in future!      
+            
+        //sidebar
+        .product__sidebar.product-sidebar(js-teleport data-teleport-to="product-sidebar" data-teleport-condition="<992")
+          .product-sidebar__wrap.wow
+            .sidebar-user
+              .sidebar-user__avatar
+                .avatar.avatar--big
+                  img(src='img/avatar-main-1.jpg' srcset='img/avatar-main-1@2x.jpg 2x')
+              .sidebar-user__name.sidebar-user__name--bigger Chester Parsons
+              .sidebar-user__position Spotify Playlist Curator
+              .sidebar-user__rating
+                .rating-stars.rating-stars--bigger(data-rating='3')
+                  i.icon
+                  i.icon
+                  i.icon
+                  i.icon
+                  i.icon
+                    
+          .product-sidebar__bottom.wow
+            .product-sidebar__title Service
+            ul.product-sidebar__list
+              li Your music on 30 Pop Playlists
+              li For up to 4 weeks
+              li A full report at the end!
+            .product-sidebar__message
+              a(href="message.html").btn.btn-message
+                span Message seller
+            .product-sidebar__cta
+              a(href="cart.html").btn.btn-primary.btn-primary--red
+                span Process to Order

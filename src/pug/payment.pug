@@ -1,0 +1,35 @@
+---
+title: Payment page
+---
+extends shared/_layout
+
+block header
+  include components/headers/_header-dash
+  
+block content
+  
+  // Payment page
+  .full-height-wrap
+    .container
+      .f-page__title.wow(data-animation-delay=".1s") Please add your card info
+      .f-page__subtitle.wow(data-animation-delay=".2s") We wont keep any personal information about your card in our system.
+      
+      form.f-page__form(action="#" js-validate-cc)
+        .ui-group.wow(data-animation-delay=".4s")
+          input(type="text" name="cc" placeholder="XXXX  XXXX  XXXX  XXXX" js-mask-cc)
+        .f-page__form-row
+          .ui-group.wow(data-animation-delay=".4s")
+            input(type="text" placeholder="MM/YY" js-mask-mmyy)
+          .ui-group.wow(data-animation-delay=".5s")
+            input(type="text" placeholder="CVC" js-mask-cvc)
+          .ui-group.wow(data-animation-delay=".6s")
+            input(type="text" placeholder="ZIP" js-mask-zip)
+
+        .ui-checkbox.wow(data-animation-delay=".7s")
+          input(type="checkbox" name="remember" id="remember" checked)
+          label(for="remember")
+            span Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        
+        .f-page__form-cta.wow(data-animation-delay="1s")
+          button(type="submit").btn.btn-primary.btn-primary--red
+            span Pay

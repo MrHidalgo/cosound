@@ -1,0 +1,119 @@
+---
+title: MARKETPLACE - CART
+---
+extends shared/_layout
+
+block header
+  include components/headers/_header-dash
+  
+block content
+  
+  // MARKETPLACE CART
+  .cart
+    .container.container--wide
+  
+      .product__wrapper
+        .product__content
+          // box
+          .product__box.product__box--no-bg.wow
+            .product__title Your Service
+            .cart-list
+              // cart item
+              .cart-item
+                .cart-item__image
+                  img(src='img/cartItemImage.jpg' srcset='img/cartItemImage@2x.jpg 2x')
+                .cart-item__info
+                  .avatar
+                    img(src='img/suggestionCard-avatar-2.jpg' srcset='img/suggestionCard-avatar-2@2x.jpg 2x')
+                  .cart-item__info-content
+                    .cart-item__name Service title
+                    .cart-item__rating
+                      .rating-stars(data-rating='3')
+                        i.icon
+                        i.icon
+                        i.icon
+                        i.icon
+                        i.icon
+                      span 112 
+                .cart-item__price $99
+              // cart item
+              .cart-item
+                .cart-item__image
+                  img(src='img/cartItemImage.jpg' srcset='img/cartItemImage@2x.jpg 2x')
+                .cart-item__info
+                  .avatar
+                    img(src='img/suggestionCard-avatar-2.jpg' srcset='img/suggestionCard-avatar-2@2x.jpg 2x')
+                  .cart-item__info-content
+                    .cart-item__name Service title
+                    .cart-item__rating
+                      .rating-stars(data-rating='3')
+                        i.icon
+                        i.icon
+                        i.icon
+                        i.icon
+                        i.icon
+                      span 112 
+                .cart-item__price $99
+              // cart item
+              .cart-item
+                .cart-item__image
+                  img(src='img/cartItemImage.jpg' srcset='img/cartItemImage@2x.jpg 2x')
+                .cart-item__info
+                  .avatar
+                    img(src='img/suggestionCard-avatar-2.jpg' srcset='img/suggestionCard-avatar-2@2x.jpg 2x')
+                  .cart-item__info-content
+                    .cart-item__name Service title
+                    .cart-item__rating
+                      .rating-stars(data-rating='3')
+                        i.icon
+                        i.icon
+                        i.icon
+                        i.icon
+                        i.icon
+                      span 112 
+                .cart-item__price $99
+                
+        //sidebar
+        .product__sidebar.cart-sidebar
+          .cart-sidebar__wrap.wow
+            .cart-sidebar__title Summary
+            .cart-sidebar__table
+              .cart-sidebar__line
+                span Subtotal
+                span $199
+              .cart-sidebar__line
+                span Tax
+                span -
+                  
+          .cart-sidebar__bottom.wow
+            .cart-sidebar__table.cart-sidebar__table--bold
+              .cart-sidebar__line
+                span Total
+                span $199
+              .cart-sidebar__line
+                span Delivery Time
+                span 3 days
+                
+            .cart-sidebar__cta
+              a(href="message.html").btn.btn-primary.btn-primary--red
+                span Proceed to payment
+            .cart-sidebar__add
+              a(href="#") Add to cart
+          
+          .cart-sidebar__payments.wow
+            .cart-sidebar__payments-logos
+              i.icon.icon-pay-discover
+              i.icon.icon-pay-visa
+              i.icon.icon-pay-maestro-old
+              i.icon.icon-pay-jcb
+              i.icon.icon-pay-paypal
+              i.icon.icon-pay-amex
+              i.icon.icon-pay-mastercard-old    
+            .cart-sidebar__payments-title Payment Methods Accepted
+          
+          .cart-sidebar__ssl.wow
+            .cart-sidebar__ssl-icon
+              +icon('ico-ssl')
+            .cart-sidebar__ssl-title Secure Payment SLL Lorem
+              
+              

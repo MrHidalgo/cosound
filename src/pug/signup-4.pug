@@ -1,0 +1,34 @@
+---
+title: Signup 4
+---
+extends shared/_layout
+
+block header
+  
+block content
+  
+  // SIGNUP
+  .signup
+    .page-bg
+      .page-bg__wrapper
+        include ../inline-svg/hero-bg-login.svg
+    .container
+      .signup__wrapper
+        .signup__logo.wow(data-animation-class="wowFadeDown")
+          +icon('ico-logo')
+        h2.signup__heading.wow(data-animation-delay=".4s") Let's get to know each other..
+
+        //form
+        form.signup-form(action="#" js-validate-signup-1 data-animation-delay=".6s").wow
+          .ui-group(data-animation-delay=".7s")
+            textarea(type="text" name="bio" rows="5" data-min-rows="5" placeholder="Bio (tell us a bit about yourself)")
+
+          .signup-form__cta.wow(data-animation-delay=".8s")
+            button(type="submit").btn.btn-primary.btn-primary--red
+              span Save
+          .signup-form__skip
+            a(href="signup-5.html") Skip for now
+        
+        // steps
+        .signup__steps(data-active-step="4" data-animation-class="wowFadeDown").wow
+          include components/_signup-steps

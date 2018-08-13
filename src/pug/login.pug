@@ -1,0 +1,47 @@
+---
+title: Login
+---
+extends shared/_layout
+
+block header
+  include components/headers/_header-login
+  
+block content
+  
+  // HERO
+  .login
+    .page-bg
+      .page-bg__wrapper
+        include ../inline-svg/hero-bg-login.svg
+    .container
+      .login__wrapper
+        .heading.wow Log  in
+        //form
+        form(action="#" js-validate-login).login-form
+          .ui-group.wow(data-animation-delay=".4s")
+            input(type="email" name="email" placeholder="Email")
+          .ui-group.wow(data-animation-delay=".5s")
+            input(type="password" name="password" placeholder="Password")
+          .login-form__row.wow(data-animation-delay=".6s")
+            .ui-checkbox
+              input(type="checkbox" name="remember" id="remember" checked)
+              label(for="remember")
+                span Remember me
+            a(href="recover-password.html") Forgot Password?
+          .login-form__cta.wow(data-animation-delay=".7s")
+            button(type="submit").btn.btn-primary.btn-primary--red
+              span Login
+        
+        // socials
+        .login-form__socials.wow
+          a(href="#").btn.btn-social.btn-social--fb
+            +icon('ico-social-fb')
+            span Facebook <span>login</span>
+          
+          a(href="#").btn.btn-social.btn-social--tw
+            +icon('ico-social-tw')
+            span Twitter <span>login</span>
+            
+          a(href="#").btn.btn-social.btn-social--gplus
+            +icon('ico-social-gplus')
+            span Google <span>login</span>

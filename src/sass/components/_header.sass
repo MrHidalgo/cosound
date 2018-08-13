@@ -1,0 +1,485 @@
+/* HEADER
+.header
+  position: absolute
+  top: 0
+  right: 0
+  left: 0
+  z-index: 10
+  background: transparent
+  &__wrapper
+    position: relative
+    z-index: 2
+    display: flex
+    align-items: center
+    padding: 35px 50px 35px
+    // min-height: 100px
+    color: white
+    // transition: .25s $ease
+
+  &__logo
+    flex: 0 0 590px
+    font-size: 35px
+    padding-right: 30px
+    font-size: 25px
+
+  &__menu
+    flex: 0 1 auto
+    margin: 0
+    margin-left: auto
+    display: flex
+    align-items: center
+    li
+      display: inline-block
+      margin-right: 25px
+      &:last-child
+        margin-right: 0px
+    a
+      display: inline-block
+      position: relative
+      padding: 5px 0px
+      transition: color .25s $ease
+      &::after
+        display: inline-block
+        content: ' '
+        position: absolute
+        bottom: 1px
+        left: 0
+        right: 100%
+        height: 2px
+        background: currentColor
+        transition: .15s $ease
+      &:hover
+        // color: $colorViolet
+        &::after
+          right: 0
+
+  &__hamburger
+    display: none
+    padding-left: 20px
+
+  &__info
+    margin-left: auto
+    font-size: 14px
+    display: flex
+    flex-wrap: wrap
+    span
+      display: inline-block
+      color: rgba(white, .72)
+    a
+      display: inline-block
+      margin-left: 15px
+      font-weight: 500
+
+  &__search
+    position: relative
+    margin-left: auto
+    margin-right: auto
+    flex: 0 2 640px
+    &-input
+      position: relative
+      z-index: 1
+      font-size: 14px
+      input
+        position: relative
+        z-index: 2
+        width: 100%
+        -webkit-apperance: none
+        border-radius: 25px
+        padding: 13px 45px
+        border: 0
+        background: rgba(white, .13)
+        color: white
+        transition: .25s $ease
+        &::placeholder
+          color: rgba(white, .6)
+        &:focus, &.is-focused
+          color: $fontColor
+          background: white
+          box-shadow: 0 4px 11px 0 rgba(0,0,0,0.12)
+          &::placeholder
+            color: $fontColor
+          + .ico
+            fill: #667AC2
+      .ico
+        fill: white
+        font-size: 15px
+        position: absolute
+        z-index: 2
+        top: 50%
+        left: 19px
+        transform: translateY(-50%)
+        transition: .25s $ease
+
+    &-drop
+      position: absolute
+      z-index: 1
+      top: 30px
+      left: 20px
+      right: 20px
+      background: white
+      box-shadow: 0 10px 30px 0 rgba(0,0,0,0.08)
+      border-radius: 10px
+      padding: 37px 0 27px
+      opacity: 0
+      transform: translate(0,20px)
+      pointer-events: none
+      transition: .25s $ease
+      li
+        display: none
+        color: $fontColor
+        margin-bottom: 5px
+        transition: .25s $ease
+        a
+          padding: 10px 27px
+          display: block
+          transition: .25s $ease
+          &:hover
+            background: #F9F9F9
+            box-shadow: 0 6px 11px 0 rgba(0, 0, 0, 0.04)
+        mark
+          color: #949494
+          background: none
+        // test
+        &.is-visible
+          display: block
+
+      &.is-active
+        opacity: 1
+        transform: translate(0,0)
+        pointer-events: all
+    &-no-results
+      display: none
+      color: $fontColor
+      margin: 15px 27px
+      font-size: 16px
+      span
+        font-weight: 500
+
+
+  &__actions
+    // margin-left: auto
+    padding-left: 80px
+    flex: 0 0 470px
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    min-width: 1px
+    min-height: 42px
+    &--search
+      display: none
+    &-item
+      flex: 0 1 80px
+      // min-width: 80px
+      min-height: 0
+      font-size: 0
+      // padding: 0 5%
+      display: flex
+      a
+        position: relative
+        display: block
+        width: 100%
+        text-align: center
+        &::after
+          display: block
+          content: ' '
+          position: absolute
+          top: 50%
+          left: 50%
+          transform: translate(-50%,-50%)
+          background: rgba(#424242, .2)
+          z-index: -1
+          border-radius: 26px
+          size: 55px 42px
+          opacity: 0
+          pointer-events: none
+          user-select: none
+          transition: .25s $ease
+        &.is-active, &:hover
+          &::after
+            opacity: 1
+    .ico
+      &-case
+        font-size: 20px
+      &-comments
+        font-size: 20px
+        transform: translateY(2px)
+      &-profile
+        font-size: 20px
+      &-notifications
+        font-size: 22px
+      &-cart
+        font-size: 22px
+      &-search
+        font-size: 20px
+
+
+  &__premium
+    flex: 0 0 auto
+    padding-left: 20px
+    a
+      display: inline-block
+      border-radius: 50px
+      font-size: 14px
+      font-weight: 500
+      background: #319B9D
+      padding: 12px 18px
+      transition: .25s $ease
+      &:hover
+        background: $colorRed
+        color: white
+
+  &__user
+    position: relative
+    flex: 0 0 auto
+    padding-left: 20px
+    font-size: 0
+    .avatar
+      cursor: pointer
+      transition: .25s $ease
+      &:hover
+        opacity: .8
+    &-dropdown
+      position: absolute
+      top: 55px
+      z-index: 5
+      right: -15px
+      opacity: 0
+      transform: translate(0,15px)
+      pointer-events: none
+      color: rgba($fontColor, .75)
+      transition: .25s $ease
+      &::before
+        display: inline-block
+        content: ' '
+        size: 12px
+        position: absolute
+        z-index: 1
+        right: 32px
+        top: -6px
+        background: white
+        border-radius: 2px
+        transform: rotate(45deg)
+      &.is-active
+        opacity: 1
+        transform: translate(0,0)
+        pointer-events: all
+    &-list
+      position: relative
+      z-index: 2
+      background: white
+      border-radius: 6px
+      overflow: hidden
+      box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.08)
+      a
+        position: relative
+        display: block
+        white-space: nowrap
+        padding: 10px 20px
+        font-size: 14px
+        background: white
+        transition: background .25s $ease
+        &:hover
+          background: #EEEEEE
+    &-separator
+      height: 1px
+      background: $borderColor20
+
+
+
+  &__cart
+    position: relative
+    .ico
+      transform: translate(-3px)
+    &-num
+      position: absolute
+      top: -5px
+      right: 22px
+      background: $colorRed
+      color: white
+      border-radius: 50px
+      font-size: 10px
+      min-size: 14px
+      size: 14px
+      overflow: hidden
+      display: flex
+      align-items: center
+      justify-content: center
+
+  &__notifications
+    position: relative
+    &-mark
+      display: inline-block
+      position: absolute
+      top: 0px
+      right: 31px
+      background: $colorRed
+      border-radius: 50%
+      box-shadow: 0 2px 4px 0 #FF1E7A
+      size: 6px
+      opacity: 0
+      transition: .25s $ease
+    &.has-notifications
+      .header__notifications-mark
+        opacity: 1
+
+  &--bg
+    background-image: linear-gradient(-80deg, #8E5ACD 0%, #21B0B0 100%)
+  &.js-should-scroll
+    position: fixed
+    left: 0
+    right: 0
+    transform-style: preserve-3d
+    transform: translate3d(0,0px,0)
+    transition: .25s $ease
+    &.is-scrolled
+      transform: translate3d(0,-20px,0)
+      background-image: linear-gradient(-80deg, #8E5ACD 0%, #21B0B0 100%)
+      .header
+        &__wrapper
+          // padding-top: 15px
+          padding-bottom: 15px
+  &--dash
+    .header
+      &__hamburger
+        margin-left: 0
+
+
++r(1660)
+  .header
+    &__logo
+      flex-basis: auto
+    &__search
+      margin-right: 0
+      padding-left: 30px
+    &__actions
+      // margin-left: auto
+      padding-left: 40px
+      flex: 0 0 430px
+
++r(1200)
+  .header
+    &__actions
+      flex-basis: 330px
+      &-item
+        flex-basis: 60px
+
+    &__notifications
+      &-mark
+        right: 21px
+    &__cart
+      &-num
+        right: 12px
+
+
++r($desktop)
+  .header
+    &__search
+      display: none
+    &__actions
+      margin-left: auto
+    &--dash
+      .header
+        &__hamburger
+          display: block
+
++r($tablet)
+  .header
+    &__wrapper
+      padding-left: 25px
+      padding-right: 25px
+    &__menu
+      display: none
+    &__hamburger
+      margin-left: auto
+      display: block
+    &__premium
+      display: none
+    &__user
+      display: none
+    &--dash
+      .header
+        &__wrapper
+          //* minus 40px
+          padding-top: 15px
+          padding-bottom: 15px
+      &.js-should-scroll.is-scrolled
+        transform: translate3d(0,0,0)
+    &__search
+      &-drop
+        left: 0
+        right: 0
+
++r(600)
+  .header
+    &__actions
+      flex: 0 0 180px
+      padding-left: 0
+      &-item
+        &:nth-child(1), &:nth-child(3)
+          display: none
+
++r($mobile)
+  .header
+    &__logo
+      // font-size: 30px
+    &__info
+      flex-direction: column
+      align-items: flex-end
+      text-align: right
+      span
+        margin-bottom: 5px
+    &__actions
+
+
+    &--dash
+      .header
+        //
+    &--alt
+      .header
+        &__hamburger
+          flex: 0 0 60px
+          order: 1
+          padding-left: 0
+          padding-right: 20px
+          .hamburger
+            margin-left: -10px
+            margin-right: 0
+
+        &__actions
+          flex: 0 0 60px
+          order: 3
+          margin-left: 0
+          display: none
+          &--search
+            transform: translateX(10px)
+            display: flex
+          &-item
+            display: flex !important
+
+        &__logo
+          order: 2
+          margin-left: auto
+          margin-right: auto
+          padding-right: 0
+
++r(460)
+  .header
+    &__actions
+      flex: 0 0 60px
+      &-item
+        &:nth-child(2), &:nth-child(5)
+          display: none
+    &--dash
+      .header
+        &__hamburger
+          padding-left: 0
+
++r($mobile-s)
+  .header
+    &__wrapper
+      padding: 20px 15px
+    &__logo
+      font-size: 21px
+    &__info
+      span
+        font-size: 12px

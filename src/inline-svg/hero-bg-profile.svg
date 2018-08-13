@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1920 524" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>hero-bg-profile</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <!-- 140deg -->
+        <!-- orig x1="-3.93107096%" y1="0%" x2="80.0870768%" y2="102.746302%" -->
+        <!-- x1="100%" y1="2.53214336%" x2="-0.647379557%" y2="46.4503738%" -->
+
+        <linearGradient x1="0%" y1="2.53214336%" x2="95.647379557%" y2="20.4503738%" id="linearGradient-profile-1">
+            <stop stop-color="#2CC4A0" offset="0%"></stop>
+            <stop stop-color="#0DC6AD" offset="41.1338247%"></stop>
+            <stop stop-color="#8E5ACD" offset="100%"></stop>
+            <animate attributeName="x2" dur="4s" from="95.647379557%" to="95.647379557%" values="95.647379557%;85%;95.647379557%" repeatCount="indefinite" />
+            <animate attributeName="y2" dur="4s" from="20.4503738%" to="20.4503738%" values="20.4503738%;10%;20.4503738%" repeatCount="indefinite" />
+        </linearGradient>
+        <path d="M0,428.665485 L0,0 L1920,0 L1920,428.665485 C1643.91086,488.96002 1314.17246,524 960,524 C605.827536,524 276.089144,488.96002 -8.52651283e-14,428.665485 Z" id="path-2"></path>
+    </defs>
+    <g id="Cosound" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="17">
+            <mask id="mask-3" fill="white">
+                <use xlink:href="#path-2"></use>
+            </mask>
+            <use id="hero-bg-profile" fill="url(#linearGradient-profile-1)" xlink:href="#path-2"></use>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,165 @@
+//header market
+.header-market
+  position: relative
+  z-index: 1
+  background: #FFFFFF
+  overflow: hidden
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09)
+  &__menu
+    display: flex
+    overflow-x: auto
+    margin: 0
+    padding-left: 50px
+    padding-right: 50px
+    // justify-content: center
+    min-width: 100vw
+    -webkit-overflow-scrolling: touch
+  &__mobile
+    display: none
+    margin: 0
+    flex: 0 0 auto
+    font-size: 14px
+    margin-right: 42px
+    color: $fontColor
+    padding: 16px 0
+    cursor: pointer
+
+  &__toggle
+    position: absolute
+    right: 45px
+    top: 50%
+    z-index: 3
+    display: none
+    align-items: center
+    justify-content: center
+    width: 42px
+    height: 36px
+    font-size: 7px
+    background-color: transparent
+    color: #8E8E8E
+    text-align: center
+    border: 1px solid $borderColor
+    border-radius: 30px
+    cursor: pointer
+    transform: translateY(-50%)
+    transition: .25s $ease
+    .ico
+      transition: transform .25s $ease
+    &:hover
+      color: $colorGreen
+    &.is-active
+      .ico
+        transform: rotate(180deg)
+
+  li
+    position: relative
+    flex: 0 0 auto
+    min-width: 1px
+    min-height: 0
+    white-space: nowrap
+    display: inline-block
+    font-size: 14px
+    margin-right: 37px
+    color: #8E8E8E
+    transition: .25s $ease
+    &:first-of-type
+      margin-left: auto
+    &:last-of-type
+      margin-right: auto
+    a
+      display: inline-block
+      position: relative
+      padding: 20px
+      &::after
+        display: inline-block
+        content: ' '
+        position: absolute
+        bottom: 0
+        left: 0
+        right: 100%
+        height: 1px
+        background: #8C5BCC
+        box-shadow: 0 2px 4px 0 rgba(140,91,204,0.23)
+        transition: .25s $ease
+    &.is-active
+      color: $fontColor
+      a::after
+        right: 0
+    &:hover
+      color: $fontColor
+
++r(1200)
+  .header-market
+    li
+      &:last-of-type
+        &::after
+          display: inline-block
+          content: ''
+          width: 50px
+
+
+
++r($desktop)
+  .header-market
+    overflow: visible
+    &__mobile
+      display: block
+      padding-left: 50px
+
+    &__toggle
+      display: flex
+    &__menu
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 2
+      padding-left: 0
+      padding-right: 0
+      display: block
+      background: white
+      opacity: 0
+      pointer-events: none
+      transition: .25s $ease
+      &.is-active
+        opacity: 1
+        pointer-events: all
+        transform: translate3d(0,0,0)
+
+    li
+      display: block
+      margin-right: 0
+      &:first-of-type
+        margin-left: 0
+      a
+        display: block
+        padding: 16px 50px
+        transition: background .25s $ease
+        &::after
+          display: none
+      &:hover
+        color: $colorGreen
+        a
+          background: #F5F5F5
+
+
+    // li
+    //   margin-right: 25px
+    //   a
+    //     padding-left: 15px
+    //     padding-right: 15px
+
++r($tablet)
+  .header-market
+    &__menu
+    li
+      a
+        padding-left: 25px
+        padding-right: 25px
+    &__mobile
+      padding-left: 25px
+    &__toggle
+      right: 20px
+    // li
+    //   &:last-of-type
+    //     &::after
+    //       width: 25px

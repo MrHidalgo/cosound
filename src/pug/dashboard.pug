@@ -1,0 +1,62 @@
+---
+title: Dashboard
+---
+extends shared/_layout
+
+block header
+  include components/headers/_header-dash
+  
+block content
+  
+  // DASHBOARD
+  .feed
+
+    // DASH CONTENT
+    .container.container--wide
+      .dash.dash--feed
+        .dash__sidebar.dash__sidebar--narrow
+          .dash__sidebar-wrap(js-sticky-area)
+            // card
+            .d-card.wow
+              .sidebar-user
+                .sidebar-user__avatar
+                  .avatar.avatar--big
+                    img(src='img/avatar-main-1.jpg' srcset='img/avatar-main-1@2x.jpg 2x')
+                .sidebar-user__name Megan Impey
+                .sidebar-user__position Service Director
+                 
+        
+        // DASH CONTENT (CENTER COL)    
+        .dash__content
+          //card
+          .d-card.d-card--mobile-btn-offset.wow
+            form(action="#").create-post
+              .create-post__writting
+                textarea(name="content" placeholder="Wright something…" rows="5" data-min-rows="5")
+              .create-post__actions
+                .create-post__types(js-post-types)
+                  .create-post__type.create-post__type--music.is-current
+                    +icon('ico-music')
+                    span Music
+                  .create-post__type.create-post__type--video
+                    +icon('ico-video')
+                    span Video
+                  .create-post__type.create-post__type--images
+                    +icon('ico-images')
+                    span Images
+                .create-post__cta
+                  button(type="submit").btn.btn-post
+                    span Post
+                    +icon('ico-arrow-next')
+          
+          include components/dash/_d-card-audio
+          
+          include components/dash/_d-card-images
+          
+          include components/dash/_d-card-audio2
+          
+          include components/dash/_d-card-image
+          
+          include components/dash/_d-card-video
+
+          

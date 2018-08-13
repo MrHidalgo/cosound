@@ -1,0 +1,385 @@
+/* Messages
+.ms
+  margin-top: 140px
+  margin-bottom: 95px
+  &--fullpage
+    margin-top: 115px
+    margin-bottom: 0
+    .ms
+      &__wrapper
+        margin-left: -50px
+        margin-right: -50px
+        border-radius: 0
+        height: calc(100vh - 115px)
+      &__sidebar
+        border-top-left-radius: 0px
+        border-bottom-left-radius: 0px
+      &__create
+        border-bottom-right-radius: 0px
+  &__wrapper
+    position: relative
+    z-index: 1
+    display: flex
+    background: #F3F3F3
+    box-shadow: 0 15px 80px 0 rgba(0,0,0,0.08)
+    border-radius: 10px
+    min-height: 350px
+    // overflow: hidden
+    height: calc(100vh - 140px - 60px)
+
+  &__sidebar
+    flex: 0 0 330px
+    max-width: 330px
+    display: flex
+    flex-direction: column
+    min-width: 1px
+    min-height: 0
+    border-top-left-radius: 10px
+    border-bottom-left-radius: 10px
+    overflow: hidden
+    border-right: 1px solid $borderColor20
+
+  &__topbar
+    flex: 0 0 auto
+    background: white
+    text-align: center
+    padding: 20px
+    .avatar
+      margin-left: auto
+      margin-right: auto
+
+  &__search
+    flex: 0 0 auto
+    position: relative
+    input
+      -webkit-apperance: none
+      display: block
+      width: 100%
+      background: #F3F3F3
+      border: 0
+      box-shadow: none
+      border-top: 1px solid $borderColor20
+      border-bottom: 1px solid $borderColor20
+      color: $fontColor
+      transition: .25s $ease
+      z-index: 14
+      padding: 13px 20px 13px 70px
+      &::placeholder
+        color: $fontColor50
+      &:focus
+        padding-left: 40px
+        + .ico
+          transform: translate(-25px,-50%)
+    .ico
+      position: absolute
+      left: 40px
+      top: 50%
+      transform: translate(0,-50%)
+      fill: $fontColor50
+      transition: .25s $ease
+
+  &__dialogs
+    display: block
+    margin: 0
+    padding: 0
+    flex: 1 1 auto
+    overflow-y: auto
+    -webkit-overflow-scrolling: touch
+    background: white
+
+  &__content
+    flex: 1 1 auto
+    max-width: 100%
+    display: flex
+    flex-direction: column
+    min-width: 1px
+    min-height: 0
+  &__list
+    flex: 1 1 auto
+    min-width: 1px
+    overflow-y: auto
+    -webkit-overflow-scrolling: touch
+    padding: 15px 35px 40px
+    &::after
+      display: block
+      content: ' '
+      height: 40px
+
+  &__create
+    flex: 0 0 auto
+    background: white
+    min-height: 85px
+    border-top: 1px solid $borderColor20
+    padding: 20px 30px
+    border-bottom-right-radius: 10px
+
+// * standalone componenets
+.ms
+  &-dialog
+    width: 100%
+    padding: 15px 20px
+    border-bottom: 1px solid $borderColor20
+    display: flex
+    align-items: center
+    transition: .25s $ease
+    cursor: pointer
+    &:hover, &.is-active
+      background: #F3F3F3
+    &.is-active
+      box-shadow: 0 4px 10px 0 rgba(0,0,0,0.07)
+    mark
+      background: transparent
+      color: $colorAqua
+    .avatar
+      img
+        width: 110%
+
+    &__content
+      flex: 1 1 auto
+      min-width: 1px
+      min-height: 0
+      margin-left: 18px
+      &-top
+        display: flex
+        align-items: center
+
+    &__name
+      flex: 1 1 auto
+      font-size: 14px
+      line-height: 1.5
+      font-weight: 500
+      min-width: 1px
+      min-height: 0
+      +text-overflow
+
+    &__timestamp
+      margin-left: auto
+      flex: 0 0 auto
+      font-size: 12px
+      line-height: 1.5
+      padding-left: 5px
+      color: $fontColor50
+
+    &__text
+      max-width: 100%
+      font-size: 14px
+      line-height: 1.5
+      color: $fontColor50
+      +text-overflow
+
+  /* Message
+
+  &-message
+    display: flex
+    width: auto
+    margin: 20px 0 40px 0
+    .avatar
+      img
+        width: 106%
+    &__content
+      position: relative
+      opacity: 0.9
+      background: white
+      box-shadow: 0 4px 14px 0 rgba(0,0,0,0.07)
+      border-radius: 5px
+      border-top-left-radius: 0
+      padding: 15px 40px 15px 20px
+      margin-left: 30px
+      margin-top: 22px
+      width: 100%
+      max-width: 470px
+      &--long
+        max-width: 630px
+      &::before
+        display: inline-block
+        content: ' '
+        position: absolute
+        top: 0
+        left: -18px
+        +arr(18, 13, white, tr)
+
+      p
+        font-size: 14px
+        line-height: 1.78
+        margin: 0
+        & + p
+          margin-top: 1em
+
+      .m-audio
+        margin: 0
+
+    &__timestamp
+      position: absolute
+      bottom: -30px
+      left: -0px
+      font-size: 12px
+      line-height: 2
+      color: $fontColor50
+
+    &--self
+      flex-direction: row-reverse
+      margin-left: auto
+      .avatar
+        display: none !important
+      .ms-message
+        &__content
+          background: #EBEBEB
+          border: 1px solid $borderColor20
+          border-top-left-radius: 5px
+          border-top-right-radius: 0
+          box-shadow: 0 4px 14px 0 rgba(0,0,0,0.07)
+          &::before
+            // refactor
+            // how to set border for this pseudo ??
+            right: -18px
+            left: auto
+            +arr(18, 13, #EBEBEB, tl)
+
+  /* Create
+  &-create
+    display: flex
+    align-items: flex-end
+    &__attach
+      flex: 0 0 auto
+      padding: 10px
+      cursor: pointer
+      font-size: 0
+    &__emodji
+      flex: 0 0 auto
+      padding: 10px
+      cursor: pointer
+      font-size: 0
+      // hide area
+      opacity: 0
+      pointer-events: none
+
+    &__textarea
+      margin: 0 30px
+      flex: 1 1 auto
+      textarea
+        display: block
+        width: 100%
+        -webkit-apperance: none
+        border: 0
+        box-shadow: none
+        resize: none
+        font-size: 14px
+        padding: 10px 0 0 0
+        margin-bottom: -2px
+      .emojionearea
+        // outline: 1px solid tomato
+
+
++r($desktop)
+  .ms
+    &__sidebar
+      flex-basis: 280px
+      max-width: 280px
+    &__search
+      input
+        // padding-left: 60px
+        &:focus
+          + .ico
+            transform: translate(-15px,-50%)
+
+      .ico
+        left: 30px
+
+    &__list
+      padding: 15px 30px 30px 25px
+      &::after
+        height: 30px
+
+    &__create
+      padding: 20px 20px
+
+
+  /* dialog
+  .ms-dialog
+    padding: 15px 15px
+    &__content
+      margin-left: 15px
+    &__timestamp
+
+
+  // * message
+  .ms-message
+    &__content
+      padding: 10px 20px 10px 15px
+      p
+        font-size: 13px
+        line-height: 1.6
+    &__timestamp
+      font-size: 11px
+      bottom: -27px
+
+  /* create
+  .ms-create
+
+
++r($tablet)
+  .ms
+    margin-top: 72px
+    margin-bottom: 0
+    &--fullpage
+      .ms
+        &__wrapper
+          margin-left: -25px
+          margin-right: -25px
+    &__wrapper
+      margin-left: -25px
+      margin-right: -25px
+      border-radius: 0
+      height: calc(100vh - 72px)
+    &__sidebar
+      flex-basis: 75px
+      max-width: 75px
+    &__topbar
+      display: none
+    &__search
+      display: none
+
+  .ms-dialog
+    &__content
+      display: none
+
++r($mobile)
+  .ms
+    &__sidebar
+      flex-basis: 70px
+      max-width: 70px
+
+    &__list
+      padding-right: 20px
+      padding-left: 20px
+
+    &__create
+      padding-left: 10px
+      padding-right: 10px
+
+  .ms-message
+    .avatar
+      flex-basis: 25px
+      size: 25px
+    &__content
+      margin-left: 20px
+      margin-top: 10px
+      padding: 10px 10px 10px 15px
+      &::before
+        +arr(13, 10, white, tr)
+        left: -13px
+
+  .ms-create
+    &__textarea
+      margin: 0 15px
+    .emojionearea
+      .emojionearea-button
+        right: -49px
+      .emojionearea-picker.emojionearea-picker-position-top
+        right: -49px
+
++r($mobile-s)
+  .ms
+    &__wrapper
+      margin-left: -15px
+      margin-right: -15px

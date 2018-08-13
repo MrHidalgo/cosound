@@ -1,0 +1,187 @@
+// UI
+
+
+// WORKS KIND OF bootstrap - group have label and input
+.ui-group
+  position: relative
+  margin-bottom: 35px
+  width: 100%
+  text-align: left
+  label:not(.ui-input__validation)
+    display: block
+    font-size: 16px
+    line-height: 1.7
+    margin-bottom: 25px
+  input, textarea
+    display: block
+    width: 100%
+    -webkit-appearance: none
+    background: white
+    color: $fontColor
+    border: none
+    border-radius: 8px
+    padding: 21px 30px 20px
+    font-size: 16px
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.07)
+    transition: .25s $ease
+    &::placeholder
+      color: $fontColor50
+    &:hover
+      box-shadow: 0 4px 8px rgba(0,0,0,0.04)
+    &:focus
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2)
+    & + .ico
+      position: absolute
+      top: 50%
+      right: 20px
+      z-index: 2
+      transform: translateY(-50%)
+      &-search
+        font-size: 18px
+
+  // when selectize is active (without + selector)
+  .ico-search
+    position: absolute
+    top: 50%
+    right: 20px
+    z-index: 2
+    transform: translateY(-50%)
+    font-size: 18px
+
+  textarea
+    resize: vertical
+
++r($mobile)
+  .ui-group
+    label:not(.ui-input__validation)
+      margin-bottom: 15px
+      font-size: 14px
+
++r($mobile-s)
+  .ui-group
+    margin-bottom: 30px
+
+// Checkbox
+.ui-checkbox
+  display: inline-block
+  width: auto
+  input
+    display: none
+    width: 0.1px
+    height: 0.1px
+    opacity: 0
+    position: absolute
+    top: 0
+    left: 0
+    &:checked
+      + label
+        &::before
+          // border-color: $colorGreen
+        &::after
+          transform: translateY(-0%) scale(1.3)
+  label
+    display: block
+    width: 100%
+    position: relative
+    cursor: pointer
+    &::before
+      position: absolute
+      left: 0
+      top: 0px
+      transform: translateY(-0%)
+      display: inline-block
+      content: ' '
+      size: 20px
+      background-color: white
+      border: 2px solid #F0F0F0
+      border-radius: 4px
+      vertical-align: middle
+      cursor: pointer
+      transition: all $transitionSpeed ease-in-out
+    &::after
+      position: absolute
+      left: 7px
+      top: 8px
+      transform: translateY(0%) scale(0)
+      display: inline-block
+      content: ' '
+      border-radius: 50%
+      +sprite('checkmark')
+      transition: transform .2s ease
+    span
+      display: inline-block
+      padding-left: 30px
+      vertical-align: top
+      line-height: 2
+      font-size: 14px
+      cursor: pointer
+      transition: .25s $ease
+    &:hover
+      span
+        color: $colorAqua
+
+  &--optional
+    width: 100%
+    display: flex
+    justify-content: center
+    label
+      width: auto
+      margin-left: auto
+      margin-right: auto
+      &::before
+        border-color: $colorViolet
+      span
+        padding-left: 45px
+
+      &:hover
+        span
+          color: $colorViolet
+
+
+.ui-input__validation
+  position: absolute
+  bottom: -27px
+  left: 0
+  right: 0
+  color: $colorRed
+  font-size: 12px
+  font-weight: 500
+  text-align: right
+
++r($mobile-s)
+  .ui-input__validation
+    bottom: -18px
+
+// TAG INPUTS
+.multiple-inputs
+  input
+    border: 2px solid white
+    padding: 14px 29px
+    background: transparent
+    &:focus
+      background: white
+  &__plus
+    position: absolute
+    display: flex
+    align-items: center
+    justify-content: center
+    z-index: 2
+    right: 0
+    top: 0
+    bottom: 0
+    padding: 5px 20px 5px 10px
+    font-size: 16px
+    cursor: pointer
+    transition: .25s $ease
+    &:hover
+      opacity: .8
+    // transform: translateY(-50%)
+  .ico-plus
+    cursor: pointer
+    z-index: 2
+  &.is-ready
+    input
+      background: white
+    .multiple-inputs__plus
+      opacity: 0
+      pointer-events: none

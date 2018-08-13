@@ -1,0 +1,89 @@
+.ntf
+  position: absolute
+  top: 112px
+  left: 0
+  right: 0
+  z-index: 9
+  background: #F5F5F5
+  opacity: 0
+  transform: translate(0,20px,0)
+  box-shadow: 0 4px 11px 0 rgba(0,0,0,0.12)
+  pointer-events: none
+  transition: .25s $ease
+  &--fixed
+    position: fixed
+    &.is-scrolled
+      top: 72px
+      .ntf
+        &__wrapper
+          max-height: calc(100vh - 72px - 42px)
+    +r($tablet)
+      top: 72px
+      .ntf
+        &__wrapper
+          max-height: calc(100vh - 72px - 42px)
+  &.is-active
+    opacity: 1
+    pointer-events: all
+    transform: translate(0,0px,0)
+
+  &__title
+    text-align: center
+    font-size: 16px
+    line-height: 2
+    padding: 5px
+
+  &__wrapper
+    background: white
+    width: 100%
+    max-height: calc(100vh - 112px - 42px)
+    overflow: scroll
+  &__list
+    max-width: 1240px
+    padding-left: 50px
+    padding-right: 50px
+    margin-left: auto
+    margin-right: auto
+
+  &__card
+    display: flex
+    border-bottom: 1px solid rgba(#979797, .13)
+    padding: 35px 0
+    &:last-child
+      border-bottom: 0
+
+    &-contents
+      position: relative
+      flex: 1 1 auto
+      margin-left: 30px
+
+    &-title
+      font-size: 16px
+      font-weight: 500
+      line-height: 2
+
+    &-date
+      position: absolute
+      top: 0
+      right: 0
+      font-size: 12px
+      text-align: right
+      line-height: 1.9
+      color: $fontColor50
+
+    &-text
+      margin-top: 10px
+      font-size: 14px
+      line-height: 1.9
+      color: $fontColor50
+      p
+        margin: 0
+        & + p
+          margin-top: 1em
+
+
++r($tablet)
+  .ntf
+    &__list
+      padding-left: 25px
+      padding-right: 25px

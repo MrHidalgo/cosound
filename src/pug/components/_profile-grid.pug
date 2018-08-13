@@ -1,0 +1,117 @@
+// DASH CONTENT
+.container.container--wide
+  .dash
+    .dash__sidebar
+      .dash__sidebar-wrap(js-sticky-area js-sticky-bp="992")
+        // card
+        .d-card.wow
+          .d-card__head
+            .d-card__title My Music
+            .d-card__action(js-do-some)
+              +icon('ico-card-add')
+          .d-card__content
+            // music plugin (media)
+            .m-music
+              .m-music__scope
+                .m-music__cover
+                  img(src='img/audioCoverMini.jpg' srcset='img/audioCoverMini@2x.jpg 2x')
+                  .m-music__play(js-play-audio)
+                    +icon('ico-play')
+                    +icon('ico-stop')
+                .m-music__names
+                  .m-music__author Kygo
+                  .m-music__title Of Monsters and Men - Dirty Paws (Kygo remix)
+              //- refactor?? Not sure how to make such a graph
+              //- .m-music__track-graph
+                //- img(src='img/musicInfoFake.png' srcset='img/musicInfoFake@2x.png 2x')
+              .m-audio
+                div(js-audio-waveform data-src='media/audio-piano.mp3' data-mini="true")
+              .m-audio.m-audio--ie
+                audio
+                  source(src="media/audio-piano.mp3" type="audio/mpeg")
+              .m-music__tracks
+                .m-music__track
+                  span.m-music__track-name 1. Save Me Baby (Nayio Bitz Remix]
+                  span.m-music__track-duration 5:10
+                .m-music__track
+                  span.m-music__track-name 2. Summer Stories (Original Mix)
+                  span.m-music__track-duration 5:10
+                .m-music__track
+                  span.m-music__track-name 3. Dancing Ninja (Original Mix)
+                  span.m-music__track-duration 5:10
+                .m-music__track
+                  span.m-music__track-name 4. Him I (GeoM Remix )
+                  span.m-music__track-duration 5:10
+            
+            .d-card__more
+              a(href="#" js-load-more) View More…
+            
+        // card
+        .d-card.wow
+          .d-card__head
+            .d-card__title My images
+            .d-card__action(js-do-some)
+              +icon('ico-card-add')
+          .d-card__content
+            // gallery plugin (media)
+            .m-gallery(js-popup-gallery)
+              .m-gallery__item
+                a(href="/img/lightbox/1.jpg").m-gallery__img-holder.no-barba
+                  img(src='img/gallery-img-1.jpg' srcset='img/gallery-img-1@2x.jpg 2x')
+              .m-gallery__item
+                a(href="/img/lightbox/2.jpg").m-gallery__img-holder.no-barba
+                  img(src='img/gallery-img-2.jpg' srcset='img/gallery-img-2@2x.jpg 2x')
+              .m-gallery__item
+                a(href="/img/lightbox/3.jpg").m-gallery__img-holder.no-barba
+                  img(src='img/gallery-img-3.jpg' srcset='img/gallery-img-3@2x.jpg 2x')
+              .m-gallery__item
+                a(href="/img/lightbox/1.jpg").m-gallery__img-holder.no-barba
+                  img(src='img/gallery-img-4.jpg' srcset='img/gallery-img-4@2x.jpg 2x')
+              .m-gallery__item
+                a(href="/img/lightbox/2.jpg").m-gallery__img-holder.no-barba
+                  img(src='img/gallery-img-5.jpg' srcset='img/gallery-img-5@2x.jpg 2x')
+              .m-gallery__item
+                a(href="/img/lightbox/3.jpg").m-gallery__img-holder.no-barba
+                  img(src='img/gallery-img-6.jpg' srcset='img/gallery-img-6@2x.jpg 2x')
+              .m-gallery__item
+                a(href="/img/lightbox/1.jpg").m-gallery__img-holder.no-barba
+                  img(src='img/gallery-img-7.jpg' srcset='img/gallery-img-7@2x.jpg 2x')
+              .m-gallery__item
+                a(href="/img/lightbox/1.jpg").m-gallery__img-holder.no-barba
+                  img(src='img/gallery-img-8.jpg' srcset='img/gallery-img-8@2x.jpg 2x')
+              .m-gallery__item
+                a(href="/img/lightbox/2.jpg").m-gallery__img-holder.no-barba
+                  img(src='img/gallery-img-9.jpg' srcset='img/gallery-img-9@2x.jpg 2x')
+                  
+            .d-card__more
+              a(href="#" js-load-more) View More…      
+      
+    // DASH CONTENT (CENTER COL)    
+    .dash__content
+      //card
+      .d-card.d-card--mobile-btn-offset.wow
+        form(action="#").create-post
+          .create-post__writting
+            textarea(name="content" placeholder="Wright something…" rows="5" data-min-rows="5")
+          .create-post__actions
+            .create-post__types(js-post-types)
+              .create-post__type.create-post__type--music.is-current
+                +icon('ico-music')
+                span Music
+              .create-post__type.create-post__type--video
+                +icon('ico-video')
+                span Video
+              .create-post__type.create-post__type--images
+                +icon('ico-images')
+                span Images
+            .create-post__cta
+              button(type="submit").btn.btn-post
+                span Post
+                +icon('ico-arrow-next')
+      
+      include dash/_d-card-video
+      
+      include dash/_d-card-audio
+      
+      include dash/_d-card-video
+      

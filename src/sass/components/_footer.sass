@@ -1,0 +1,187 @@
+// FOOTER
+.footer
+  position: fixed
+  bottom: 0
+  left: 0
+  right: 0
+  background: #343434
+  color: white
+  &--blue
+    background: #2F385B
+  &__wrapper
+    padding: 50px 0 40px
+  &__top
+    display: flex
+    align-items: center
+
+  &__logo
+    font-size: 25px
+
+  &__socials
+    margin-left: auto
+    display: flex
+    align-items: center
+    padding-right: 26px
+    a
+      flex: 0 0 auto
+      display: flex
+      align-items: center
+      color: $colorWhite50
+      margin-right: 10px
+      padding: 10px
+      transition: .25s $ease
+      &:hover
+        color: white
+      &:last-child
+        margin-right: -10px
+
+    .ico-social
+      &-fb
+        font-size: 15px
+      &-insta
+        font-size: 13px
+      &-soundcloud
+        font-size: 11px
+
+  &__main
+    margin-top: 50px
+    display: flex
+    overflow: hidden
+
+  &__info
+    flex: 1 1 auto
+    margin-right: auto
+    display: flex
+    flex-direction: column
+    max-width: auto
+    min-width: 1px
+    min-height: 1px
+    font-size: 14px
+    line-height: 2
+    color: $colorWhite50
+
+  &__copy
+    margin-top: auto
+    font-size: 14px
+    color: white
+    &--mobile
+      display: none
+
+  &__nav
+    flex: 0 0 auto
+    min-width: 1px
+    margin-left: -20px
+    margin-right: -20px
+    display: flex
+    padding-left: 30px
+
+    &-col
+      flex: 0 0 auto
+      max-width: auto
+      min-width: 1px
+      padding: 0 20px
+      display: flex
+      flex-direction: column
+      a
+        color: white
+        font-size: 14px
+        margin-bottom: 7px
+        padding: 5px 0
+        transition: .25s $ease
+        &:hover
+          color: $colorWhite50
+    &-title
+      width: 100%
+      font-size: 16px
+      text-transform: uppercase
+      margin-bottom: 20px
+      color: $colorWhite50
+
+  &--mini
+    z-index: 8
+    position: static
+    .footer
+      &__wrapper
+        padding: 30px 50px
+      &__socials
+        padding-right: 0
+      &__copy
+        margin-top: 0
+
+
++r($desktop)
+  .footer
+    &__main
+      margin-top: 20px
+      flex-wrap: wrap
+    &__info
+      .footer__copy
+        display: none
+    &__copy
+      &--mobile
+        display: block
+        flex: 0 0 100%
+        margin-top: 30px
+    &__nav
+      margin-top: 20px
+      padding-left: 0
+      // display: none
+
++r($tablet)
+  .footer
+    &__main
+      // margin-top: 30px
+    &__info, &__copy
+      // font-size: 12px
+
+    &--mini
+      .footer
+        &__wrapper
+          padding-left: 25px
+          padding-right: 25px
+
++r($mobile)
+  .footer
+    &__wrapper
+      padding: 30px 0 30px
+    &__top
+      // flex-direction: column
+    &__socials
+      // justify-content: center
+      // margin-left: 0
+      // margin-top: 20px
+      padding-right: 0
+    &__main
+      margin-top: 0
+
+    &__info
+      // text-align: center
+      // p
+      //   display: none
+
+    &__nav
+      margin-top: 10px
+      flex: 0 1 100%
+      flex-wrap: wrap
+      &-col
+        margin-bottom: 30px
+
+    &__copy
+      &--mobile
+        margin-top: 0px
+
+    &--mini
+      .footer
+        &__socials
+          // margin-right: 10px
+
++r($mobile-s)
+  .footer
+    &__logo
+      font-size: 25px
+
+    &--mini
+      .footer
+        &__wrapper
+          padding-left: 15px
+          padding-right: 15px

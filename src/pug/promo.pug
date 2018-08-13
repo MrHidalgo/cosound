@@ -1,0 +1,101 @@
+---
+title: Promo page
+---
+extends shared/_layout
+
+block footer
+  include components/_footer-full
+  
+block content
+  
+  // HERO
+  .hero.hero--promo
+    .promo-bg
+      .promo-bg__wrapper
+        include ../inline-svg/hero-bg-promo.svg
+        img(src='img/promoBg.jpg' srcset='img/promoBg@2x.jpg 2x')
+    .container
+      .hero__wrapper
+        .hero__logo.wow(data-animation-class="wowFadeDown" data-animation-delay=".3s")
+          +icon('ico-logo')
+        .hero__text.wow(data-animation-delay=".5s")
+          p Welcome to a world of collaboration and infinite opportunity.
+          
+  
+  .promo-benefits
+    .container
+      .benefits__list
+        // el
+        .benefits__el.wow(data-animation-delay=".1s")
+          .benefits__icon
+            +icon('ico-promo-benefiit-1')
+          .benefits__el-name Global Music Industry Directory with advanced search facilities
+          .benefits__el-desc
+            p An online directory of publicists, recording studios, writers, session musicians, social media marketing professionals, videographers, music lawyers, publishers. (and more)
+        // el
+        .benefits__el.wow(data-animation-delay=".2s")
+          .benefits__icon
+            +icon('ico-promo-benefiit-2')
+          .benefits__el-name A Music Industry Marketplace and Payment Portal
+          .benefits__el-desc
+            p Music industry professionals will create and list services through the platforms integrated marketplace.
+        // el
+        .benefits__el.wow(data-animation-delay=".3s")
+          .benefits__icon
+            +icon('ico-promo-benefiit-3')
+          .benefits__el-name A Music Industry Social Network
+          .benefits__el-desc
+            p Connect and interact with musicians and professionals through a social network built around music.
+        // el
+        .benefits__el.wow(data-animation-delay=".4s")
+          .benefits__icon
+            +icon('ico-promo-benefiit-4')
+          .benefits__el-name Advanced AI integration
+          .benefits__el-desc
+            p AI integration will shape the users marketplace and social experience. Analysing a range of available user stats (external social stats, music streams etc) the platform will provide a seamless, customised front end experience.
+        // el
+        .benefits__el.wow(data-animation-delay=".5s")
+          .benefits__icon
+            +icon('ico-promo-benefiit-5')
+          .benefits__el-name Toolkits
+          .benefits__el-desc
+            p Cosound V2 will provide intuitive tools for musicians, AI integration will give clear roadmaps and suggestions on how to reach the next checkpoint.
+        // el
+        .benefits__el.wow(data-animation-delay=".6s")
+          .benefits__icon
+            +icon('ico-promo-benefiit-6')
+          .benefits__el-name An A&R Engine
+          .benefits__el-desc
+            p Cosound V2 will create an unrivalled database designed to scrub acoustic fingerprints against user engagements to determine potentially successful songs.
+    
+  // INFO
+  .info
+    .info__bg
+      .info__bg-wrapper
+        include ../inline-svg/info-promo-bg.svg
+    .container
+      .info__wrapper
+        .info__content.wow(data-animation-class="wowFadeRight")
+          h2.heading.c-aqua Artist Development
+          .info__text
+            p Adipiscing bibendum est ultricies integer quis auctor. Enim praesent elementum facilisis leo vel. Pellentesque sit amet porttitor eget dolor morbi non arcu risus. Amet est placerat in egestas erat imperdiet. Nisl nisi scelerisque eu ultrices vitae 
+            .info__cta
+              a(href="signup.html").btn.btn-primary.btn-primary--wider.btn-primary--red
+                span Get Started
+        .info__image.wow(data-animation-class="wowFadeRight" data-animation-delay=".5s")
+          .info__image-mask
+            img(src='img/promoImage_1.jpg' srcset='img/promoImage_1@2x.jpg 2x')
+
+
+  // INFO invert
+  .info.info--m-bottom
+    .container
+      .info__wrapper.info__wrapper--reverse
+        .info__content.wow(data-animation-class="wowFadeLeft")
+          h2.heading.c-violet Your Career
+          .info__text
+            p Adipiscing bibendum est ultricies integer quis auctor. Enim praesent elementum facilisis leo vel. Pellentesque sit amet porttitor eget dolor morbi non arcu risus. Amet est placerat in egestas erat imperdiet. Nisl nisi scelerisque eu ultrices vitae 
+        
+        .info__image.wow(data-animation-class="wowFadeRight" data-animation-delay=".5s")
+          .info__image-mask
+            img(src='img/promoImage_2.jpg' srcset='img/promoImage_2@2x.jpg 2x')

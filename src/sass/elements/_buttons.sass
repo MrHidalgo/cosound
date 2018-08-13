@@ -1,0 +1,188 @@
+// buttons
+button
+  -webkit-apperance: none
+  border: 0
+  box-shadow: none
+  cursor: pointer
+  &:focus
+    outline: none
+
+.btn
+  display: inline-block
+  position: relative
+  text-align: center
+  transition: all $transitionSpeed ease-in-out
+  &:focus, &:active
+    outline: none
+  &--block
+    display: block
+    width: 100%
+
+  &-primary
+    font-weight: 500
+    font-size: 16px
+    line-height: 2
+    box-shadow: 0 4px 11px 0 rgba(0,0,0,0.12)
+    border-radius: 45px
+    padding: 8px 35px
+    min-width: 166px
+    &:hover
+      box-shadow: 0 7px 20px 0 rgba(0,0,0,0.15)
+
+    &--red
+      background: $colorRed
+      color: white
+      &:hover
+        background: $colorAqua
+        color: white
+    &--white
+      background: white
+      color: $colorAqua
+      &:hover
+        background: $fontColor
+        color: white
+    &--smaller
+      font-size: 14px
+      padding: 7px 10px
+      min-width: 111px
+    &--aqua
+      background: $colorAqua
+      color: white
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,0.07)
+      &:hover
+        background: $fontColor
+        color: white
+        box-shadow: none
+    &--green
+      background: $colorGreen
+      color: white
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,0.07)
+      &:hover
+        background: $fontColor
+        color: white
+        box-shadow: none
+    &--violet
+      background: $colorViolet
+      color: white
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,0.07)
+      &:hover
+        background: $fontColor
+        color: white
+        box-shadow: none
+    &--disabled
+      color: #8E8E8E
+      background: #F5F5F5
+      // pointer-events: none
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,0.07)
+      &:hover
+        color: #8E8E8E
+        background: #F5F5F5
+    &--wider
+      min-width: 220px
+    .ico, .icon
+      position: absolute
+      top: 50%
+      right: 20px
+      font-size: 12px
+      transform: translateY(-50%)
+
+  &-more
+    font-weight: 500
+    font-size: 14px
+    line-height: 2
+    border-radius: 45px
+    padding: 8px 50px
+    min-width: 166px
+    background: white
+    color: $colorRed
+    &:hover
+      background: $colorRed
+      color: white
+
+  &-social
+    background: white
+    display: flex
+    align-items: center
+    border-radius: 30px
+    padding: 15px 20px
+    span
+      display: inline-block
+      margin-left: 7px
+      span
+        margin-left: 0
+        +r($mobile)
+          // display: none
+    .ico
+      &-social-fb
+        font-size: 14px
+      &-social-tw
+        font-size: 12px
+      &-social-glus
+        font-size: 15px
+    &--fb
+      color: #4867AA
+    &--tw
+      color: #1CA1F3
+    &--gplus
+      color: #EA4336
+    &:hover
+      &.btn-social
+        color: white
+        &--fb
+          background: #4867AA
+        &--tw
+          background: #1CA1F3
+        &--gplus
+          background: #EA4336
+
+  &-post
+    font-size: 14px
+    line-height: 2
+    border-radius: 45px
+    padding: 4px 10px
+    min-width: 93px
+    background: white
+    color: $colorRed
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10)
+    border-radius: 100px
+    &:hover
+      background: $colorRed
+      color: white
+    span
+      display: inline-block
+      margin-right: 15px
+    .ico, .icon
+      position: absolute
+      top: 50%
+      right: 18px
+      font-size: 10px
+      transform: translateY(-50%)
+
+  &-message
+    font-weight: 500
+    font-size: 14px
+    line-height: 2
+    border-radius: 45px
+    padding: 5px 30px
+    min-width: 155px
+    background: #F5F5F5
+    box-shadow: 0 4px 11px 0 rgba(0,0,0,0.12)
+    color: $colorRed
+    &:hover
+      background: $colorRed
+      color: white
+
+  &-plan
+    font-weight: 500
+    font-size: 14px
+    line-height: 2
+    border-radius: 45px
+    padding: 7px 20px
+    min-width: 176px
+    background: $colorGreen
+    color: white
+    &:hover
+      background: $colorRed
+      color: white
+    &--violet
+      background: #8262CB

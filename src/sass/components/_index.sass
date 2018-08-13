@@ -1,0 +1,129 @@
+.page-bg
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  z-index: 1
+  display: flex
+  flex-direction: column
+  overflow: hidden
+  &__wrapper
+    flex: 1 1 auto
+    display: flex
+    flex-direction: column
+    max-height: 1056px
+    position: relative
+    &--plans
+      max-height: 880px
+  svg
+    position: absolute
+    top: 0%
+    left: 50%
+    transform: translate(-50%,0%)
+    min-width: 100%
+    min-height: 100%
+    // width: auto
+    width: 1920px
+    height: auto
+    // top: 50%
+    // left: 50%
+    // transform: translate(-50%,-50%)
+    // min-width: 100%
+    // min-height: 100%
+    // width: auto
+    // height: auto
+    overflow: visible
+
++r($mobile)
+  .page-bg
+    svg
+      // width: 1500px
+      // height: auto
+      margin-left: -200px
+      // padding-top: 150px
+
+
+/* BG OVERLAY
+.bg-overlay
+  position: fixed 0
+  z-index: 5
+  opacity: 0
+  background: rgba(black, .57)
+  pointer-events: none
+  transition: .25s $ease
+  &.is-active
+    opacity: 1
+    pointer-events: all
+  +rmin($desktop)
+    display: none !important
+
+
+// Payment, adv. search pages
+.full-height-wrap
+  margin: 160px 0 80px 0
+  display: flex
+  flex-direction: column
+  justify-content: center
+  min-height: calc(100vh - 200px)
+  text-align: center
+
++r($tablet)
+  .full-height-wrap
+    margin-top: 130px
+
+
+/* avatar
+// refactor avatar
+.avatar
+  display: inline-block
+  position: relative
+  z-index: 2
+  border-radius: 50%
+  overflow: hidden
+  font-size: 0
+  size: 45px
+  flex: 0 0 45px
+  &--shad
+    box-shadow: 0 10px 14px 0 rgba(0,0,0,0.11)
+  &--small
+    size: 30px
+    flex: 0 0 30px
+  &--mid
+    size: 60px
+    flex: 0 0 60px
+  &--big
+    size: 94px
+    flex: 0 0 94px
+    //what to do with box-shadow
+    // box-shadow: 0px 9px 19px rgba(black, .3)
+  img
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 105%
+    // refactor - should behave as background cover
+    // min-width: 101%
+    // min-height: 101%
+    // width: auto
+    // height: auto
+    transform: translate(-50%,-50%)
+  .icon, .ico
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+
++r($mobile)
+  .avatar
+    size: 40px
+    flex-basis: 40px
+    &--small
+      size: 30px
+      flex: 0 0 30px
+    &--mid
+      size: 50px
+      flex-basis: 50px
+    &--big
+      size: 85px
+      flex-basis: 85px

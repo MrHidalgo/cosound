@@ -1,0 +1,56 @@
+---
+title: Signup 3
+---
+extends shared/_layout
+
+block header
+  // empty header
+  
+block content
+  
+  // SIGNUP
+  .signup
+    .page-bg
+      .page-bg__wrapper
+        include ../inline-svg/hero-bg-login.svg
+    .container
+      .signup__wrapper
+        .signup__logo.wow(data-animation-class="wowFadeDown")
+          +icon('ico-logo')
+        h2.signup__heading.signup__heading--big.wow(data-animation-delay=".4s") Nice! Welcome.
+
+        //form
+        form.signup-form(action="#" js-validate-signup-3 data-animation-delay=".6s").wow
+          .signup-form__uploader
+            .photo-uploader(js-photo-upload)
+              input(type="file" name="avatar" id="avatar")
+              label(for="avatar")
+                .photo-uploader__placeholder
+                  img(src='' alt="")
+                  +icon('ico-camera')
+                .photo-uploader__name Upload Photo
+              
+          .ui-group.wow(data-animation-delay=".4s")
+            input(type="text" name="name" placeholder="First Name")
+          .ui-group.wow(data-animation-delay=".4s")
+            input(type="text" name="surname" placeholder="Last Name")
+          .ui-group.wow(data-animation-delay=".4s")
+            input(type="text" name="birth" placeholder="Date of birth" js-date-mask)
+          .ui-group.wow(data-animation-delay=".5s")
+            input(type="text" name="artist" placeholder="Artist Name")
+          .ui-group.wow(data-animation-delay=".6s" style="z-index: 2")
+            input(type="text" name="genres" placeholder="Music Genres" js-selectize-genres)
+            +icon('ico-search')
+          .ui-group.wow(data-animation-delay=".6s")
+            .multiple-inputs(js-multiple-inputs)
+              input(type="text" name="socails" placeholder="Social links")
+              .multiple-inputs__plus
+                +icon('ico-plus','js-multiple-inputs-plus')
+          .signup-form__cta.wow(data-animation-delay=".8s")
+            button(type="submit").btn.btn-primary.btn-primary--red
+              span Next
+              +icon('ico-arrow-next')
+                      
+        // steps
+        .signup__steps(data-active-step="3" data-animation-class="wowFadeDown").wow
+          include components/_signup-steps

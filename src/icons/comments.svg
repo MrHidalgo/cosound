@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>comments</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Cosound" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="11,12,16_b" transform="translate(-1463.000000, -47.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <path d="M1467.29289,61.2928932 C1467.48043,61.1053568 1467.73478,61 1468,61 L1480,61 C1480.55228,61 1481,60.5522847 1481,60 L1481,50 C1481,49.4477153 1480.55228,49 1480,49 L1466,49 C1465.44772,49 1465,49.4477153 1465,50 L1465,63.5857864 L1467.29289,61.2928932 Z M1464.70711,66.7071068 C1464.07714,67.3370716 1463,66.8909049 1463,66 L1463,50 C1463,48.3431458 1464.34315,47 1466,47 L1480,47 C1481.65685,47 1483,48.3431458 1483,50 L1483,60 C1483,61.6568542 1481.65685,63 1480,63 L1468.41421,63 L1464.70711,66.7071068 Z" id="comments"></path>
+        </g>
+    </g>
+</svg>

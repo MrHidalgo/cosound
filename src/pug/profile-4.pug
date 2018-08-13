@@ -1,0 +1,33 @@
+---
+title: Profile
+---
+extends shared/_layout
+
+block header
+  include components/headers/_header-profile
+  
+block content
+  
+  // PROFILE
+  .profile
+    .profile__hero
+      .profile__bg
+        .profile__bg-wrapper
+          include ../inline-svg/hero-bg-profile.svg
+      .container
+        .profile__info
+          .profile__image.wow(data-animation-class="wowFadeDown")
+            .avatar.avatar--big
+              img(src='img/avatar-3.jpg' srcset='img/avatar-3@2x.jpg 2x')
+          a(href="plans.html").profile__status.wow(data-animation-delay=".4s")
+            span Premium
+          .profile__name.wow(data-animation-delay=".5s") Luca Tozzi 
+          .profile__position.wow(data-animation-delay=".6s") Luke ATME
+          .profile__connections.wow(data-animation-delay=".8s")
+            .profile__connections-num 550 
+            .profile__connections-name Connections
+          .profile__bio.wow
+            p Italian pop export Luke ATME is aiming to soar up the charts with his new single ‘Higher’. The track is Luke’s third single to date, following his debut ‘Get The Freedom’ and stripped-back piano ballad ‘Cosmos’. Starting out as a dancer at the age of 12, Luke turned his hand to making homemade covers of his favourite artists before moving to London to study at the University of West London. While there, Luke split his time between music and modelling, funding his music career by appearing in music videos for big-name acts such as Ellie Goulding, Fred V & Grafix, and Pixie Lott.
+
+
+    include components/_profile-grid

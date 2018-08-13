@@ -1,0 +1,97 @@
+.create-post
+
+  &__writting
+    textarea
+      display: block
+      width: 100%
+      -webkit-appearance: none
+      background: white
+      color: $fontColor
+      border: none
+      border-radius: 8px
+      padding: 5px 0px
+      //textarea will be resized automatically
+      resize: none
+      // transition: .25s $ease
+      &::placeholder
+        color: $fontColor50
+
+
+  &__actions
+    border-top: 1px solid $borderColor20
+    display: flex
+    align-items: center
+    padding: 18px 0px
+
+  &__types
+    display: flex
+
+  &__type
+    position: relative
+    display: flex
+    align-items: center
+    color: $fontColor50
+    margin-right: 30px
+    padding: 9px 0
+    cursor: pointer
+    &::before
+      display: inline-block
+      content: ' '
+      position: absolute
+      top: -19px
+      height: 1px
+      left: 0
+      right: 100%
+      transition: .25s $ease
+    &:last-child
+      margin-right: 0
+    span
+      display: inline-block
+      font-size: 14px
+      margin-left: 10px
+      transition: .25s $ease
+    .ico
+      &-music
+        font-size: 17px
+        fill: #8C5BCC
+      &-video
+        font-size: 12px
+        fill: #3B93BB
+      &-images
+        font-size: 14px
+        fill: #2ABEA7
+    &--music
+      &::before
+        background-color: #8C5BCC
+        box-shadow: 0 2px 4px 0 rgba(#8C5BCC,0.23)
+    &--video
+      &::before
+        background-color: #3B93BB
+        box-shadow: 0 2px 4px 0 rgba(#3B93BB,0.23)
+    &--images
+      &::before
+        background-color: #2ABEA7
+        box-shadow: 0 2px 4px 0 rgba(#2ABEA7,0.23)
+    &.is-current
+      color: $fontColor
+      &::before
+        right: 0
+    &:hover
+      color: $fontColor
+  &__cta
+    margin-left: auto
+
++r($mobile)
+  .create-post
+    &__type
+      // span
+      //   display: none
+    &__cta
+      position: absolute
+      right: 25px
+      bottom: -45px
+
++r($mobile-s)
+  .create-post
+    &__cta
+      right: 15px

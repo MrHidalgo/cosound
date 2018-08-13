@@ -1,0 +1,412 @@
+.market
+  margin-top: 200px
+  margin-bottom: 45px
+  &__container
+    padding-left: 50px
+    padding-right: 50px
+    max-width: 1830px
+    margin: 0 auto
+  &__top
+    display: flex
+    // align-items: flex-start
+    &-left
+      flex: 0 1 16.666%
+      max-width: 16.666%
+      min-width: 1px
+      min-height: 0
+      .d-card
+        margin-bottom: 0
+    &-right
+      position: relative
+      flex: 0 1 83.333%
+      max-width: 83.333%
+      display: flex
+      flex-direction: column
+      margin-left: 30px
+
+  &__slider
+    position: relative
+    border-radius: 9px
+    width: 100%
+    flex: 1 1 auto
+    display: flex
+    flex-direction: column
+    .swiper-wrapper
+      flex: 1 1 auto
+    &-next, &-prev
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      size: 40px
+      z-index: 3
+      cursor: pointer
+      display: flex
+      align-items: center
+      justify-content: center
+      background: #FFFFFF
+      box-shadow: 0 6px 8px 0 rgba(0,0,0,0.07)
+      border-radius: 50%
+      transition: .25s $ease
+      &:hover
+        box-shadow: 0 12px 18px 0 rgba(0,0,0,0.1)
+      &.swiper-button-disabled
+        opacity: .7
+        cursor: default
+    // .swiper-wrapper
+    //   flex: 1 0 auto
+    &-next
+      right: -20px
+
+    &-prev
+      left: -20px
+
++r(1660)
+  .market
+    &__top-left
+      flex-basis: 20%
+      max-width: 20%
+
++r(1400)
+  .market
+    &__top-left
+      flex-basis: 25%
+      max-width: 25%
+
++r($wide)
+  .market
+    &__top
+      &-left
+        display: none
+      &-right
+        flex-basis: 100%
+        max-width: 100%
+        margin-left: 0
+
++r($tablet)
+  .market
+    margin-top: 160px
+    margin-bottom: 20px
+    &__container
+      padding-left: 25px
+      padding-right: 25px
+
+
+.market-slide
+  flex: 0 0 auto
+  width: 100%
+  max-width: 100%
+  min-width: 1px
+  min-height: 0
+  position: relative
+  overflow: hidden
+  background: black
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.08)
+  border-radius: 9px
+  background-size: cover
+  &__bg
+    position: absolute 0
+    opacity: .56
+    z-index: 1
+    background-position: center center
+    background-repeat: no-repeat
+    background-size: cover
+    img
+      width: 100%
+
+  &__content
+    position: relative
+    width: 100%
+    z-index: 2
+    padding: 20px 60px
+    color: white
+    min-height: 253px
+
+  &__title
+    font-size: 50px
+    line-height: 1.2
+  &__desc
+    margin-top: 10px
+    font-size: 16px
+    line-height: 1.67
+    max-width: 500px
+    /* btn offset width
+    margin-right: 180px
+    p
+      margin: 0
+      & + p
+        margin-top: 1em
+  &__cta
+    position: absolute
+    bottom: 45px
+    right: 60px
+
++r($desktop)
+  .market-slide
+    &__content
+      padding: 20px 40px
+    &__title
+      font-size: 42px
+    &__desc
+      font-size: 15px
+    &__cta
+      right: 40px
+      bottom: 35px
+
++r($mobile)
+  .market-slide
+    &__content
+      padding: 20px 25px 20px 35px
+    &__title
+      font-size: 36px
+    &__desc
+      margin-top: 25px
+      font-size: 14px
+    &__cta
+      right: 25px
+      bottom: 20px
+
++r(480)
+  .market-slide
+    &__content
+      padding-bottom: 30px
+    &__desc
+      margin-right: 0
+    &__cta
+      position: static
+      margin-top: 30px
+      text-align: right
+
+/* Market grid
+.market-grid
+  padding: 60px 0
+  &--narrow
+    padding-top: 70px 0
+    border-top: 1px solid $borderColor20
+    max-width: 1170px
+    margin-left: auto
+    margin-right: auto
+    .market-grid__col
+      flex-basis: 25%
+      max-width: 25%
+  &__title
+    font-size: 20px
+    text-align: center
+    margin-bottom: 35px
+  &__list
+    display: flex
+    flex-wrap: wrap
+    margin: 0 -15px
+  &__col
+    padding: 15px
+    flex: 0 1 16.666%
+    max-width: 16.666%
+    min-width: 1px
+    min-height: 0
+    display: flex
+    flex-direction: column
+  &__more
+    margin-top: 60px
+    text-align: center
+
++r(1660)
+  .market-grid
+    &__col
+      flex-basis: 20%
+      max-width: 20%
+
++r(1400)
+  .market-grid
+    &__col
+      flex-basis: 25%
+      max-width: 25%
+
++r(1150)
+  .market-grid
+    &__col
+      flex-basis: 33.3%
+      max-width: 33.3%
+    &--narrow
+      .market-grid__col
+        flex-basis: 33.3%
+        max-width: 33.3%
+
++r($tablet)
+  .market-grid
+    padding: 50px 0 40px
+    &__col
+      flex-basis: 50%
+      max-width: 50%
+    &--narrow
+      .market-grid__col
+        flex-basis: 50%
+        max-width: 50%
+    &__more
+      margin-top: 40px
+
++r(480)
+  .market-grid
+    &__col
+      flex-basis: 100%
+      max-width: 100%
+      // max-width: 270px
+      padding: 10px
+      margin-left: auto
+      margin-right: auto
+    &--narrow
+      .market-grid__col
+        flex-basis: 100%
+        max-width: 100%
+
+.m-card
+  position: relative
+  flex: 0 1 auto
+  position: relative
+  overflow: hidden
+  z-index: 1
+  background: #FFFFFF
+  box-shadow: 0 10px 30px 0 rgba(0,0,0,0.08)
+  border-radius: 10px
+  transition: .25s $ease
+  &__cover
+    position: relative
+    position: relative
+    font-size: 0
+    // min-height: 260px
+    display: block
+    overflow: hidden
+    img
+      width: 100%
+      // position: absolute
+      // top: 50%
+      // left: 50%
+      // transform: translate(-50%,-50%)
+      // min-width: 100%
+      // min-height: 100%
+      // width: auto
+      // height: auto
+      transition: .25s $ease
+    &:hover
+      // img
+      //   transform: translate(-50%,-50%) scale(1.05)
+
+  &__content
+
+  &__info
+    display: flex
+    padding: 22px 13px
+    &-left
+      flex: 0 0 30px
+    &-right
+      flex: 1 1 auto
+      padding-left: 12px
+      min-width: 1px
+      min-height: 0
+
+  &__name
+    display: block
+    font-size: 16px
+    font-weight: 500
+    +text-overflow
+    line-height: 1.9
+    transition: .25s $ease
+    &:hover
+      color: $colorAqua
+
+  &__album
+    color: $fontColor50
+    font-size: 14px
+    line-height: 1.7
+    margin-top: -.2em
+    +text-overflow
+
+  &__rating
+    margin-top: 5px
+    display: flex
+    align-items: center
+
+    &-count
+      display: inline-block
+      margin-left: 8px
+      font-size: 14px
+      color: $fontColor50
+
+  &__actions
+    display: flex
+    align-items: center
+    border-top: 1px solid rgba(#979797, .13)
+    padding: 10px 20px
+
+  &__price
+    font-size: 14px
+    line-height: 2
+
+  &__like
+    margin-left: auto
+    transition: .25s $ease
+    cursor: pointer
+    .ico
+      font-size: 15px
+    &:hover, &.is-active
+      color: $colorRed
+
+
+.rating-stars
+  flex: 0 0 auto
+  display: flex
+  // margin: 0 -2px
+  align-items: center
+  &[data-rating="1"]
+    .icon
+      &:nth-child(1)
+        +sprite(star-fill)
+  &[data-rating="2"]
+    .icon
+      &:nth-child(1), &:nth-child(2)
+        +sprite(star-fill)
+  &[data-rating="3"]
+    .icon
+      &:nth-child(1), &:nth-child(2), &:nth-child(3)
+        +sprite(star-fill)
+  &[data-rating="4"]
+    .icon
+      &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4)
+        +sprite(star-fill)
+  &[data-rating="5"]
+    .icon
+      &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4), &:nth-child(5)
+        +sprite(star-fill)
+
+  .icon
+    margin-right: 3px
+    +sprite(star-blank)
+
+  &--bigger
+    .icon
+      transform: scale(1.5)
+      margin-right: 9px
+      &:last-child
+        margin-right: 0
+
++r($desktop)
+  .m-card
+    &__name
+      font-size: 14px
+    &__album
+      font-size: 12px
+
++r($tablet)
+  .m-card
+
++r($mobile)
+  .m-card
+    &__name
+      font-size: 16px
+    &__album
+      font-size: 14px
+
+
++r(480)
+  .m-card
+    margin-left: -25px
+    margin-right: -25px
+    border-radius: 0

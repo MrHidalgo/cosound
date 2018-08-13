@@ -1,0 +1,95 @@
+---
+title: Account
+---
+extends shared/_layout
+
+block header
+  include components/headers/_header-profile
+  
+block content
+  
+  // PROFILE
+  .profile
+    .profile__hero.profile__hero--short
+      .profile__bg
+        .profile__bg-wrapper
+          include ../inline-svg/hero-bg-profile.svg
+      .container
+        .profile__info
+          .avatar.avatar--big.wow(data-animation-class="wowFadeUp")
+            img(src='img/profileImage.jpg' srcset='img/profileImage@2x.jpg 2x')
+          .profile__name.wow(data-animation-delay=".4s") Lois Stokes
+  
+          
+    .container
+      .bg-overlay
+      // settings
+      .profile-settings.wow
+        .profile__categories-mobile
+          a(href="#").profile__category.--violet.is-active
+            .profile__category-icon
+              i.icon.icon-profile-gears
+            span Account Settings
+        .profile__categories-toggle(js-mobile-account-nav)
+          +icon('ico-select-down')
+  
+        .profile__categories
+          a(href="#").profile__category.--violet.is-active
+            .profile__category-icon
+              i.icon.icon-profile-gears
+            span Account Settings
+          a(href="#").profile__category.--blue
+            .profile__category-icon
+              i.icon.icon-profile-privacy
+            span Privacy
+          a(href="#").profile__category.--aqua
+            .profile__category-icon
+              i.icon.icon-profile-communication
+            span Communiaction
+          a(href="#").profile__category.--blue-mute
+            .profile__category-icon
+              i.icon.icon-profile-support
+            span Support Center
+      
+      .profile-tabs
+        .profile-tabs__sidebar.wow(js-tabs data-animation-class="wowFadeLeft" data-animation-delay=".5s")
+          ul.profile-tabs__links
+            li(data-target="tab1").is-active Contact information 
+            li(data-target="tab2") Cover photo
+            li(data-target="tab3") Payment details
+            li(data-target="tab4") Notification settings 
+            li(data-target="tab5") Other
+            
+        .profile-tabs__content.wow
+          // tab
+          .profile-tabs__tab(data-tab="tab1").is-active
+            .ui-group
+              input(type="email" name="email" placeholder="Email" value="mail@mail.com")
+            .ui-group
+              input(type="tel" name="phones" placeholder="Phones" value="+1 123 124 1234, +1 123 122 1234, +1 123 133 1234" js-selectize)
+            .ui-group
+              input(type="password" name="password" placeholder="Password" value="supersecret")
+          // tab
+          .profile-tabs__tab(data-tab="tab2")
+            .ui-group
+              input(type="email" name="email" placeholder="Email")  
+            .ui-group
+              input(type="password" name="password" placeholder="Password" value="supersecret")
+          // tab
+          .profile-tabs__tab(data-tab="tab3")
+            .ui-group
+              input(type="email" name="email" placeholder="Email")  
+            .ui-group
+              input(type="password" name="password" placeholder="Password" value="supersecret")
+          // tab
+          .profile-tabs__tab(data-tab="tab4")
+            .ui-group
+              input(type="email" name="email" placeholder="Email") 
+            .ui-group
+              input(type="password" name="password" placeholder="Password" value="supersecret")
+          // tab
+          .profile-tabs__tab(data-tab="tab5")
+            .ui-group
+              input(type="email" name="email" placeholder="Email")  
+            .ui-group
+              input(type="password" name="password" placeholder="Password" value="supersecret") 

@@ -1,0 +1,156 @@
+---
+title: Create Service
+---
+extends shared/_layout
+
+block header
+  include components/headers/_header-profile
+  
+block content
+  
+  // PROFILE
+  .profile
+    .profile__hero.profile__hero--short
+      .profile__bg
+        .profile__bg-wrapper
+          include ../inline-svg/hero-bg-profile.svg
+      .container
+        .profile__info
+          .avatar.avatar--big.wow(data-animation-class="wowFadeUp")
+            img(src='img/profileImage.jpg' srcset='img/profileImage@2x.jpg 2x')
+          .profile__name.wow(data-animation-delay=".4s") Lois Stokes
+  
+          
+    .container
+      .bg-overlay
+      // settings
+      .profile-settings.wow
+        .profile__categories-mobile
+          a(href="#").profile__category.--blue.is-active
+            .profile__category-icon
+              i.icon.icon-profile-services
+            span Offered Services
+        .profile__categories-toggle(js-mobile-account-nav)
+          +icon('ico-select-down')
+
+        .profile__categories
+          a(href="purchased-services.html").profile__category.--violet
+            .profile__category-icon
+              i.icon.icon-profile-gears
+            span Purchased Services
+          a(href="#").profile__category.--blue.is-active
+            .profile__category-icon
+              i.icon.icon-profile-services
+            span Offered Services
+          a(href="#").profile__category.--aqua
+            .profile__category-icon
+              i.icon.icon-profile-history
+            span Historic
+          a(href="#").profile__category.--blue-mute
+            .profile__category-icon
+              i.icon.icon-profile-support
+            span Support Center
+    
+    .container.container--wide
+      // SERVICES
+      .services.services--wide
+        .services-create
+          .services-create__title.wow Nice! Let's create your first service!
+          
+          .services-create__wrapper
+            // step
+            .services-create__step(js-createServices data-step="1").is-active
+              form(action="#" js-validateCreate-1 data-next-step="2").services-create__form
+                .ui-group.wow(data-animation-delay=".6s" style="z-index: 2")
+                  label What type of service are you offering?            
+                  input(type="text" name="genres" placeholder="Music Genres" js-selectize-genres)
+                
+                .services-create__cta.wow(data-animation-delay=".7s")
+                  button(type="submit" js-next-service).btn.btn-primary.btn-primary--red
+                    span Next
+            // step
+            .services-create__step(js-createServices data-step="2")
+              form(action="#" js-validateCreate-2 data-next-step="3").services-create__form.services-create__form--wide
+                .ui-group
+                  label Nice… describe your service in more detail! (give as much information as possible!)        
+                  textarea(type="text" name="description" placeholder="" autoexpand rows="7" data-min-rows="7" )
+                
+                .services-create__cta
+                  button(type="submit").btn.btn-primary.btn-primary--red
+                    span Next
+            // step
+            .services-create__step(js-createServices data-step="3")
+              form(action="#" js-validateCreate-3 data-next-step="4").services-create__form
+                .ui-group
+                  label What is the cost of this service?         
+                  input(type="text" name="cost" placeholder="Cost" js-mask-price)
+                
+                .services-create__price-hint
+                  span Price will be given after a consultation
+                  +icon('ico-check-outline')
+                  
+                .services-create__cta
+                  button(type="submit").btn.btn-primary.btn-primary--red
+                    span Next
+            //step
+            .services-create__step(js-createServices data-step="4")
+              form(action="#" js-validateCreate-4 data-next-step="5").services-create__form
+                .ui-group
+                  label Name your service
+                  input(type="text" name="name" placeholder="Service name")
+                
+                // shoud it be here?
+                .services-create__price-hint
+                  span Price will be given after a consultation
+                  +icon('ico-check-outline')
+                      
+                .services-create__cta
+                  button(type="submit").btn.btn-primary.btn-primary--red
+                    span Next
+            //step
+            .services-create__step(js-createServices data-step="5")
+              form(action="#" js-validateCreate-5).services-create__form.services-create__form--full
+                .photo-uploader.photo-uploader--top-label(js-photo-upload)
+                  .photo-uploader__name Add some pictures to your service!
+                  
+                  input(type="file" name="avatar" id="avatar")
+                  label(for="avatar")
+                    .photo-uploader__placeholder
+                      img(src='' alt="")
+                      +icon('ico-camera')
+                .services-create__images
+                  .services-create__section-title Featured picture
+                  .services-create__images-wrap
+                    .services-create__images-col
+                      .photo-uploader.photo-uploader--boxed(js-photo-upload)
+                        input(type="file" name="service-image" id="service-image_1")
+                        label(for="service-image_1")
+                          .photo-uploader__placeholder
+                            img(src='' alt="")
+                            +icon('ico-uploader-add')
+                    .services-create__images-col
+                      .photo-uploader.photo-uploader--boxed(js-photo-upload)
+                        input(type="file" name="service-image" id="service-image_2")
+                        label(for="service-image_2")
+                          .photo-uploader__placeholder
+                            img(src='' alt="")
+                            +icon('ico-uploader-add')
+                    .services-create__images-col
+                      .photo-uploader.photo-uploader--boxed(js-photo-upload)
+                        input(type="file" name="service-image" id="service-image_3")
+                        label(for="service-image_3")
+                          .photo-uploader__placeholder
+                            img(src='' alt="")
+                            +icon('ico-uploader-add')
+                    .services-create__images-col
+                      .photo-uploader.photo-uploader--boxed(js-photo-upload)
+                        input(type="file" name="service-image" id="service-image_4")
+                        label(for="service-image_4")
+                          .photo-uploader__placeholder
+                            img(src='' alt="")
+                            +icon('ico-uploader-add')  
+                                    
+                .services-create__cta
+                  button(type="submit").btn.btn-primary.btn-primary--red
+                    span Publish Service
+                    

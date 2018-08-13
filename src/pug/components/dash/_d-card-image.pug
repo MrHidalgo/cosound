@@ -1,0 +1,100 @@
+// card (post)
+.d-card.wow
+  .d-card__head
+    .d-card__user
+      .avatar.avatar--mid
+        img(src="img/suggestionCard-avatar-1.jpg" srcset='img/suggestionCard-avatar-1@2x.jpg 2x')
+      .d-card__user-info
+        .d-card__user-name Bryan Garza
+        .d-card__user-position Job Title/Artist Name.
+    .d-card__options
+      .d-card__options-wrap
+        .d-card__options-toggle(js-card-options)
+          +icon('ico-more')
+        ul.d-card__options-list
+          li
+            a(href="#") All
+          li
+            a(href="#") Copy link
+          li
+            a(href="#") Share
+          li
+            a(href="#") Unollow User
+          li
+            a(href="#") Report Post
+            
+  .d-card__content
+    //- p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+    .m-image
+      img(src='img/post-image-2.jpg' srcset='img/post-image-2@2x.jpg 2x')
+
+  
+  .d-card__actions
+    .d-card__like.is-active
+      +icon('ico-like')
+      span 1k
+      
+    .d-card__share
+      +icon('ico-share')
+      span 56
+      
+    .d-card__repost
+      +icon('ico-repost')
+  
+  .d-card__comments
+    .d-card__comments-head
+      .d-card__comments-toggle(js-toggle-comments)
+        .d-card__comments-text
+          +icon('ico-comment')
+          span 9 comments
+        .d-card__comments-arrow
+          +icon('ico-select-down')
+    
+    // comment
+    .d-card__comments-drop
+      .d-card__comment
+        .avatar.avatar--shad
+          img(src="img/suggestionCard-avatar-3.jpg" srcset='img/suggestionCard-avatar-3@2x.jpg 2x')
+        .d-card__comment-content
+          .d-card__comment-author Devin Richardson
+          .d-card__comment-text
+            p Very Nice!
+        .d-card__comment-date
+          span 1 day ago
+      // comment
+      .d-card__comment
+        .avatar.avatar--shad
+          img(src="img/suggestionCard-avatar-1.jpg" srcset='img/suggestionCard-avatar-1@2x.jpg 2x')
+        .d-card__comment-content
+          .d-card__comment-author Marcus Cobb
+          .d-card__comment-text
+            p The 11-minute opener begins well enough, with bass thumps building a trance beneath paranormal EQs as White-Gluz’s vocals 
+        .d-card__comment-date
+          span 1 day ago
+      // comment
+      .d-card__comment
+        .avatar.avatar--shad
+          img(src="img/suggestionCard-avatar-2.jpg" srcset='img/suggestionCard-avatar-2@2x.jpg 2x')
+        .d-card__comment-content
+          .d-card__comment-author Clifford Rowe
+          .d-card__comment-text
+            p nice work, congrats
+        .d-card__comment-date
+          span 1 day ago
+      // comment
+      .d-card__comment
+        .avatar.avatar--shad
+          img(src="img/suggestionCard-avatar-4.jpg" srcset='img/suggestionCard-avatar-4@2x.jpg 2x')
+        .d-card__comment-content
+          .d-card__comment-author Marcus Cobb
+          .d-card__comment-text
+            p The only song that makes effective use of White-Gluz’s and Kember’s complementary skills is “Triangle Probably.”
+        .d-card__comment-date
+          span 1 day ago  
+    
+    // add comment
+    .d-card__reply
+      .avatar.avatar--shad
+        img(src="img/suggestionCard-avatar-2.jpg" srcset='img/suggestionCard-avatar-2@2x.jpg 2x')
+      textarea(name="d-reply" placeholder="Write a comment")
+      

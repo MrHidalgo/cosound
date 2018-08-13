@@ -1,0 +1,51 @@
+---
+title: Homepage
+---
+extends shared/_layout
+
+block footer
+  include components/_footer-full
+  
+block content
+  
+  // HERO
+  .hero
+    .hero__bg
+      .hero__bg-wrapper
+        include ../inline-svg/hero-bg-home.svg
+    .container
+      .hero__wrapper
+        .hero__logo.wow(data-animation-class="wowFadeDown" data-animation-delay=".3s")
+          +icon('ico-logo')
+        .hero__text.wow(data-animation-delay=".5s")
+          p The music industry network and marketplace
+          
+        .hero__cta.wow(data-animation-delay=".75s")
+          a(href='signup.html').btn.btn-primary.btn-primary--red
+            span Sign up 
+          a(href='login.html').btn.btn-primary.btn-primary--white
+            span Login
+  
+  // INFO
+  .info
+    .container
+      .info__wrapper
+        .info__content.wow(data-animation-class="wowFadeLeft")
+          h2.heading Join for free
+          .info__text
+            p Cosound is the world's first music industry only platform. Built for music industry professionals, musicians and business. Join today for free, and begin sharing, collaborating and developing your career in the music industry.  
+        
+        .info__image.wow(data-animation-class="wowFadeRight" data-animation-delay=".5s")
+          .info__image-box(js-popupVideo href="https://www.youtube.com/watch?v=6dVFy4d61gU")
+            .info__image-placeholder
+              img(src='img/homepage-video-placeholder.jpg' srcset='img/homepage-video-placeholder@2x.jpg 2x')
+            .info__image-play
+              +icon('ico-play')
+  
+  // PREFOOTER    
+  .prefooter
+    .container.wow
+      picture
+        source(media="(min-width: 568px)" srcset="img/prefooter.png 1x, img/prefooter@2x.png 2x")
+        source(media="(max-width: 568px)" srcset="img/prefooterMobile.png 1x, img/prefooterMobile@2x.png 2x")
+        img(src="img/prefooter.png")

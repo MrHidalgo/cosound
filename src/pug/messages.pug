@@ -1,0 +1,122 @@
+---
+title: MESSAGES
+---
+extends shared/_layout
+
+block header
+  include components/headers/_header-dash
+  
+block content
+  
+  // MESSAGES
+  .ms.wow(data-animation-delay="0s")
+    .container.container--wide
+      .ms__wrapper
+        // sidebar
+        .ms__sidebar
+          // topbar
+          .ms__topbar
+            .avatar.avatar--big
+              img(src='img/avatar-main-1.jpg' srcset='img/avatar-main-1@2x.jpg 2x')
+          
+          // search
+          .ms__search
+            input(type="text" name="search" placeholder="Search" js-filter-dialogs data-list=".ms__dialogs")
+            +icon('ico-search')
+          
+          // dialogs
+          ul.ms__dialogs(js-scrollbar)
+            -
+              var dialogs = [
+                ['suggestionCard-avatar-2', 'Jerome Barber', 'just now', 'Hello, are you still interested in my offer?'],
+                ['suggestionCard-avatar-1', 'Sarah Ingram', '1m ago', 'Thanks', 'is-active'],
+                ['suggestionCard-avatar-4', 'Hubert Blaine Wolfeschlegelsteinhausenbergerdorff', '5m ago', 'Ok, sounds great'],
+                ['suggestionCard-avatar-2', 'Hallie Elliott', '1h ago', 'See you there'],
+                ['suggestionCard-avatar-3', 'Edward Luna', '1h ago', 'How about long text which probably wont fit in this box?'],
+                ['suggestionCard-avatar-2', 'Florence Lynch', '1d ago', 'Lorem ipsum dolor sit amet'],
+                ['suggestionCard-avatar-1', 'Austin Peterson', 'a day ago', 'Lorem ipsum dolor sit amet'],
+                ['suggestionCard-avatar-2', 'Alan Perkins', '1w ago', 'Lorem ipsum dolor sit amet'],
+                ['suggestionCard-avatar-4', 'Ricky Bryant', '1w ago', 'Lorem ipsum dolor sit amet'],
+                ['suggestionCard-avatar-2', 'Roy Foster', '1w ago', 'Lorem ipsum dolor sit amet'],
+                ['suggestionCard-avatar-1', 'Jerome Barber', '1w ago', 'Lorem ipsum dolor sit amet'],
+                ['suggestionCard-avatar-1', 'Jerome Barber', '1w ago', 'Lorem ipsum dolor sit amet'],
+                ['suggestionCard-avatar-3', 'Hallie Elliott', '1 month ago', 'Lorem ipsum dolor sit amet'],
+                ['suggestionCard-avatar-4', 'Jerome Barber', '1 month ago', 'Lorem ipsum dolor sit amet'],
+              ]
+            
+            each dialog, index in dialogs
+              li.ms-dialog(class=''+dialog[4]+'')
+                .avatar.avatar--shad
+                  img(src='img/' + dialog[0] + '.jpg' srcset='img/' + dialog[0] + '@2x.jpg 2x')
+                .ms-dialog__content
+                  .ms-dialog__content-top
+                    .ms-dialog__name= dialog[1]
+                    .ms-dialog__timestamp= dialog[2]
+                  .ms-dialog__text= dialog[3]
+              
+        
+        // content
+        .ms__content
+          // messages list
+          .ms__list(js-scrollbar)
+            // message
+            .ms-message
+              .avatar.avatar--shad
+                img(src='img/suggestionCard-avatar-4.jpg' srcset='img/suggestionCard-avatar-4@2x.jpg 2x')
+              .ms-message__content
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                .ms-message__timestamp 9:41pm
+                  
+            // message self
+            .ms-message.ms-message--self
+              .avatar.avatar--shad
+                img(src='img/suggestionCard-avatar-4.jpg' srcset='img/suggestionCard-avatar-4@2x.jpg 2x')
+              .ms-message__content
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                .ms-message__timestamp 9:41pm Delivered
+            
+            // message
+            .ms-message
+              .avatar.avatar--shad
+                img(src='img/suggestionCard-avatar-4.jpg' srcset='img/suggestionCard-avatar-4@2x.jpg 2x')
+              // long mod
+              .ms-message__content.ms-message__content--long
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do 
+                .ms-message__timestamp 9:41pm Read
+            
+            // message with audio
+            .ms-message
+              .avatar.avatar--shad
+                img(src='img/suggestionCard-avatar-4.jpg' srcset='img/suggestionCard-avatar-4@2x.jpg 2x')
+              .ms-message__content
+                .m-music__play(js-play-audio)
+                  +icon('ico-play')
+                  +icon('ico-stop')
+                .m-audio
+                  div(js-audio-waveform data-src='media/audio-drum.mp3' data-mini="true" data-timestamp="false")
+                .m-audio.m-audio--ie
+                  audio
+                    source(src="media/audio-drum.mp3" type="audio/mpeg")
+                .ms-message__timestamp 9:41pm
+                
+            // message self
+            .ms-message.ms-message--self
+              .avatar.avatar--shad
+                img(src='img/suggestionCard-avatar-4.jpg' srcset='img/suggestionCard-avatar-4@2x.jpg 2x')
+              .ms-message__content
+                p Lorem ipsum dolor sit amet, consectetur
+                .ms-message__timestamp 9:41pm Delivered
+                
+                
+          // writing area
+          .ms__create.ms-create
+            .ms-create__attach
+              i.icon.icon-paperclip
+            
+            .ms-create__textarea
+              textarea(type="text" placeholder="Message" js-emojiArea)
+            
+            .ms-create__emodji
+              i.icon.icon-emodji
+            
+      

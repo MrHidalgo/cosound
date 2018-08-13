@@ -1,0 +1,33 @@
+---
+title: Profile
+---
+extends shared/_layout
+
+block header
+  include components/headers/_header-profile
+  
+block content
+  
+  // PROFILE
+  .profile
+    .profile__hero
+      .profile__bg
+        .profile__bg-wrapper
+          include ../inline-svg/hero-bg-profile.svg
+      .container
+        .profile__info
+          .profile__image.wow(data-animation-class="wowFadeDown")
+            .avatar.avatar--big
+              img(src='img/avatar-4.jpg' srcset='img/avatar-4@2x.jpg 2x')
+          a(href="plans.html").profile__status.wow(data-animation-delay=".4s")
+            span Premium
+          .profile__name.wow(data-animation-delay=".5s") Ted Kurie
+          .profile__position.wow(data-animation-delay=".6s") Producer
+          .profile__connections.wow(data-animation-delay=".8s")
+            .profile__connections-num 300+ 
+            .profile__connections-name Connections
+          .profile__bio.wow
+            p The Music, Entertainment and Tech industries are close to my heart and almost all of my working life has been spent here. Have had great successes and maintain extensive relationships with the most influential people, businesses and entities in these industries. Based between Los Angeles and Stockholm, Sweden.
+            
+    
+    include components/_profile-grid

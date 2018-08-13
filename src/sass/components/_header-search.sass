@@ -1,0 +1,204 @@
+/* Header search
+.header-search
+  position: relative
+  z-index: 1
+  margin: 0
+  background: #FFFFFF
+  padding-left: 50px
+  padding-right: 50px
+  display: flex
+  // justify-content: center
+  // overflow-x: auto
+  min-width: 100vw
+  -webkit-overflow-scrolling: touch
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09)
+  &__wrapper
+    padding: 7px 0
+    width: 100%
+    max-width: 1350px
+    min-width: 1px
+    display: flex
+    margin-left: auto
+    margin-right: auto
+  &__keywords
+    flex: 0 1 580px
+    max-width: 580px
+    min-width: 1px
+    padding-right: 50px
+    display: flex
+    align-items: center
+
+  &__location
+    flex: 0 1 530px
+    min-width: 1px
+    max-width: 530px
+    display: flex
+    align-items: center
+    .header-search__group
+      padding-right: 35px
+      label:not(.ui-input__validation)
+        padding-right: 20px
+      &:last-child
+        padding-right: 0
+      &:first-child
+        flex: 0 0 240px
+
+  &__cta
+    flex: 0 0 230px
+    max-width: 230px
+    min-width: 1px
+    padding-left: 30px
+    margin-left: auto
+    .btn
+      width: 100%
+
+
+  &__group
+    display: flex
+    width: 100%
+    min-width: 1px
+    align-items: center
+    label:not(.ui-input__validation)
+      flex: 0 0 auto
+      min-width: 1px
+      display: block
+      font-size: 14px
+      line-height: 1.7
+      padding-right: 25px
+    input, textarea
+      flex: 1 1 auto
+      display: block
+      width: 100%
+      min-width: 1px
+      -webkit-appearance: none
+      background: #F5F5F5
+      color: $fontColor
+      border: none
+      border-radius: 30px
+      padding: 12px 20px
+      font-size: 14px
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,0.07)
+      transition: .25s $ease
+      &::placeholder
+        color: $fontColor50
+      &:hover
+        box-shadow: 0 4px 8px rgba(0,0,0,0.04)
+      &:focus
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2)
+
+  &__mobile-toggle
+    display: none
+    align-items: center
+    padding: 8px 0
+    width: 100%
+    cursor: pointer
+    span
+      font-size: 14px
+    &.is-active
+      .header-search__mobile-btn
+        .ico
+          transform: rotate(180deg)
+  &__mobile-btn
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 42px
+    height: 36px
+    font-size: 7px
+    background-color: transparent
+    color: $fontColor50
+    text-align: center
+    margin-left: auto
+    border: 1px solid $borderColor
+    border-radius: 30px
+    margin-right: 0px
+    transition: .25s $ease
+    .ico
+      transition: .25s $ease
+
+
++r(1200)
+  .header-search
+    &__keywords
+      padding-right: 30px
+    &__group
+      label:not(.ui-input__validation)
+        display: none
+    &__location
+      flex: 0 0 375px
+      // width: 100%
+      .header-search__group
+        &:first-child
+          flex-basis: 175px
+          max-width: 175px
+        &:last-child
+          flex: 0 0 200px
+          max-width: 200px
+
++r($desktop)
+  .header-search
+    &__keywords
+      padding-right: 20px
+    &__location
+      flex: 0 0 300px
+      .header-search__group
+        &:first-child
+          flex-basis: 155px
+          padding-right: 20px
+
+        &:last-child
+          flex: 0 1 auto
+
+    &__cta
+      flex: 0 0 160px
+      padding-left: 20px
+
++r($tablet)
+  .header-search
+    padding-left: 25px
+    padding-right: 25px
+    display: block
+    &__mobile-toggle
+      display: flex
+
+    &__group
+      flex-wrap: wrap
+      label:not(.ui-input__validation)
+        display: block
+        flex: 1 1 auto
+        margin-bottom: 5px
+
+    &__wrapper
+      display: none
+      flex-direction: column
+      // max-width: 500px
+      margin-left: auto
+      margin-right: auto
+      &.is-active
+        display: block
+    &__keywords
+      max-width: 100%
+      flex: 0 0 auto
+      margin-bottom: 13px
+      padding-right: 0
+      /* because is visible from mobbile toggelr
+      label:not(.ui-input__validation)
+        display: none
+    &__location
+      flex: 0 0 auto
+      max-width: 100%
+      margin-bottom: 13px
+      .header-search__group
+        &:last-child
+          flex: 1 1 auto
+          max-width: 100%
+    &__cta
+      // display: none
+      flex: 0 0 auto
+      margin: 47px auto 30px auto
+      padding-left: 0
+
++r($mobile-s)
+  .header-search
+    padding-left: 15px
+    padding-right: 15px

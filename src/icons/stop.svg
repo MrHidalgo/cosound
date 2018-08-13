@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="11px" height="17px" viewBox="0 0 11 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>stop@2x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Cosound" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="11,12,16_b" transform="translate(-741.000000, -4521.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="stop" transform="translate(741.000000, 4521.000000)">
+                <path d="M1.69833333,16.881 C0.820625,16.881 0.109583333,16.2061395 0.109583333,15.3735349 L0.109583333,1.62646512 C0.109583333,0.793860465 0.820833333,0.119 1.69833333,0.119 C2.57583333,0.119 3.28708333,0.793860465 3.28708333,1.62646512 L3.28708333,15.3735349 C3.28708333,16.2061395 2.57583333,16.881 1.69833333,16.881 Z" id="Shape"></path>
+                <path d="M9.30145833,16.881 C8.42395833,16.881 7.71270833,16.2061395 7.71270833,15.3735349 L7.71270833,1.62646512 C7.71270833,0.793860465 8.42395833,0.119 9.30145833,0.119 C10.1789583,0.119 10.8904167,0.793860465 10.8904167,1.62646512 L10.8904167,15.3735349 C10.8904167,16.2061395 10.1789583,16.881 9.30145833,16.881 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

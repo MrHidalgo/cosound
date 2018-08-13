@@ -1,0 +1,164 @@
+---
+title: MARKETPLACE
+---
+extends shared/_layout
+
+block header
+  include components/headers/_header-market
+  
+block content
+  
+  // MARKETPLACE
+  .market
+    .market__container
+      // top
+      .market__top
+        .market__top-left
+          .d-card.wow(data-animation-class="wowFadeLeft")
+            .sidebar-user
+              .sidebar-user__avatar
+                .avatar.avatar--big
+                  img(src='img/avatar-main-1.jpg' srcset='img/avatar-main-1@2x.jpg 2x')
+              .sidebar-user__name Lois Stokes
+              .sidebar-user__position Job Title/Artist Name.
+            .d-card__btn-bottom
+              a(href="purchased-services.html").btn.btn-primary.btn-primary--red
+                span My Market
+                       
+        .market__top-right.wow(data-animation-class="wowFadeRight")
+          //slider
+          .market__slider.swiper-container(js-market-slider)
+            .swiper-wrapper
+              // slide
+              .market-slide
+                .market-slide__bg(style="background-image: url(img/marketplace-slide-bg-1.jpg)")
+
+                .market-slide__content
+                  .market-slide__desc Featured Recording Studio 
+                  .market-slide__title The Jukebox Recording Studios London
+                  .market-slide__desc
+                    p The Jukebox comes with a large live room, perfect for bands. The team at Jukebox have over 40 years experience in recording rock and heavy metal musicians. 
+                  .market-slide__cta
+                    a(href="product.html").btn.btn-primary.btn-primary--red
+                      span See more ...
+              // slide
+              .market-slide
+                .market-slide__bg(style="background-image: url(img/marketplace-slide-bg-1.jpg)")
+
+                .market-slide__content
+                  .market-slide__desc Featured Photographer 
+                  .market-slide__title Lel Burnett
+                  .market-slide__desc
+                    p If you’re looking for high quality, stylistic imagery for your band then check out Lel’s award winning portfolio here. 
+                  .market-slide__cta
+                    a(href="product.html").btn.btn-primary.btn-primary--red
+                      span See more ...
+                      
+          .market__slider-next
+            +icon("ico-swiper-right")
+          .market__slider-prev
+            +icon('ico-swiper-left')
+    
+      .market-grid
+        .market-grid__title.wow Your Personal Reccomendations
+        .market-grid__list
+          
+          -
+            var cards = [
+              ['marketGrid-1', '8 Hour Session with Pop Producer', 'Mike Vallis', '5', '$349', 'suggestionCard-avatar-4'],
+              ['marketGrid-2', 'Minimal Graphic Design Album Cover', 'Pete Rogers', '5', '$299', 'suggestionCard-avatar-2'],
+              ['marketGrid-3', '4 HR Vocal Coaching in San Diego', 'Lisa Song', '5', '$40 p/h', 'suggestionCard-avatar-1'],
+              ['marketGrid-4', 'Mixing and Mastering from Pop Producer', 'Ted Kurie', '5', '$999', 'suggestionCard-avatar-3'],
+              ['marketGrid-5', 'Wacky Album illustration ', 'Malcolm Jazz', '4', '$299', 'suggestionCard-avatar-4'],
+              ['marketGrid-6', '300 + Student Radio Plays', 'Chris Tock', '3', '$99', 'suggestionCard-avatar-2'],
+              ['marketGrid-7', 'National Radio Campaign', 'Helen Hart', '5', '$9000', 'suggestionCard-avatar-1'],
+              ['marketGrid-8', 'Get you on 200 Spotify Playlists', 'Toby Dando ', '4', '$500', 'suggestionCard-avatar-3'],
+              ['marketGrid-9', '50 urban playlists', 'J Kizco', '3', '$380', 'suggestionCard-avatar-4'],
+              ['marketGrid-10', 'Promoted to 10 Hip-Hop Blogs', 'Sophia Le’mar', '5', '$200', 'suggestionCard-avatar-2'],
+              ['marketGrid-11', 'Featured Podcast Episode promoting your music', 'Benjamin Rees', '3', '$300', 'suggestionCard-avatar-1'],
+              ['marketGrid-12', '5000 Flyers Printed', 'Hatti Marcel', '2', '$180', 'suggestionCard-avatar-3'],
+            ]
+          
+          each card, index in cards
+            .market-grid__col.wow
+              // market-card
+              .m-card
+                a(href="product.html").m-card__cover
+                  img(src='img/' + card[0] + '.jpg' srcset='img/' + card[0] + '@2x.jpg 2x')
+                .m-card__content
+                  .m-card__info
+                    .m-card__info-left
+                      .avatar.avatar--small
+                        img(src='img/' + card[5] + '.jpg' srcset='img/' + card[5] + '@2x.jpg 2x')
+                    .m-card__info-right
+                      a(href="product.html").m-card__name= card[1]
+                      .m-card__album= card[2]
+                      .m-card__rating
+                        .rating-stars(data-rating=''+card[3]+'')
+                          i.icon
+                          i.icon
+                          i.icon
+                          i.icon
+                          i.icon
+                        span.m-card__rating-count 112
+                  .m-card__actions
+                    .m-card__price= card[4]
+                    .m-card__like
+                      +icon('ico-heart-outline')
+        
+        .market-grid__more.wow(data-animation-delay=".5s")
+          a(href='#' js-fake-moreSuggestions).btn.btn-more
+            span See more…
+                          
+      // narrow modificator            
+      .market-grid.market-grid--narrow
+        .market-grid__title.wow Your Personal Reccomendations
+        
+        .market-grid__list
+          
+          -
+            var cardsMini = [
+              ['marketGird-s-1', '8 Hour Session with Pop Producer', 'Mike Vallis', '5', '$349', 'suggestionCard-avatar-4'],
+              ['marketGird-s-2', 'Minimal Graphic Design Album Cover', 'Pete Rogers', '5', '$299', 'suggestionCard-avatar-2'],
+              ['marketGird-s-3', '4 HR Vocal Coaching in San Diego', 'Lisa Song', '5', '$40 p/h', 'suggestionCard-avatar-1'],
+              ['marketGird-s-4', 'Mixing and Mastering from Pop Producer', 'Ted Kurie', '5', '$999', 'suggestionCard-avatar-3'],
+              ['marketGird-s-1', 'Wacky Album illustration ', 'Malcolm Jazz', '4', '$299', 'suggestionCard-avatar-4'],
+              ['marketGird-s-2', '300 + Student Radio Plays', 'Chris Tock', '3', '$99', 'suggestionCard-avatar-2'],
+              ['marketGird-s-3', 'National Radio Campaign', 'Helen Hart', '5', '$9000', 'suggestionCard-avatar-1'],
+              ['marketGird-s-4', 'Get you on 200 Spotify Playlists', 'Toby Dando ', '4', '$500', 'suggestionCard-avatar-3'],
+              ['marketGird-s-1', '50 urban playlists', 'J Kizco', '3', '$380', 'suggestionCard-avatar-4'],
+              ['marketGird-s-2', 'Promoted to 10 Hip-Hop Blogs', 'Sophia Le’mar', '5', '$200', 'suggestionCard-avatar-2'],
+              ['marketGird-s-3', 'Featured Podcast Episode promoting your music', 'Benjamin Rees', '3', '$300', 'suggestionCard-avatar-1'],
+              ['marketGird-s-4', '5000 Flyers Printed', 'Hatti Marcel', '2', '$180', 'suggestionCard-avatar-3'],
+            ]
+          
+          each card, index in cardsMini
+            .market-grid__col.wow
+              // market-card
+              .m-card
+                a(href="product.html").m-card__cover
+                  img(src='img/' + card[0] + '.jpg' srcset='img/' + card[0] + '@2x.jpg 2x')
+                .m-card__content
+                  .m-card__info
+                    .m-card__info-left
+                      .avatar.avatar--small
+                        img(src='img/' + card[5] + '.jpg' srcset='img/' + card[5] + '@2x.jpg 2x')
+                    .m-card__info-right
+                      a(href="product.html").m-card__name= card[1]
+                      .m-card__album= card[2]
+                      .m-card__rating
+                        .rating-stars(data-rating=''+card[3]+'')
+                          i.icon
+                          i.icon
+                          i.icon
+                          i.icon
+                          i.icon
+                        span.m-card__rating-count 112
+                  .m-card__actions
+                    .m-card__price= card[4]
+                    .m-card__like
+                      +icon('ico-heart-outline')
+                
+        .market-grid__more.wow(data-animation-delay=".5s")
+          a(href='#' js-fake-moreSuggestions).btn.btn-more
+            span See more…                  

@@ -1,0 +1,43 @@
+---
+title: Signup 2
+---
+extends shared/_layout
+
+block header
+  // empty header
+  
+block content
+  
+  // SIGNUP
+  .signup
+    .page-bg
+      .page-bg__wrapper
+        include ../inline-svg/hero-bg-login.svg
+    .container
+      .signup__wrapper
+        .signup__logo.wow(data-animation-class="wowFadeDown")
+          +icon('ico-logo')
+        h2.signup__heading.wow(data-animation-delay=".4s") Are you…
+          
+        //form
+        form.signup-form.signup-form--full(action="#" js-validate-signup-2 data-animation-delay=".6s").wow
+          .signup-type
+            .signup-type__radio
+              input(type="radio" name="singup-type" id="signup-type_1" value="musician")
+              label(for="signup-type_1")
+                i.icon.icon-signup-type-musician
+                span A Musician
+            //- .signup-type__radio
+            //-   input(type="radio" name="singup-type" id="signup-type_2" value="pro")
+            //-   label(for="signup-type_2")
+            //-     i.icon.icon-signup-type-band
+            //-     span Band
+            .signup-type__radio
+              input(type="radio" name="singup-type" id="signup-type_3" value="pro")
+              label(for="signup-type_3")
+                i.icon.icon-signup-type-pro
+                span Industry <br> Professional
+                
+        // steps
+        .signup__steps(data-active-step="2" data-animation-class="wowFadeDown").wow
+          include components/_signup-steps

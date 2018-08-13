@@ -1,0 +1,99 @@
+.photo-uploader
+  position: relative
+  text-align: center
+  input
+    display: none
+    width: 0.1px
+    height: 0.1px
+    opacity: 0
+    position: absolute
+    top: 0
+    left: 0
+  label
+    cursor: pointer
+    &:hover
+      .photo-uploader
+        &__placeholder
+          box-shadow: 0px 4px 8px rgba(black, .14)
+          color: $fontColor
+        &__name
+
+  &__placeholder
+    position: relative
+    z-index: 1
+    size: 107px
+    margin-left: auto
+    margin-right: auto
+    display: flex
+    align-items: center
+    justify-content: center
+    background: rgba(38,38,38,0.32)
+    background: white
+    border-radius: 50%
+    box-shadow: 0px 2px 4px rgba(black, .07)
+    overflow: hidden
+    // icon style
+    color: rgba($fontColor, .32)
+    font-size: 32px
+    transition: .25s $ease
+    .ico
+      opacity: .52
+    img
+      position: absolute
+      opacity: 0
+      z-index: 2
+      top: 50%
+      left: 50%
+      max-width: 100%
+      transform: translate(-50%,-50%)
+      transition: .25s $ease
+  &__name
+    font-size: 14px
+    margin-top: 15px
+  &.has-file
+    .photo-uploader
+      &__placeholder
+        img
+          opacity: 1
+        .ico
+          opacity: 0
+  &--top-label
+    .photo-uploader
+      &__name
+        font-size: 16px
+        margin-top: 0
+        margin-bottom: 60px
+  &--boxed
+    .photo-uploader
+      &__placeholder
+        size: 260px
+        border-radius: 10px
+        color: $colorBlue
+        font-size: 58px
+        .ico
+          opacity: 1
+
++r($tablet)
+  .photo-uploader
+    &--boxed
+      .photo-uploader
+        &__placeholder
+          size: 220px
+          font-size: 50px
+
++r($mobile)
+  .photo-uploader
+    color: white
+    &--boxed
+      .photo-uploader
+        &__placeholder
+          size: 150px
+          font-size: 40px
+
++r($mobile-s)
+  .photo-uploader
+    &--boxed
+      .photo-uploader
+        &__placeholder
+          size: 100% 260px
+          font-size: 56px

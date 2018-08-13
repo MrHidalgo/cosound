@@ -1,0 +1,436 @@
+.profile
+  position: relative
+  z-index: 2
+  &__bg
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    z-index: 2
+    display: flex
+    flex-direction: column
+    overflow: hidden
+    &-wrapper
+      flex: 1 1 auto
+      display: flex
+      flex-direction: column
+      min-height: 520px
+      position: relative
+    svg
+      position: absolute
+      bottom: 0
+      left: 50%
+      transform: translateX(-50%)
+      min-width: 100%
+      min-height: 100%
+      width: 1920px
+      height: auto
+      overflow: visible
+
+  &__hero
+    padding-top: 100px
+    .container
+      position: relative
+      z-index: 3
+    &--short
+      padding-top: 50px
+      .profile__bg-wrapper
+        min-height: 320px
+  &__image
+    margin-left: auto
+    margin-right: auto
+    box-shadow: 0px 9px 19px rgba(black, .3)
+    border-radius: 50%
+    font-size: 0
+
+  &__info
+    margin-top: 75px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+
+  &__status
+    margin-top: 20px
+    margin-bottom: 20px
+    display: inline-block
+    border-radius: 50px
+    font-size: 14px
+    font-weight: 500
+    background: white
+    color: $colorGreen
+    padding: 12px 14px
+    transition: background .25s $ease, color .25s $ease
+    &:hover
+      background: #319B9D
+      color: white
+
+  &__name
+    margin-top: 20px
+    font-size: 40px
+    font-weight: 500
+    color: white
+    text-align: center
+    +text-overflow
+
+  &__position
+    font-size: 14px
+    margin-top: 15px
+    color: $colorWhite50
+    text-align: center
+
+  &__connections
+    background: white
+    margin-top: 40px
+    padding: 8px 15px 14px
+    min-width: 172px
+    text-align: center
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.12)
+    border-radius: 3px
+    &-num
+      margin-top: 5px
+      font-size: 20px
+
+
+    &-name
+      font-size: 14px
+      color: $fontColor50
+
+  &__bio
+    margin: 50px 0
+    text-align: center
+    max-width: 840px
+    margin-left: auto
+    margin-right: auto
+    p
+      margin: 0
+      line-height: 1.9
+      font-size: 16px
+      & + p
+        margin-top: 1em
+
+/* WHY ?
+.is-ie
+  .profile
+    &__bg-wrapper
+      background-image: linear-gradient(135deg, #2CC4A0 0%, #0DC6AD 41%, #8E5ACD 100%)
+      svg
+        display: none
+
++r($desktop)
+  .profile
+    &__bg
+      &-wrapper
+        min-height: 480px
+    &__hero
+      padding-top: 60px
+
++r($tablet)
+  .profile
+    &__bg-wrapper
+      min-height: 455px
+    &__bio
+      p
+        font-size: 14px
+    &__name
+      font-size: 34px
+      margin-top: 10px
+    &__connections
+      margin-top: 30px
+    // &__hero--short
+    //   profile__bg-wrapper
+
+
++r($mobile)
+  .profile
+
+
+.profile-settings
+  position: relative
+  z-index: 6
+  margin-top: 80px
+  max-width: 740px
+  margin-left: auto
+  margin-right: auto
+
+
+.profile
+  &__categories
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-left: -10px
+    margin-right: -10px
+    min-width: 1px
+    min-height: 0
+    &::before
+      display: inline-block
+      content: ' '
+      position: absolute
+      top: 0
+      left: 10px
+      right: 10px
+      height: 1px
+      background: rgba(#979797, .13)
+    &-mobile
+      display: none
+    &-toggle
+      position: absolute
+      right: 0px
+      top: 50%
+      z-index: 3
+      display: none
+      align-items: center
+      justify-content: center
+      width: 42px
+      height: 36px
+      font-size: 7px
+      background-color: white
+      color: #8E8E8E
+      text-align: center
+      border: 1px solid $borderColor
+      border-radius: 30px
+      cursor: pointer
+      transform: translateY(-50%)
+      transition: .25s $ease
+      .ico
+        transition: transform .25s $ease
+      &:hover
+        color: $colorGreen
+      &.is-active
+        .ico
+          transform: rotate(180deg)
+  &__category
+    flex: 0 0 auto
+    white-space: nowrap
+    min-width: 1px
+    min-height: 0
+    position: relative
+    display: flex
+    align-items: center
+    color: $fontColor50
+    font-size: 14px
+    line-height: 2
+    padding: 30px 10px 10px
+    transition: .25s $ease
+    &-icon
+      display: flex
+      align-items: center
+      justify-content: center
+    .icon
+      margin-right: 10px
+    &::after
+      display: block
+      content: ' '
+      position: absolute
+      top: 0px
+      left: 10px
+      right: calc(100% - 10px)
+      height: 1px
+      transition: .25s $ease
+
+    &.is-active, &:hover
+      color: $fontColor
+      &::after
+        right: 10px
+    span
+      flex: 1 1 auto
+      display: inline-block
+      font-size: 14px
+
+    &.--violet
+      &::after
+        background: $colorViolet
+        box-shadow: 0 2px 4px 0 rgba($colorViolet,0.23)
+    &.--blue
+      &::after
+        background: $colorBlue
+        box-shadow: 0 2px 4px 0 rgba($colorBlue,0.23)
+    &.--aqua
+      &::after
+        background: $colorAqua
+        box-shadow: 0 2px 4px 0 rgba($colorAqua,0.23)
+    &.--blue-mute
+      &::after
+        background: $colorBlueMute
+        box-shadow: 0 2px 4px 0 rgba($colorBlueMute,0.23)
+
+
+.profile-tabs
+  margin-top: 100px
+  margin-bottom: 100px
+  display: flex
+  max-width: 850px
+  margin-left: auto
+  margin-right: auto
+  &__sidebar
+    flex: 0 0 230px
+    max-width: 230px
+    border-right: 1px solid #F1F1F1
+
+  &__links
+    margin: 0
+    padding: 0 20px 0 0
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    li
+      display: block
+      width: auto
+      color: $fontColor50
+      border-radius: 3px
+      padding: 15px 20px
+      font-size: 14px
+      margin-bottom: 15px
+      cursor: pointer
+      transition: .25s $ease
+      &:hover, &.is-active
+        color: $fontColor
+      &.is-active
+        background: #FFFFFF
+
+  &__content
+    flex: 1 1 auto
+    padding-left: 60px
+
+  &__tab
+    display: none
+    &.is-active
+      display: block
+
++r($desktop)
+  .profile-tabs
+    margin-top: 80px
+    &__sidebar
+      flex-basis: 210px
+      max-width: 210px
+
+    &__links
+      padding-right: 10px
+    &__content
+      padding-left: 30px
+
++r($tablet)
+  .profile
+    &-settings
+      margin-top: 60px
+    &__categories
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      z-index: 2
+      padding-left: 0
+      padding-right: 0
+      margin-left: -25px
+      margin-right: -25px
+      display: block
+      background: white
+      opacity: 0
+      pointer-events: none
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,0.09)
+      transition: .25s $ease
+      &::before
+        display: none
+      &.is-active
+        opacity: 1
+        pointer-events: all
+        transform: translate3d(0,0,0)
+      &-mobile
+        display: block
+      &-toggle
+        display: flex
+
+      .profile__category
+        padding-left: 20px
+        padding-right: 25px
+        margin-left: 0
+        &:hover
+          background: #F5F5F5
+
+
+    &__category
+      padding: 15px 0px
+      margin-left: -5px
+      &-icon
+        flex: 0 0 40px
+        max-width: 40px
+        min-width: 1px
+        text-align: center
+        font-size: 0
+        padding-right: 10px
+      .icon
+        margin-right: 0
+      &::after
+        display: none
+
+  .profile-tabs
+    margin-top: 40px
+    display: block
+    &__sidebar
+      max-width: 100%
+      margin-bottom: 40px
+      border-right: 0
+    &__links
+      padding-right: 0
+      flex-direction: row
+      flex-wrap: wrap
+      justify-content: center
+      li
+        padding: 10px 12px
+        font-size: 12px
+        margin-bottom: 5px
+        margin-right: 5px
+        &:last-child
+          margin-right: 0
+    &__content
+      padding-left: 0
+
++r($mobile)
+  .profile
+    &--alt
+      .profile
+        &__status
+          order: 1
+          background: transparent
+          font-size: 14px
+          margin-top: 5px
+          color: $colorWhite50
+          text-align: center
+          padding: 0
+        &__bg
+          &-wrapper
+            background-image: linear-gradient(85deg, #2CC1A5 0%, #8E5ACD 100%)
+            border-bottom-left-radius: 50%
+            border-bottom-right-radius: 50%
+            top: -145px
+            min-height: 300px
+            width: 120%
+            margin-left: -10%
+            svg
+              display: none
+        &__info
+          margin-top: 5px
+        &__position
+          order: 4
+          margin-top: 10px
+          margin-bottom: 15px
+          color: $fontColor50
+        &__image
+          order: 2
+        &__name
+          order: 3
+          color: $fontColor
+        &__connections
+          margin-top: 0
+          order: 5
+          background: transparent
+          box-shadow: none
+          &-num
+            color: $colorAqua
+        &__bio
+          order: 6
+          margin-top: 0
+          p
+            font-size: 13px

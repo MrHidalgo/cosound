@@ -1,0 +1,92 @@
+/* LOGIN
+.login
+  position: relative
+  z-index: 2
+  color: white
+  .container
+    position: relative
+    z-index: 2
+  &__wrapper
+    min-height: 1100px
+    /* ie fix
+    // https://github.com/philipwalton/flexbugs/issues/231
+    // height: 1099px
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    text-align: center
+    padding: 90px 0
+    // &::after
+    //   content: ''
+    //   min-height: inherit
+    //   font-size: 0
+
+
+/* Login form
+.login-form
+  width: 100%
+  max-width: 565px
+  margin-top: 100px
+  margin-bottom: 60px
+  margin-left: auto
+  margin-right: auto
+  color: $fontColor
+  &__row
+    padding-top: 10px
+    display: flex
+    justify-content: space-between
+    a
+      display: inline-block
+      font-size: 14px
+      transition: .25s $ease
+      &:hover
+        color: $colorAqua
+  &__cta
+    margin-top: 60px
+    .btn
+      min-width: 220px
+  &__socials
+    margin-top: 90px
+    margin-left: -17px
+    margin-right: -17px
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+    .btn
+      flex: 0 0 auto
+      margin: 17px
+
++r($tablet)
+  .login-form
+    &__socials
+      margin-top: 40px
+      margin-left: -10px
+      margin-right: -10px
+      .btn
+        margin: 10px
+
++r($mobile)
+  .login
+    &__wrapper
+      min-height: 1px
+      padding-top: 175px
+
+  .login-form
+    margin-top: 60px
+    margin-bottom: 40px
+
+
++r($mobile-s)
+  .login
+    &__wrapper
+      // padding-top: 120px
+
+  .login-form
+    &__socials
+      margin-top: 0
+      margin-left: -8px
+      margin-right: -8px
+      .btn
+        margin: 5px

@@ -1,0 +1,32 @@
+// HEADER :: START
+header.header.header--dash.header--bg.js-should-scroll
+  // no wow class here
+  .header__wrapper
+    a(href="homepage.html").header__logo
+      +icon('ico-logo')
+  
+    include _search
+      
+    include _actions
+    
+    //- .header__premium
+    //-   a(href="plans.html") Premium
+  
+    include _user
+    
+    .header__hamburger
+      .hamburger.hamburger--squeeze(js-hamburger)
+        .hamburger-box
+          .hamburger-inner
+            
+// HEADER :: END
+
+
+// MOBILE NAV
+.mnav.mnav--fixed
+  .mnav__wrapper(js-scrollbar)
+    include _search
+    
+    include _dash-mobileMenu
+
+include ../_notifications
