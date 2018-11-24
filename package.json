@@ -1,5 +1,5 @@
 {
-  "name": "gulp-tpl",
+  "name": "cosound",
   "version": "2.0.0",
   "description": "",
   "main": "index.js",
@@ -14,10 +14,7 @@
       "pre-push": "surge --project ./dist --domain cos-dev.surge.sh"
     }
   },
-  "author": [
-    "Sergey Khmelevskoy <sergey@khmelevskoy.co>",
-    "Andrii Kovalenko <hkovalenko9@gmail.com>"
-  ],
+  "author": "Andrii Kovalenko <hkovalenko9@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "autoprefixer": "^7.1.2",
