@@ -4,10 +4,9 @@
     <desc>Created with Sketch.</desc>
     <defs>
         <linearGradient x1="100%" y1="18.7653777%" x2="1.09049479%" y2="34.3330864%" id="linearGradient-plans-1">
-            <stop stop-color="#8E5ACD" offset="0%"></stop>
+            <stop stop-color="#2CC1A5" offset="0%"></stop>
             <stop stop-color="#1CA9B4" offset="45.2143426%"></stop>
-            <stop stop-color="#2CC1A5" offset="100%"></stop>
-            <animate attributeName="x2" dur="4s" from="1.09049479%" to="1.09049479%" values="1.09049479%;23%;-5.36336263%" repeatCount="indefinite" />
+            <stop stop-color="#8E5ACD" offset="100%"></stop>
         </linearGradient>
     </defs>
     <g id="Cosound" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
