@@ -48,6 +48,9 @@ $(document).ready(function(){
     initEmoji();
     initTeleport();
     initSticky();
+    // initUserDashboardProfileSticky();
+    initProfileUserInfo();
+
     _window.on('resize', debounce(initSticky, 250));
     initEqualHeights();
     _window.on('resize', debounce(initEqualHeights, 250));
@@ -88,6 +91,74 @@ $(document).ready(function(){
   //////////
   // COMMON
   //////////
+
+  function initProfileUserInfo() {
+    $(window).on('load scroll', function(ev) {
+      if($('.profile--sticky').length > 0) {
+        let _countScroll = $(window).scrollTop(),
+          _headerHeight = $('.header').outerHeight(),
+          _stickyElemPosTop = $('.profile .profile__position').offset().top,
+          _stickyElement = $('.profile--sticky');
+
+        if ((_stickyElemPosTop - _countScroll) <= _headerHeight) {
+          _stickyElement.addClass("is-fixed");
+        } else {
+          _stickyElement.removeClass("is-fixed");
+        }
+      }
+    });
+  }
+
+  function initUserDashboardProfileSticky () {
+    var scrollUserBool = false,
+      _scrollDirection = 0,
+      _scaleVal = 0,
+      _dimensionVal = 85;
+
+    $(window).on('load', function(ev) {
+      var _header = $('.header'),
+        _profileImg = $('.dashboard-photo-js').clone(),
+        _profileImgPosition = parseInt($('.dashboard-photo-js').offset().top);
+
+      _header.append(_profileImg.attr('style', 'top: ' + _profileImgPosition + 'px'));
+
+      scrollUserBool = true;
+
+      if (scrollUserBool) {
+        $(window).on('scroll', function(ev) {
+          console.log('scroll');
+          var _winScrollTop = $(window).scrollTop(),
+            _profileImgPosition = $('.sidebar-user .dashboard-photo-js').offset().top,
+            _diffOffsetPosition = parseInt(_profileImgPosition - _winScrollTop);
+
+          if ((document.body.getBoundingClientRect()).top > _scrollDirection) {
+            console.log('down');
+            if(_dimensionVal <= 85) {
+              _scaleVal = _dimensionVal++;
+            }
+          } else {
+            console.log('up');
+            if(_dimensionVal >= 55) {
+              _scaleVal = _dimensionVal--;
+            }
+          }
+
+          _scrollDirection = (document.body.getBoundingClientRect()).top;
+
+          $('.header .dashboard-photo-js').css({
+            'top' : (_diffOffsetPosition >= 10) ? _diffOffsetPosition : 10,
+            'width': _scaleVal,
+            'height': _scaleVal
+          });
+
+          $('.sidebar-user .dashboard-photo-js').css({
+            'width': _scaleVal,
+            'height': _scaleVal
+          });
+        });
+      }
+    });
+  }
 
   function legacySupport(){
     // svg support for laggy browsers
