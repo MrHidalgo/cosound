@@ -95,15 +95,17 @@ $(document).ready(function(){
   function initProfileUserInfo() {
     $(window).on('load scroll', function(ev) {
       if($('.profile--sticky').length > 0) {
-        let _countScroll = $(window).scrollTop(),
+        var _countScroll = $(window).scrollTop(),
           _headerHeight = $('.header').outerHeight(),
           _stickyElemPosTop = $('.profile .profile__position').offset().top,
           _stickyElement = $('.profile--sticky');
 
         if ((_stickyElemPosTop - _countScroll) <= _headerHeight) {
           _stickyElement.addClass("is-fixed");
+          $('body').addClass("is-fixed");
         } else {
           _stickyElement.removeClass("is-fixed");
+          $('body').removeClass("is-fixed");
         }
       }
     });

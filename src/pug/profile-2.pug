@@ -5,6 +5,16 @@ extends shared/_layout
 
 block header
   include components/headers/_header-profile-alt
+
+block syickyProfileInfo
+  .profile--sticky
+    .profile--sticky-left
+      .avatar.avatar--big
+        img(src='img/avatar-2.jpg' srcset='img/avatar-2@2x.jpg 2x')
+
+    .profile--sticky-right
+      .profile__name Jonnie Forster
+      .profile__position CEO at The Foundation
   
 block content
   
@@ -30,12 +40,3 @@ block content
             p JONNIE FORSTER EMERGED AS A MUSIC ENTREPRENEUR AFTER GRADUATING WITH A BACHELOR OF SCIENCE IN MARKETING FROM SAN DIEGO STATE UNIVERSITY. HE SOON JOINED A&M/TUFF BREAK RECORDS TO HELP IMPLEMENT MARKETING PLANS FOR THEIR HIP-HOP ROSTER. JONNIE MOVED NEXT TO CAPITOL RECORDS’ CATALOG DEPARTMENT, AS A MARKETING EXECUTIVE, AND WAS INSTRUMENTAL IN VASTLY SUCCESSFUL CAMPAIGNS FOR THE BEATLES, FRANK SINATRA, JIMI HENDRIX, THE BEACH BOYS, TINA TURNER, PINK FLOYD, AND A HOST OF OTHERS. JONNIE CONCEPTUALIZED AND EXECUTIVE PRODUCED GEORGE CLINTON’S “GREATEST FUNKIN’ HITS” ALBUM SECURING ARTISTS LIKE ICE CUBE, BUSTA RHYMES, Q-TIP, OL’ DIRTY BASTARD, COOLIO, AND DIGITAL UNDERGROUND.
             
     include components/_profile-grid
-
-    .profile--sticky
-      .profile--sticky-left
-        .avatar.avatar--big
-          img(src='img/avatar-2.jpg' srcset='img/avatar-2@2x.jpg 2x')
-
-      .profile--sticky-right
-        .profile__name Jonnie Forster
-        .profile__position CEO at The Foundation
