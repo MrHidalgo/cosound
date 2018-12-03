@@ -48,7 +48,7 @@ $(document).ready(function(){
     initEmoji();
     initTeleport();
     initSticky();
-    // initUserDashboardProfileSticky();
+    initUserDashboardProfileSticky();
     initProfileUserInfo();
 
     _window.on('resize', debounce(initSticky, 250));
@@ -94,7 +94,7 @@ $(document).ready(function(){
 
   function initProfileUserInfo() {
     $(window).on('load scroll', function(ev) {
-      if($('.profile--sticky').length > 0) {
+      if($('.profile--sticky').length > 0 && $(window).width() <= 460) {
         var _countScroll = $(window).scrollTop(),
           _headerHeight = $('.header').outerHeight(),
           _stickyElemPosTop = $('.profile .profile__position').offset().top,
@@ -114,52 +114,79 @@ $(document).ready(function(){
   function initUserDashboardProfileSticky () {
     var scrollUserBool = false,
       _scrollDirection = 0,
-      _scaleVal = 0,
-      _dimensionVal = 85;
+      _scaleVal = 1;
 
-    $(window).on('load', function(ev) {
-      var _header = $('.header'),
-        _profileImg = $('.dashboard-photo-js').clone(),
-        _profileImgPosition = parseInt($('.dashboard-photo-js').offset().top);
-
-      _header.append(_profileImg.attr('style', 'top: ' + _profileImgPosition + 'px'));
-
-      scrollUserBool = true;
-
-      if (scrollUserBool) {
-        $(window).on('scroll', function(ev) {
-          console.log('scroll');
-          var _winScrollTop = $(window).scrollTop(),
-            _profileImgPosition = $('.sidebar-user .dashboard-photo-js').offset().top,
-            _diffOffsetPosition = parseInt(_profileImgPosition - _winScrollTop);
-
-          if ((document.body.getBoundingClientRect()).top > _scrollDirection) {
-            console.log('down');
-            if(_dimensionVal <= 85) {
-              _scaleVal = _dimensionVal++;
-            }
-          } else {
-            console.log('up');
-            if(_dimensionVal >= 55) {
-              _scaleVal = _dimensionVal--;
-            }
-          }
-
-          _scrollDirection = (document.body.getBoundingClientRect()).top;
-
-          $('.header .dashboard-photo-js').css({
-            'top' : (_diffOffsetPosition >= 10) ? _diffOffsetPosition : 10,
-            'width': _scaleVal,
-            'height': _scaleVal
-          });
-
-          $('.sidebar-user .dashboard-photo-js').css({
-            'width': _scaleVal,
-            'height': _scaleVal
-          });
-        });
+    /**
+     *
+     * @param offsetPosition
+     */
+    var hideShowHeaderProfile = function(offsetPosition) {
+      if(offsetPosition <= 10) {
+        $('.header .dashboard-photo-js').addClass('is-show');
+      } else {
+        $('.header .dashboard-photo-js').removeClass('is-show');
       }
-    });
+    };
+
+    /**
+     *
+     * @param resVal
+     */
+    var assignResultValue = function(resVal) {
+      $('.sidebar-user .dashboard-photo-js').css({
+        'transform' : 'scale(' + parseFloat(resVal).toFixed(2) + ')'
+      });
+    };
+
+
+    if($('.dashboard-photo-js').length > 0 && $(window).width() <= 460) {
+      $(window).on('load', function(ev) {
+
+        var _header = $('.header'),
+          _profileImg = $('.dashboard-photo-js').clone(),
+          _profileImgPosition = parseInt($('.dashboard-photo-js').offset().top),
+          _diffOffsetPosition = parseInt(_profileImgPosition - $(window).scrollTop());
+
+        _header.append(_profileImg);
+
+        hideShowHeaderProfile(_diffOffsetPosition);
+
+        scrollUserBool = true;
+
+        if (scrollUserBool) {
+          $(window).on('scroll', function(ev) {
+
+            var _winScrollTop = $(window).scrollTop(),
+              _profileScrollImgPosition = $('.sidebar-user .dashboard-photo-js').offset().top,
+              _diffScrollOffsetPosition = parseInt(_profileScrollImgPosition - _winScrollTop);
+
+            if ((document.body.getBoundingClientRect()).top > _scrollDirection) {
+              if(_diffScrollOffsetPosition <= _profileScrollImgPosition && _diffScrollOffsetPosition >= 10) {
+                if(_scaleVal <= 1) {
+                  _scaleVal = _scaleVal + 0.0125;
+
+                  var _resultScaleVal = (_diffScrollOffsetPosition > _profileImgPosition) ? 1 : _scaleVal;
+
+                  assignResultValue(_resultScaleVal);
+                }
+              }
+            } else {
+              if(_diffScrollOffsetPosition <= _profileScrollImgPosition && _diffScrollOffsetPosition >= 10) {
+                if(_scaleVal >= 0.7) {
+                  _scaleVal = _scaleVal - 0.0125;
+
+                  assignResultValue(_scaleVal);
+                }
+              }
+            }
+
+            _scrollDirection = (document.body.getBoundingClientRect()).top;
+
+            hideShowHeaderProfile(_diffScrollOffsetPosition);
+          });
+        }
+      });
+    }
   }
 
   function legacySupport(){

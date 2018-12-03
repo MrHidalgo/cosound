@@ -10,10 +10,17 @@
 
   .dashboard-photo-js
     position: fixed
+    top: -6px
     left: 0
     right: 0
     margin-right: auto
     margin-left: auto
+    transform: scale(0.7) translateY(150%)
+    transition: transform 0.05s ease-in-out
+
+    &.is-show
+      transform: scale(0.7) translateY(0)
+      transition: transform 0.35s ease-in-out
 
   &__wrapper
     position: relative
