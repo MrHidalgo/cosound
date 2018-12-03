@@ -34,8 +34,34 @@ block content
             input(type="text" name="name" placeholder="First Name")
           .ui-group.wow(data-animation-delay=".4s")
             input(type="text" name="surname" placeholder="Last Name")
-          .ui-group.wow(data-animation-delay=".4s")
-            input(type="text" name="birth" placeholder="Date of birth" js-date-mask)
+          //.ui-group.wow(data-animation-delay=".4s")
+            //input(type="text" name="birth" placeholder="Date of birth" js-date-mask)
+          .ui-group-wrapper
+            .ui-group(data-animation-delay=".6s")
+              select(name="options" placeholder="Date")
+                - for(var date = 1; date <= 31; date++)
+                  option!= date
+
+            .ui-group(data-animation-delay=".6s")
+              select(name="options" placeholder="Month")
+                option(value="january")!= "January"
+                option(value="february")!= "February"
+                option(value="march")!= "March"
+                option(value="april")!= "April"
+                option(value="may")!= "May"
+                option(value="june")!= "June"
+                option(value="july")!= "July"
+                option(value="august")!= "August"
+                option(value="september")!= "September"
+                option(value="october")!= "October"
+                option(value="november")!= "November"
+                option(value="december")!= "December"
+
+            .ui-group(data-animation-delay=".6s")
+              select(name="options" placeholder="Year")
+                - for(var year = 1930; year <= 2019; year++)
+                  option!= year
+
           .ui-group.wow(data-animation-delay=".5s")
             input(type="text" name="artist" placeholder="Job title")
           .ui-group.wow(data-animation-delay=".6s" style="z-index: 2")

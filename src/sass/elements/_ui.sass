@@ -7,6 +7,34 @@
   margin-bottom: 35px
   width: 100%
   text-align: left
+
+  &-wrapper
+    display: flex
+    +r(767)
+      flex-direction: column
+
+    .ui-group
+      width: 100%
+      max-width: calc((100% - 20px) / 3)
+      margin-right: 5px
+      margin-left: 5px
+      +r(767)
+        max-width: 100%
+        margin-left: 0
+        margin-right: 0
+
+      &:first-of-type
+        margin-left: 0
+
+      &:last-of-type
+        margin-right: 0
+
+      .label
+        color: $fontColor50
+
+        &.is-choose
+          color: $fontColor
+
   label:not(.ui-input__validation)
     display: block
     font-size: 16px
@@ -22,6 +50,7 @@
     border-radius: 8px
     padding: 21px 30px 20px
     font-size: 16px
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.07)
     transition: .25s $ease
     &::placeholder

@@ -1200,6 +1200,12 @@ $(document).ready(function(){
             $wrapper = $elm.closest('.' + data.classes.wrapper);
 
         $wrapper.find('.label').html($wrapper.find('.label').data('value'));
+      },
+      onChange: function(element, data) {
+        var $elm = $(element),
+          $wrapper = $elm.closest('.' + data.classes.wrapper);
+
+        $wrapper.find('.label').addClass('is-choose');
       }
     });
   }
