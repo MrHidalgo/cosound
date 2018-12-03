@@ -33,6 +33,9 @@
     color: $fontColor
     user-select: none
     padding: 21px 30px 20px
+    +r(460)
+      padding: 21px 10px 20px
+
   .button
     display: flex
     align-items: center
@@ -47,6 +50,13 @@
     border-radius: 15px
     margin-right: 15px
     transition: .25s $ease
+    +r(460)
+      margin-right: 5px
+      width: 15px
+      border: none
+
+      svg
+        width: 1.4em
 
 .selectric-focus .selectric
   // border-color: #aaaaaa
