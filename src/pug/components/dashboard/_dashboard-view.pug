@@ -1,0 +1,26 @@
+.dashboard.dashboard--view
+  .dashboard__wrapper
+    .dashboard__wrapper-left
+
+      .dashboard__menu
+        .dashboard__menu-header
+          p!= "Admin Back Office"
+
+        .dashboard__menu-body
+          ul
+            li
+              a(href="#" class="" title="")!= "Growth"
+            li
+              a(href="#" class="" title="")!= "Storage"
+            li
+              a(href="#" class="" title="")!= "User Management"
+            li
+              a.is-active(href="#" class="" title="")!= "Market Management"
+            li
+              a(href="#" class="" title="")!= "Finance"
+
+
+    .dashboard__wrapper-right
+
+      h1.dashboard__title!= "Market Management"
+      span.dashboard__title.dashboard__title-step!= "> View Service</span>"

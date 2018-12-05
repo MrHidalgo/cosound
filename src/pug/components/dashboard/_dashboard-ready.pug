@@ -1,0 +1,14 @@
+.dashboard.dashboard--ready
+
+  .dashboard__row.dashboard__row-ready
+
+    include ./_dashboard-logo
+
+    div.wow(data-animation-class="wowFadeUp" data-animation-delay=".1s")
+      include ./_dashboard-check
+
+    div.wow(data-animation-class="wowFadeUp" data-animation-delay=".2s")
+      p!= "Awesome. Thanks for approving. This service will now be available on the marketplace. Check the link below."
+
+    div.wow(data-animation-class="wowFadeUp" data-animation-delay=".3s")
+      a(href="#" class="" title="")!= "Link"
