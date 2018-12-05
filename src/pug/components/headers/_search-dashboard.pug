@@ -1,0 +1,18 @@
+.header__search
+  form.header__search-input(autocomplete='off')
+    input(name="search" type="text" placeholder="Search a user" js-header-search)
+    +icon('ico-search')
+    .header__search-drop(js-header-searchResults)
+      li
+        a(href="#") Music
+      li
+        a(href="#") Music Lounge
+      li
+        a(href="#") Music Rock
+      li
+        a(href="#") Music Listen
+      li
+        a(href="#") Music
+      li
+        a(href="#") Music Lounge
+      .header__search-no-results No results found for <span>qqq</span> query

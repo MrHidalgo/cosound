@@ -8,6 +8,27 @@
   z-index: 10
   background: transparent
 
+  &--dashboard
+    background-image: linear-gradient(80deg, #21B0B0 0%, #8E5ACD 100%)
+
+    .header__wrapper
+      display: flex
+      align-items: center
+
+      &-left,
+      &-right
+        width: 50%
+
+      &-right
+        display: flex
+        justify-content: flex-end
+        align-items: center
+
+  &__signout
+    svg
+      width: 18px
+      height: 20px
+
   .dashboard-photo-js
     position: fixed
     top: -6px

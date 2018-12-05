@@ -50,6 +50,7 @@ $(document).ready(function(){
     initSticky();
     initUserDashboardProfileSticky();
     initProfileUserInfo();
+    initDashboardSwipe();
 
     _window.on('resize', debounce(initSticky, 250));
     initEqualHeights();
@@ -187,6 +188,17 @@ $(document).ready(function(){
         }
       });
     }
+  }
+
+  function initDashboardSwipe() {
+    $('.dashboard__swipe').on('click', function(ev) {
+      var elem = $(ev.currentTarget);
+
+      $('.dashboard__swipe').removeClass('is-active');
+      elem.addClass('is-active');
+
+      elem.closest('.dashboard__swipe-wrapper').toggleClass('is-swap');
+    });
   }
 
   function legacySupport(){

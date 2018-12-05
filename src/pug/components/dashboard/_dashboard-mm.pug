@@ -1,0 +1,83 @@
+.dashboard.dashboard--mm
+  .dashboard__wrapper
+    .dashboard__wrapper-left
+
+      .dashboard__menu
+        .dashboard__menu-header
+          p!= "Admin Back Office"
+
+        .dashboard__menu-body
+          ul
+            li
+              a(href="#" class="" title="")!= "Growth"
+            li
+              a(href="#" class="" title="")!= "Storage"
+            li
+              a(href="#" class="" title="")!= "User Management"
+            li
+              a.is-active(href="#" class="" title="")!= "Market Management"
+            li
+              a(href="#" class="" title="")!= "Finance"
+
+
+    .dashboard__wrapper-right
+
+      h1.dashboard__title!= "Market Management"
+
+      .dashboard__row.dashboard__row-search
+        .dashboard__row-left
+
+          include ../headers/_search-dashboard
+
+        .dashboard__row-right
+
+          .dashboard__swipe-wrapper
+            a.dashboard__swipe.dashboard__swipe-0.is-active(
+              href="#" class="" title=""
+              data-swip="active"
+            )!= "Active Services"
+            a.dashboard__swipe.dashboard__swipe-1(
+              href="#" class="" title=""
+              data-swip="pending"
+            )!= "Pending Approval"
+
+      .dashboard__row.dashboard__row-table
+        .dashboard__table
+          .dashboard__table-head
+            .dashboard__table-tr
+              .dashboard__table-th
+              .dashboard__table-th
+                span!= "User"
+              .dashboard__table-th
+                span!= "Service Title"
+              .dashboard__table-th
+                span!= "Category"
+              .dashboard__table-th
+                span!= "Total Sales"
+              .dashboard__table-th
+                span!= "Data Added"
+              .dashboard__table-th
+                span!= "Options"
+
+          .dashboard__table-body
+            -for(var i = 0; i < 30; i++)
+              .dashboard__table-tr
+                .dashboard__table-td
+                  span
+                    img(src="./img/avatar-1.jpg" srcset="./img/avatar-1@2x.jpg 2x" alt="" title="")
+                .dashboard__table-td
+                  span!= "Timothy Parsons"
+                .dashboard__table-td
+                  span!= "Abstract Album Cover"
+                .dashboard__table-td
+                  a.dashboard__table-position(href="#" class="" title="")!= "Graphic Design"
+                .dashboard__table-td
+                  span!= "$3,044"
+                .dashboard__table-td
+                  span!= "11-16-2018"
+                .dashboard__table-td
+                  a.dashboard__table-view(href="#" class="" title="")!= "View"
+
+      .dashboard__row.dashboard__row-more
+        a.dashboard__more(href="#" class="" title="")
+          span!= "Load more"

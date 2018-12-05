@@ -69,3 +69,9 @@ PageList:
   ready: 90
 - file: ito.html
   ready: 90
+
+- file: =====DASHBOARD=====
+  ready: 0
+
+- file: dashboard-mm.html
+  ready: 1

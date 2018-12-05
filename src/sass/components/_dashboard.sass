@@ -1,0 +1,275 @@
+.dashboard
+  padding-top: 100px
+
+  &__wrapper
+    display: flex
+    align-items: flex-start
+    padding: 34px 50px 150px
+
+    &-left
+      width: 312px
+
+    &-right
+      width: 100%
+      max-width: calc(100% - 312px)
+
+  &__title
+    margin: 0
+    padding-top: 28px
+    padding-bottom: 46px
+    font-size: 30px
+    font-weight: normal
+
+  &__row
+    display: flex
+    align-items: center
+
+    &-search
+      .dashboard__row-left
+        width: 416px
+
+      .dashboard__row-right
+        display: flex
+        align-items: center
+        justify-content: flex-end
+        width: 100%
+        max-width: calc(100% - 416px)
+        padding-left: 15px
+
+      .header__search-input
+        input
+          color: #262626
+          background: white
+          box-shadow: 0 2px 4px 0 rgba(0,0,0,0.07)
+          font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif
+
+          &::placeholder
+            color: #262626
+
+        svg
+          fill: #8E8E8E
+
+    &-more
+      padding-top: 43px
+
+    &-table
+      padding-top: 42px
+
+  &__menu
+    width: 262px
+    border-radius: 10px
+    background: #FFFFFF
+    box-shadow: 0 10px 30px 0 rgba(0,0,0,0.08)
+
+    &-header
+      display: flex
+      align-items: center
+      height: 89px
+      padding: 0 30px
+      background-color: #F1F1F1
+
+      p
+        font-weight: 500
+
+    &-body
+      padding: 17px 30px
+
+    ul
+      display: flex
+      flex-direction: column
+      margin: 0
+      padding: 0
+
+      a
+        display: flex
+        align-items: center
+        min-height: 41px
+        color: rgba(#262626, 0.52)
+        transition: color 0.3s ease-in-out
+
+        &:hover
+          color: rgba(#262626, 1)
+          transition: color 0.3s ease-in-out
+
+        &.is-active
+          color: rgba(#262626, 1)
+          font-size: 18px
+          font-weight: 500
+
+  &__swipe
+    z-index: 1
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 50%
+    min-height: 44px
+    color: #319B9D
+    font-size: 14px
+    transition: color 0.3s ease-in-out
+
+    &.is-active
+      color: #fff
+      transition: color 0.3s ease-in-out
+
+    &-wrapper
+      overflow: hidden
+      position: relative
+      display: flex
+      align-items: center
+      width: 100%
+      max-width: 359px
+      border-radius: 22px
+      border: 1px solid #319B9D
+
+      &.is-swap
+        &:before
+          transform: translateX(calc(100% + 1px))
+          transition: transform 0.3s ease-in-out
+
+      &:before
+        content: ''
+        position: absolute
+        top: -1px
+        left: -1px
+        width: calc(50% + 2px)
+        height: calc(100% + 2px)
+        border-radius: 22px
+        background-color: #319B9D
+        transform: translateX(0)
+        transition: transform 0.3s ease-in-out
+
+  &__more
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    min-height: 34px
+    width: 100%
+
+    &:before
+      content: ''
+      z-index: 0
+      position: absolute
+      top: 50%
+      left: 0
+      transform: translateY(-50%)
+      height: 1px
+      width: 100%
+      background-color: #D8D8D8
+
+    span
+      overflow: hidden
+      position: relative
+      z-index: 1
+      display: block
+      padding-left: 30px
+      padding-right: 30px
+      background-color: #F5F5F5
+      color: rgba(#262626, 0.52)
+
+      &:hover
+        &:after
+          transform: translateY(150%)
+          transition: transform 0.3s ease-in-out
+
+      &:after
+        content: ''
+        z-index: 0
+        position: absolute
+        top: calc(100% - 1px)
+        left: 30px
+        width: calc(100% - 60px)
+        height: 1px
+        background-color: rgba(#262626, 0.52)
+        transform: translateY(0)
+        transition: transform 0.3s ease-in-out
+
+  &__table
+    overflow: hidden
+    display: flex
+    flex-direction: column
+    width: 100%
+    max-width: 100%
+    border-radius: 10px
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.08)
+
+    &-position
+      color: #20ACAC
+
+    &-view
+      color: #8E5ACD
+
+    &-head
+      background-color: #F1F1F1
+
+    &-body
+      overflow-y: auto
+      overflow-x: hidden
+      max-height: calc(475px + 63px)
+      background-color: #fff
+
+      > div
+        border-bottom: 1px solid rgba(#979797, 0.13)
+
+        &:last-child
+          border-bottom: none
+
+    &-tr
+      display: flex
+      align-items: center
+
+    &-th,
+    &-td
+      &:nth-child(1)
+        width: 82px
+      &:nth-child(2)
+        width: 260px
+      &:nth-child(3),
+      &:nth-child(4)
+        width: 100%
+        max-width: calc((100% - (82px + 260px + 150px + 200px + 100px)) / 2)
+      &:nth-child(5)
+        width: 150px
+      &:nth-child(6)
+        width: 200px
+      &:nth-child(7)
+        width: 100px
+
+    &-th
+      cursor: pointer
+      display: flex
+      align-items: center
+      height: 63px
+      color: rgba(#262626, 0.52)
+      font-size: 15px
+
+    &-td
+      display: flex
+      align-items: center
+      height: 67px
+      color: #262626
+      font-size: 14px
+
+      &:nth-child(1)
+        span
+          overflow: hidden
+          position: relative
+          display: block
+          width: 44px
+          height: 44px
+          margin-left: 15px
+          border-radius: 100%
+          box-shadow: 0 10px 14px 0 rgba(0,0,0,0.11)
+
+          img
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            object-fit: cover
+            object-position: center
+
+      a
+        text-decoration: underline
