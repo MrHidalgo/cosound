@@ -10,19 +10,24 @@
     display: flex
     // align-items: flex-start
     &-left
-      flex: 0 1 16.666%
-      max-width: 16.666%
+      //flex: 0 1 16.666%
+      //max-width: 16.666%
+      width: 313px
+      padding-right: 30px
       min-width: 1px
       min-height: 0
       .d-card
         margin-bottom: 0
     &-right
       position: relative
-      flex: 0 1 83.333%
-      max-width: 83.333%
+      //flex: 0 1 83.333%
+      //max-width: 83.333%
+      width: 100%
+      max-width: calc(100% - 313px)
       display: flex
       flex-direction: column
-      margin-left: 30px
+      //margin-left: 30px
+      //padding-left: 30px
 
   &__slider
     position: relative
@@ -61,19 +66,19 @@
       left: -20px
 
 +r(1660)
-  .market
+  //.market
     &__top-left
       flex-basis: 20%
       max-width: 20%
 
 +r(1400)
-  .market
+  //.market
     &__top-left
       flex-basis: 25%
       max-width: 25%
 
 +r($wide)
-  .market
+  //.market
     &__top
       &-left
         display: none
@@ -89,6 +94,14 @@
     &__container
       padding-left: 25px
       padding-right: 25px
+
++r(767)
+  .market
+    &__top
+      &-left
+        display: none
+      &-right
+        max-width: 100%
 
 
 .market-slide
@@ -152,6 +165,14 @@
       right: 40px
       bottom: 35px
 
++r($tablet)
+  .market-slide
+    &__desc
+      margin-right: 0
+    &__cta
+      position: static
+      margin-top: 30px
+
 +r($mobile)
   .market-slide
     &__content
@@ -179,6 +200,14 @@
 /* Market grid
 .market-grid
   padding: 60px 0
+
+  > a.btn.btn-primary.btn-primary--red
+      display: none
+
+      +r(767)
+        display: block
+        margin-bottom: 50px
+
   &--narrow
     padding-top: 70px 0
     border-top: 1px solid $borderColor20
