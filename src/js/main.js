@@ -204,7 +204,7 @@ $(document).ready(function(){
 
   function initDashboardTableCollapse() {
     $('.dashboard__table-header').on('click', function(ev) {
-      const elem = $(ev.currentTarget),
+      var elem = $(ev.currentTarget),
         parentElem = elem.closest('.dashboard__table-tr');
 
       parentElem.find('.dashboard__table-main').slideToggle(300);
