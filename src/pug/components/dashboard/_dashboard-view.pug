@@ -24,3 +24,192 @@
 
       h1.dashboard__title!= "Market Management"
       span.dashboard__title.dashboard__title-step!= "> View Service</span>"
+
+      .dashboard__row.dashboard__row-profile
+        .dashboard__profile
+          .dashboard__profile-left
+            div
+              span.dashboard__profile-img
+                img(src="./img/avatar-1.jpg" srcset="./img/avatar-1@2x.jpg 2x" alt="" title="")
+
+            div
+              p.dashboard__profile-service!= "Abstract Album Cover Design"
+              p.dashboard__profile-name!= "Jane Doe / Graphic Designer"
+              p.dashboard__profile-desc!= "I'll design an awesome abstract album cover for your band or act"
+
+          .dashboard__profile-right
+            .dashboard__profile-box
+              p!= "$199"
+              span!= "Delivery time 3 days"
+              a(href='#').btn.btn-primary.btn-primary--red
+                span Active
+
+      .dashboard__row.dashboard__row-service
+        .dashboard__service
+          p!= "Your Service"
+          span!= "I can list your Pop track on 30 highly subscribed playlists! Each of the playlists has around 700 - 2000 active subscribers and are often played in bars and clubs around the Shoreditch area. These playlists only have 30/40 songs in each, so you're much more likely to be heard.I'm looking forward to working with you!! Please drop me a message so that I can listen to the song(s) before hand!"
+
+      .dashboard__row.dashboard__row-slider
+        //slider
+        .dashboard__slider.swiper-container(js-dashboard-slider)
+          .swiper-wrapper
+            // slide
+            .dashboard-slide
+              .dashboard-slide__bg(style="background-image: url(img/dashboard-slide-bg-1.jpg)")
+            // slide
+            .dashboard-slide
+              .dashboard-slide__bg(style="background-image: url(img/dashboard-slide-bg-2.jpg)")
+            // slide
+            .dashboard-slide
+              .dashboard-slide__bg(style="background-image: url(img/dashboard-slide-bg-3.jpg)")
+            // slide
+            .dashboard-slide
+              .dashboard-slide__bg(style="background-image: url(img/dashboard-slide-bg-4.jpg)")
+
+        .dashboard__slider-next
+          +icon("ico-swiper-right")
+        .dashboard__slider-prev
+          +icon('ico-swiper-left')
+
+
+      if(commentBlock === true)
+        .dashboard__row.dashboard__row-comments
+          .dashboard__comments
+            .product__box.product__box--no-pad
+              .product-testimonials
+                .product-testimonials__header
+                  .product-testimonials__rating
+                    .rating-stars.rating-stars--bigger(data-rating='5')
+                      i.icon
+                      i.icon
+                      i.icon
+                      i.icon
+                      i.icon
+                    span 112 Reviews
+                  .product-testimonials__sorting
+                    select(name="sorting").-mini
+                      option Most Recent
+                      option Best Rated
+                      option Worst Rated
+
+                .product-testimonials__content
+                  // testiminial
+                  .testimonial
+                    .testimonial__head
+                      .testimonial__info
+                        .avatar.avatar--mid
+                          img(src='img/suggestionCard-avatar-1.jpg' srcset='img/suggestionCard-avatar-1@2x.jpg 2x')
+                        .testimonial__info-content
+                          .testimonial__name Bryan Garza
+                          .testimonial__rating
+                            .rating-stars(data-rating='4')
+                              i.icon
+                              i.icon
+                              i.icon
+                              i.icon
+                              i.icon
+                            span 112
+                      .d-card__options
+                        .d-card__options-wrap
+                          .d-card__options-toggle(js-card-options)
+                            +icon('ico-more')
+                          ul.d-card__options-list
+                            li
+                              a(href="#") All
+                            li
+                              a(href="#") Copy link
+                            li
+                              a(href="#") Share
+                            li
+                              a(href="#") Unollow User
+                            li
+                              a(href="#") Report Post
+                      .testimonial__timestamp about 21 hours ago
+                      .testimonial__timestamp.testimonial__timestamp--mobile 21h ago
+                    .testimonial__content
+                      p Awesome service, exactly as described! Thanks Chester!
+
+                  // testiminial
+                  .testimonial
+                    .testimonial__head
+                      .testimonial__info
+                        .avatar.avatar--mid
+                          img(src='img/suggestionCard-avatar-4.jpg' srcset='img/suggestionCard-avatar-4@2x.jpg 2x')
+                        .testimonial__info-content
+                          .testimonial__name Patrick Watkins
+                          .testimonial__rating
+                            .rating-stars(data-rating='5')
+                              i.icon
+                              i.icon
+                              i.icon
+                              i.icon
+                              i.icon
+                            span 112
+                      .d-card__options
+                        .d-card__options-wrap
+                          .d-card__options-toggle(js-card-options)
+                            +icon('ico-more')
+                          ul.d-card__options-list
+                            li
+                              a(href="#") All
+                            li
+                              a(href="#") Copy link
+                            li
+                              a(href="#") Share
+                            li
+                              a(href="#") Unollow User
+                            li
+                              a(href="#") Report Post
+                      .testimonial__timestamp about 21 hours ago
+                      .testimonial__timestamp.testimonial__timestamp--mobile 21h ago
+
+                    .testimonial__content
+                      p My spotify plays went THROUGH THE ROOF! Chester is a really great guy, and delivered exactly what he promised.
+                  // testiminial
+                  .testimonial
+                    .testimonial__head
+                      .testimonial__info
+                        .avatar.avatar--mid
+                          img(src='img/suggestionCard-avatar-2.jpg' srcset='img/suggestionCard-avatar-2@2x.jpg 2x')
+                        .testimonial__info-content
+                          .testimonial__name Bryan Garza
+                          .testimonial__rating
+                            .rating-stars(data-rating='4')
+                              i.icon
+                              i.icon
+                              i.icon
+                              i.icon
+                              i.icon
+                            span 112
+                      .d-card__options
+                        .d-card__options-wrap
+                          .d-card__options-toggle(js-card-options)
+                            +icon('ico-more')
+                          ul.d-card__options-list
+                            li
+                              a(href="#") All
+                            li
+                              a(href="#") Copy link
+                            li
+                              a(href="#") Share
+                            li
+                              a(href="#") Unollow User
+                            li
+                              a(href="#") Report Post
+                      .testimonial__timestamp about 21 hours ago
+                      .testimonial__timestamp.testimonial__timestamp--mobile 21h ago
+
+                    .testimonial__content
+                      p Perfect service for the promotion of my artist! Our label will be buying again in future!
+
+
+      .dashboard__row.dashboard__row-btn
+        .dashboard__btn
+          a(href='#').btn.btn-primary.btn-primary--white
+            span Edit
+          a(href='#').btn.btn-primary.btn-primary--white
+            span Approve
+          a(href='#').btn.btn-primary.btn-primary--delete
+            span Delete
+          a(href='#').btn.btn-primary.btn-primary--white
+            span Contact User

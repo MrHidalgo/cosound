@@ -1012,7 +1012,33 @@ $(document).ready(function(){
         nextEl: '.market__slider-next',
         prevEl: '.market__slider-prev',
       },
-    })
+    });
+
+    //
+    var swiperDashboard = new Swiper('[js-dashboard-slider]', {
+      wrapperClass: "swiper-wrapper",
+      slideClass: "dashboard-slide",
+      direction: 'horizontal',
+      loop: true,
+      watchOverflow: false,
+      setWrapperSize: false,
+      // setWrapperSize: true,
+      spaceBetween: 36,
+      slidesPerView: 4,
+      // loop: true,
+      normalizeSlideIndex: true,
+      // centeredSlides: true,
+      freeMode: false,
+      // effect: 'cube',
+      cubeEffect: {
+        slideShadows: false,
+        shadow: false,
+      },
+      navigation: {
+        nextEl: '.dashboard__slider-next',
+        prevEl: '.dashboard__slider-prev',
+      },
+    });
 
     // ito swiper
     new Swiper('[js-ito-slider]', {
