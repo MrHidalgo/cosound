@@ -74,10 +74,10 @@ PageList:
   ready: 0
 
 - file: dashboard-mm.html
-  ready: 1
+  ready: 75
 - file: dashboard-view-1.html
   ready: 1
 - file: dashboard-view-2.html
   ready: 1
 - file: dashboard-ready.html
-  ready: 90
+  ready: 75

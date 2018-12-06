@@ -51,6 +51,7 @@ $(document).ready(function(){
     initUserDashboardProfileSticky();
     initProfileUserInfo();
     initDashboardSwipe();
+    initDashboardTableCollapse();
 
     _window.on('resize', debounce(initSticky, 250));
     initEqualHeights();
@@ -198,6 +199,15 @@ $(document).ready(function(){
       elem.addClass('is-active');
 
       elem.closest('.dashboard__swipe-wrapper').toggleClass('is-swap');
+    });
+  }
+
+  function initDashboardTableCollapse() {
+    $('.dashboard__table-header').on('click', function(ev) {
+      const elem = $(ev.currentTarget),
+        parentElem = elem.closest('.dashboard__table-tr');
+
+      parentElem.find('.dashboard__table-main').slideToggle(300);
     });
   }
 

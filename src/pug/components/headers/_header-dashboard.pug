@@ -7,7 +7,30 @@ header.header.header--dashboard
         +icon('ico-logo')
 
     .header__wrapper-right
+
+      .header__hamburger
+        .hamburger.hamburger--squeeze(js-hamburger)
+          .hamburger-box
+            .hamburger-inner
+
       a.header__signout(href="#")
         +icon('ico-signout')
 
 // HEADER :: END
+
+
+.mnav
+  .mnav__wrapper(js-scrollbar)
+    ul.mnav__menu
+      li
+        a(href="#") Growth
+      li
+        a(href="#") Storage
+      li
+        a(href="#") User Management
+      li
+        a(href="#") Market Management
+      li
+        a(href="#") Finance
+      li
+        a(href="#") Sign Out

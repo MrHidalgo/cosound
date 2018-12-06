@@ -37,17 +37,25 @@
     +r(1439)
       padding-left: 30px
       padding-right: 30px
+    +r(767)
+      padding-left: 15px
+      padding-right: 15px
+      padding-bottom: 100px
 
     &-left
       width: 312px
       +r(1439)
         width: 292px
+      +r(1199)
+        display: none
 
     &-right
       width: 100%
       max-width: calc(100% - 312px)
       +r(1439)
         max-width: calc(100% - 292px)
+      +r(1199)
+        max-width: 100%
 
   &__title
     margin: 0
@@ -55,14 +63,27 @@
     padding-bottom: 46px
     font-size: 30px
     font-weight: normal
+    +r(575)
+      padding-top: 0
+      font-size: 28px
 
   &__row
     display: flex
     align-items: center
 
     &-search
+      +r(767)
+        flex-direction: column
+
       .dashboard__row-left
         width: 416px
+        +r(991)
+          width: 50%
+          padding-right: 15px
+        +r(767)
+          width: 100%
+          padding-right: 0
+          padding-bottom: 42px
 
       .dashboard__row-right
         display: flex
@@ -71,6 +92,11 @@
         width: 100%
         max-width: calc(100% - 416px)
         padding-left: 15px
+        +r(991)
+          max-width: 50%
+        +r(767)
+          max-width: 100%
+          padding-left: 0
 
       .header__search
         display: block
@@ -195,6 +221,8 @@
     color: #319B9D
     font-size: 14px
     transition: color 0.3s ease-in-out
+    +r(575)
+      font-size: 12px
 
     &.is-active
       color: #fff
@@ -209,6 +237,8 @@
       max-width: 359px
       border-radius: 22px
       border: 1px solid #319B9D
+      +r(575)
+        max-width: 100%
 
       &.is-swap
         &:before
@@ -255,8 +285,14 @@
       padding-right: 30px
       background-color: #F5F5F5
       color: rgba(#262626, 0.52)
+      transition: color 0.3s ease-in-out
+      +r(767)
+        font-size: 14px
 
       &:hover
+        color: rgba(#262626, 1)
+        transition: color 0.3s ease-in-out
+
         &:after
           transform: translateY(150%)
           transition: transform 0.3s ease-in-out
@@ -290,6 +326,8 @@
 
     &-head
       background-color: #F1F1F1
+      +r(767)
+        display: none
 
     &-body
       overflow-y: auto
@@ -303,28 +341,112 @@
         &:last-child
           border-bottom: none
 
+    &-header,
+    &-main
+      display: flex
+      align-items: center
+
+    &-header
+      width: 382px
+      +r(1439)
+        width: 300px
+      +r(1199)
+        width: 200px
+      +r(767)
+        width: 100%
+
+    &-main
+      width: 100%
+      max-width: calc(100% - 382px)
+      +r(1439)
+        max-width: calc(100% - 300px)
+      +r(1199)
+        max-width: calc(100% - 200px)
+      +r(767)
+        display: none
+        max-width: 100%
+        border-top: 1px solid rgba(#979797, 0.13)
+        background-color: rgba(245, 245, 245, 0.5)
+
+      p
+        display: none
+        +r(767)
+          display: block
+          width: 100px
+          font-weight: bold
+
+      span,
+      a
+        +r(767)
+          width: 100%
+          max-width: calc(100% - 100px)
+
     &-tr
       display: flex
       align-items: center
+      +r(767)
+        cursor: pointer
+        flex-direction: column
 
     &-th,
     &-td
       padding: 5px
 
-      &:nth-child(1)
+      &-0
         width: 82px
 
-      &:nth-child(2),
-      &:nth-child(3),
-      &:nth-child(4)
-        width: 100%
-        max-width: calc((100% - (82px + (12% * 3))) / 3)
+      &-1
+        width: 300px
+        +r(1439)
+          width: (300 - 82px)
+        +r(1199)
+          width: (200px - 82px)
+        +r(767)
+          display: flex
+          justify-content: space-between
+          width: 100%
+          max-width: calc(100% - 82px)
 
-      &:nth-child(5),
-      &:nth-child(6),
-      &:nth-child(7)
+        span
+          +r(767)
+            width: 100%
+            max-width: calc(100% - 75px)
+
+        .dashboard__table-view
+          display: none
+          z-index: 1
+          position: relative
+          width: 75px
+          text-align: center
+          +r(767)
+            display: block
+
+      &-6
+        +r(767)
+          display: none !important
+
+      &-2,
+      &-3
         width: 100%
+        max-width: calc((100% - (12% * 3)) / 2)
+
+      &-4,
+      &-5,
+      &-6
+        width: 100%
+        min-width: 95px
         max-width: 12%
+
+      &-2,
+      &-3,
+      &-4,
+      &-5,
+      &-6
+        +r(767)
+          max-width: 100%
+          min-height: 47px !important
+          padding-left: 15px
+
 
     &-th
       cursor: pointer
@@ -345,7 +467,7 @@
       +r(1335)
         font-size: 13px
 
-      &:nth-child(1)
+      &-0
         span
           overflow: hidden
           position: relative

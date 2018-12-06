@@ -45,38 +45,109 @@
         .dashboard__table
           .dashboard__table-head
             .dashboard__table-tr
-              .dashboard__table-th
-              .dashboard__table-th
-                span!= "User"
-              .dashboard__table-th
-                span!= "Service Title"
-              .dashboard__table-th
-                span!= "Category"
-              .dashboard__table-th
-                span!= "Total Sales"
-              .dashboard__table-th
-                span!= "Data Added"
-              .dashboard__table-th
-                span!= "Options"
+              .dashboard__table-header
+                .dashboard__table-th.dashboard__table-th-0
+                .dashboard__table-th.dashboard__table-th-1
+                  span!= "User"
+              .dashboard__table-main
+                .dashboard__table-th.dashboard__table-th-2
+                  span!= "Service Title"
+                .dashboard__table-th.dashboard__table-th-3
+                  span!= "Category"
+                .dashboard__table-th.dashboard__table-th-4
+                  span!= "Total Sales"
+                .dashboard__table-th.dashboard__table-th-5
+                  span!= "Data Added"
+                .dashboard__table-th.dashboard__table-th-6
+                  span!= "Options"
 
           .dashboard__table-body
-            -for(var i = 0; i < 30; i++)
-              .dashboard__table-tr
-                .dashboard__table-td
-                  span
-                    img(src="./img/avatar-1.jpg" srcset="./img/avatar-1@2x.jpg 2x" alt="" title="")
-                .dashboard__table-td
-                  span!= "Timothy Parsons"
-                .dashboard__table-td
-                  span!= "Abstract Album Cover"
-                .dashboard__table-td
-                  a.dashboard__table-position(href="#" class="" title="")!= "Graphic Design"
-                .dashboard__table-td
-                  span!= "$3,044"
-                .dashboard__table-td
-                  span!= "11-16-2018"
-                .dashboard__table-td
-                  a.dashboard__table-view(href="#" class="" title="")!= "View"
+            -
+              var tableData = [
+                {
+                  name: 'Timothy Parsons',
+                  services: 'Abstract Album Cover',
+                  category: 'Graphic Design',
+                  sales: '$3,044',
+                  data: '11-16-2018'
+                },
+                {
+                  name: 'Leila Greer',
+                  services: 'Mix and Master grunge',
+                  category: 'Music & Audio',
+                  sales: '$6,689',
+                  data: '04-07-2018'
+                },
+                {
+                  name: 'Amy Washington',
+                  services: 'Abstract Album Cover',
+                  category: 'Legal',
+                  sales: '$5,755',
+                  data: '06-05-2018'
+                },
+                {
+                  name: 'Arthur Webb',
+                  services: 'Contract for Band',
+                  category: 'Music & Audio',
+                  sales: '$11.709',
+                  data: '11-12-2018'
+                },
+                {
+                  name: 'Rosa Powers',
+                  services: 'Pop logo design',
+                  category: 'Graphic Design',
+                  sales: '$75.615',
+                  data: '10-27-2018'
+                },
+                {
+                  name: 'Clifford Hayes',
+                  services: 'Abstract Album Cover',
+                  category: 'Legal',
+                  sales: '$8,759',
+                  data: '11-04-2018'
+                },
+                {
+                  name: 'Scott Russell',
+                  services: 'I\'ll play session guitar',
+                  category: 'Graphic Design',
+                  sales: '$5,547',
+                  data: '07-05-2018'
+                }
+              ];
+
+            -for(var j = 0; j < 2; j++)
+              -for(var i = 0; i < tableData.length; i++)
+                .dashboard__table-tr(class!= "dashboard__table-tr-" + i)
+
+                  .dashboard__table-header
+                    .dashboard__table-td.dashboard__table-td-0
+                      span
+                        img(src="./img/avatar-1.jpg" srcset="./img/avatar-1@2x.jpg 2x" alt="" title="")
+
+                    .dashboard__table-td.dashboard__table-td-1
+                      span!= tableData[i].name
+                      a.dashboard__table-view(href="dashboard-view-1.html" class="" title="")!= "View"
+
+                  .dashboard__table-main
+                    .dashboard__table-td.dashboard__table-td-2
+                      p!= "Service Title:"
+                      span!= tableData[i].services
+
+                    .dashboard__table-td.dashboard__table-td-3
+                      p!= "Category:"
+                      a.dashboard__table-position(href="#" class="" title="")!= tableData[i].category
+
+                    .dashboard__table-td.dashboard__table-td-4
+                      p!= "Total Sales:"
+                      span!= tableData[i].sales
+
+                    .dashboard__table-td.dashboard__table-td-5
+                      p!= "Data Added:"
+                      span!= tableData[i].data
+
+                    .dashboard__table-td.dashboard__table-td-6
+                      p!= "Options:"
+                      a.dashboard__table-view(href="#" class="" title="")!= "View"
 
       .dashboard__row.dashboard__row-more
         a.dashboard__more(href="#" class="" title="")

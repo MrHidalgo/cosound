@@ -24,7 +24,14 @@
         justify-content: flex-end
         align-items: center
 
+        .header__hamburger
+          display: none
+          +r(1199)
+            display: block
+
   &__signout
+    +r(1199)
+      display: none
     svg
       width: 18px
       height: 20px
