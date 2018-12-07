@@ -1038,6 +1038,23 @@ $(document).ready(function(){
         nextEl: '.dashboard__slider-next',
         prevEl: '.dashboard__slider-prev',
       },
+      breakpoints: {
+        // when window width is <= 320px
+        575: {
+          slidesPerView: 1,
+          spaceBetween: 16
+        },
+        // when window width is <= 480px
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 26
+        },
+        // when window width is <= 640px
+        1439  : {
+          slidesPerView: 3,
+          spaceBetween: 36
+        }
+      }
     });
 
     // ito swiper

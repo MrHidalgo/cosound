@@ -2,7 +2,7 @@
   padding-top: 100px
 
   &--view
-    .dashboard__wrapper-right
+    .dashboard__wrapper-cover
       width: 100%
       max-width: 1165px
 
@@ -14,6 +14,8 @@
       &-step
         padding-left: 10px
         text-decoration: none
+        +r(575)
+          font-size: 28px
 
   &--ready
     z-index: 1000
@@ -510,16 +512,26 @@
     border-radius: 10px
     background-color: #fff
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.08)
+    +r(767)
+      padding: 30px
+    +r(575)
+      margin-left: -15px
+      margin-right: -15px
+      border-radius: 0
 
     p
       margin: 0
       padding-bottom: 15px
       font-size: 30px
+      +r(767)
+        font-size: 28px
 
     span
       line-height: 1.8
       font-size: 14px
       font-family: "Lucida Grande", sans-serif
+      +r(575)
+        font-size: 12px
 
   &__slider
     position: relative
@@ -555,9 +567,13 @@
     //   flex: 1 0 auto
     &-next
       right: -20px
+      +r(767)
+        right: -10px
 
     &-prev
       left: -20px
+      +r(767)
+        left: -10px
 
   &-slide
     flex: 0 0 auto
@@ -585,6 +601,10 @@
     display: flex
     align-items: flex-start
     width: 100%
+    +r(991)
+      padding-top: 30px
+    +r(767)
+      flex-direction: column
 
     &-left
       display: flex
@@ -592,17 +612,32 @@
       width: 100%
       max-width: calc(100% - 262px)
       padding-top: 44px
+      +r(767)
+        max-width: 100%
+        padding-bottom: 42px
+      +r(575)
+        flex-direction: column
 
       > div
         &:first-child
           width: 140px
+          +r(575)
+            width: 100%
+            padding-bottom: 21px
 
         &:last-child
           width: 100%
           max-width: calc(100% - 140px)
+          padding-right: 15px
+          +r(575)
+            max-width: 100%
+            padding-right: 0
+            text-align: center
 
     &-right
       width: 262px
+      +r(767)
+        width: 100%
 
     &-box
       display: flex
@@ -634,6 +669,9 @@
       margin-left: 15px
       border-radius: 100%
       box-shadow: 0 10px 14px 0 rgba(0,0,0,0.11)
+      +r(575)
+        margin-left: auto
+        margin-right: auto
 
       img
         position: absolute
@@ -676,12 +714,19 @@
   &__btn
     display: flex
     align-items: center
+    +r(991)
+      flex-wrap: wrap
 
     a
       padding-top: 2px
       padding-bottom: 2px
       margin-right: 30px
       font-weight: normal
+      +r(991)
+        margin-bottom: 15px
+      +r(575)
+        width: 100%
+        margin-right: 0
 
       &:last-of-type
         margin-right: 0
