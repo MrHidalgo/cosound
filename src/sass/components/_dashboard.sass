@@ -660,6 +660,25 @@
         color: rgba(#262626, 0.52)
         font-size: 14px
 
+      > h2
+        user-select: none
+        display: inline-block
+        position: relative
+        text-align: center
+        transition: all $transitionSpeed ease-in-out
+        font-weight: 500
+        font-size: 16px
+        line-height: 2
+        border-radius: 45px
+        padding: 8px 35px
+        min-width: 166px
+        background: $colorAqua
+        color: white
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.07)
+
+        &:focus, &:active
+          outline: none
+
     &-img
       overflow: hidden
       position: relative
