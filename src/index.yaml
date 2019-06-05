@@ -74,10 +74,15 @@ PageList:
   ready: 0
 
 - file: dashboard-mm.html
-  ready: 80
+  ready: 90
 - file: dashboard-view-1.html
-  ready: 55
+  ready: 90
 - file: dashboard-view-2.html
-  ready: 55
+  ready: 90
 - file: dashboard-ready.html
-  ready: 80
+  ready: 90
+
+- file: =====CUSTOMER VIEW=====
+  ready: 0
+- file: service-status-1.html
+  ready: 1

@@ -7,7 +7,7 @@
     "start": "gulp",
     "build": "gulp build --production",
     "lint": "eslint --ignore-pattern 'src/js/lib/' --cache --format=node_modules/eslint-formatter-pretty src/js/",
-    "surge": "gulp build --production && surge --project ./dist --domain cos-dev.surge.sh"
+    "surge": "gulp build --production && surge --project ./dist --domain https://www.cos-dev.surge.sh"
   },
   "git": {
     "scripts": {
@@ -72,5 +72,8 @@
     "surge": "^0.19.0",
     "through2": "^2.0.3",
     "vinyl-buffer": "^1.0.0"
+  },
+  "devDependencies": {
+    "lodash": "^4.17.11"
   }
 }
