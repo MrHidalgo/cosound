@@ -85,4 +85,14 @@ PageList:
 - file: =====CUSTOMER VIEW=====
   ready: 0
 - file: service-status-1.html
-  ready: 1
+  ready: 80
+- file: service-status-2.html
+  ready: 80
+- file: service-status-3.html
+  ready: 80
+- file: service-status-4.html
+  ready: 80
+- file: service-status-5.html
+  ready: 80
+- file: service-status-6.html
+  ready: 80
