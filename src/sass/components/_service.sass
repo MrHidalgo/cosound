@@ -146,6 +146,9 @@
         height: 30px
     &-attach
       margin-bottom: 30px
+      &--bottom
+        margin-top: 15px
+        margin-bottom: 0
       ul
         display: flex
         flex-direction: column
@@ -155,6 +158,8 @@
           min-height: 25px
           color: rgba(38, 38, 38, 0.52)
           font-size: 14px
+          a
+            font-weight: bold
     &-characters
       margin-bottom: 15px
       text-align: right
@@ -180,6 +185,10 @@
     .ms__content
       margin-bottom: 15px
       border: 1px solid rgba(151, 151, 151, 0.2)
+
+      &--wm
+        .ms-create__textarea
+          margin: 0
 
     .ms__create
       border: none

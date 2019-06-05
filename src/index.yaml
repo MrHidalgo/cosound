@@ -96,3 +96,14 @@ PageList:
   ready: 80
 - file: service-status-6.html
   ready: 80
+
+- file: =====SELLER VIEW=====
+  ready: 0
+- file: service-status-7.html
+  ready: 80
+- file: service-status-8.html
+  ready: 80
+- file: service-status-9.html
+  ready: 80
+- file: service-status-10.html
+  ready: 80

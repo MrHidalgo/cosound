@@ -1,0 +1,149 @@
+---
+title: Service Status | Deliver Service Now
+---
+extends shared/_layout
+
+block header
+  include components/headers/_header-service
+  
+block content
+
+  .product
+    .container.container--wide
+
+      .product__wrapper
+
+        //sidebar
+        .product__sidebar.product-sidebar(js-teleport data-teleport-to="product-sidebar" data-teleport-condition="<992")
+          .product-sidebar__wrap.wow
+            .sidebar-user
+              .sidebar-user__avatar
+                .avatar.avatar--big
+                  img(src='img/avatar-main-1.jpg' srcset='img/avatar-main-1@2x.jpg 2x')
+              .sidebar-user__name.sidebar-user__name--bigger Chester Parsons
+              .sidebar-user__position Spotify Playlist Curator
+              .sidebar-user__rating
+                .rating-stars.rating-stars--bigger(data-rating='3')
+                  i.icon
+                  i.icon
+                  i.icon
+                  i.icon
+                  i.icon
+
+          .product-sidebar__bottom.product-sidebar__bottom--pb.wow
+            .product-sidebar__title Service
+            ul.product-sidebar__list
+              li Your music on 30 Pop Playlists
+              li For up to 4 weeks
+              li A full report at the end!
+
+        .product__content
+
+          .service
+
+            .service__main
+              .product__content
+
+                // box
+                .product__box.wow
+                  // cover modifier to cover bg photo
+                  .product__main
+                    .product__cover
+                      img(src='img/coverNew.jpg')
+                    .product__scope
+                      .product__scope-top
+                        .product__scope-left
+                          .product__name I will list you on 30 Pop Playlists
+
+                          div
+                            .product__delivery
+                              span Seller: <span>@Benjaminrees</span>
+                            .product__delivery
+                              span Order Date: <span>24/10/2018</span>
+
+                        .product__scope-right
+                          .product__price $199
+
+                      .product__scope-bottom
+                        .product__delivery
+                          span Time before delivery:
+
+                        .product__name 2d 13h 56m
+
+            .service__review.wow
+
+              p.service__review-title Deliver Service
+              p.service__review-text Notify your customer now that you've completed their service. Provide as much detail as possible.
+
+              // content
+              .ms__content.ms__content--wm
+                // writing area
+                .ms__create.ms-create
+                  .ms-create__textarea
+                    textarea(type="text" placeholder="Message")
+
+              .service__review-btn
+                a(href='#').btn.btn-primary.btn-primary--red
+                  span Attach Files
+                a(href='#').btn.btn-primary.btn-primary--white
+                  span Attach file link
+
+              .service__review-attach.service__review-attach--bottom
+                ul
+                  li!=  "For files over 2mb please attach a link to the files <a href='#'>help</a>"
+
+            .service__between.wow
+              div
+                p!= "Messages between you and <strong>@benjaminrees</strong>"
+              div
+                a.btn.btn-primary.btn-primary--red(href="#" class="" title="")
+                  span!= "View in message"
+
+            .service__message.wow
+
+              // content
+              .ms__content
+                // messages list
+                .ms__list
+                  // message
+                  .ms-message
+                    .avatar.avatar--shad
+                      img(src='img/suggestionCard-avatar-4.jpg' srcset='img/suggestionCard-avatar-4@2x.jpg 2x')
+                    .ms-message__content
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                      .ms-message__timestamp 9:41pm
+
+                  // message self
+                  .ms-message.ms-message--self
+                    .avatar.avatar--shad
+                      img(src='img/suggestionCard-avatar-4.jpg' srcset='img/suggestionCard-avatar-4@2x.jpg 2x')
+                    .ms-message__content
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                      .ms-message__timestamp 9:41pm Delivered
+
+                  // message
+                  .ms-message
+                    .avatar.avatar--shad
+                      img(src='img/suggestionCard-avatar-4.jpg' srcset='img/suggestionCard-avatar-4@2x.jpg 2x')
+                    // long mod
+                    .ms-message__content.ms-message__content--long
+                      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                      .ms-message__timestamp 9:41pm Read
+
+                  // message self
+                  .ms-message.ms-message--self
+                    .avatar.avatar--shad
+                      img(src='img/suggestionCard-avatar-4.jpg' srcset='img/suggestionCard-avatar-4@2x.jpg 2x')
+                    .ms-message__content
+                      p Lorem ipsum dolor sit amet, consectetur
+                      .ms-message__timestamp 9:41pm Delivered
+
+                .ms__create.ms-create
+                  .ms-create__attach
+                    i.icon.icon-paperclip
+
+                  .ms-create__textarea
+                    textarea(type="text" placeholder="Message" js-emojiArea)
+
+                  .ms-create__emodji
+                    i.icon.icon-emodji
